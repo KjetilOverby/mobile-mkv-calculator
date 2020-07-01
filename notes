@@ -1,0 +1,7 @@
+ "type": "2x44 - 12% - 3.6 (46)",
+    "bladtype": "2.2 - 3.6",
+    "bladeThickness": "2.2",
+    "sagSnitt": 3.6,
+    "StartRings": [7, 34.6, 54.6, 53.1],
+    "rawInput": [46, 46],
+    "shims": [46.9, 0.5]
