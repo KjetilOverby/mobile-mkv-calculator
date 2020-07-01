@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
         zIndex: '100',
         border: '1px solid gray',
         borderRadius: '4px',
-        boxShadow: '10px 10px 30px black'
+        boxShadow: '5px 5px 30px rgba(0,0,0,.3)'
      },
      [theme.breakpoints.down('xs')]: {
         height: '4rem',
@@ -82,6 +82,9 @@ const useStyles = makeStyles(theme => ({
     },
   },
   blade: {
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
     [theme.breakpoints.down('md')]: {
       height: '15rem',
       width: '2px',
@@ -95,9 +98,32 @@ const useStyles = makeStyles(theme => ({
       left: '1.5rem'
     },
 
+  },
+  bladeTop: {
+    [theme.breakpoints.down('md')]: {
+      position: "absolute",
+      color: 'orangered',
+      fontSize: '.7rem',
+      top: '-1rem'
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '.4rem'
+   },
+  },
+  bladeBottom: {
+    [theme.breakpoints.down('md')]: {
+      position: "absolute",
+      color: 'orangered',
+      fontSize: '.7rem',
+      bottom: '-1rem'
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '.4rem'
+   },
   }
 }))
 const RawRings = (props) => {
+ console.log(props.postInfo.bladeThickness);
  
 const classes = useStyles()
 return (
@@ -108,7 +134,10 @@ return (
       <Typography className={classes.rawVal}>{(props.rawVal + 1.4).toFixed(1)}</Typography>
       <Typography className={classes.ringVal}>{props.ringVal}</Typography>
       <Typography className={classes.shimsVal} className={classes.shimsVal}>{props.shimVal}</Typography>
-      <div className={classes.blade}></div>
+      <div className={classes.blade}>
+        <Typography className={classes.bladeTop}>{props.postInfo.sagsnitt[0].toFixed(1)}</Typography>
+        <Typography className={classes.bladeBottom}>{props.postInfo.bladeThickness}</Typography>
+      </div>
   </div>
   
 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Grid } from '@material-ui/core';
+import { makeStyles, Grid, Typography } from '@material-ui/core';
 import FillRings from '../FillRings';
 import RawRings from '../RawRings';
 
@@ -211,6 +211,9 @@ const useStyles = makeStyles((theme) => ({
        },
   },
   blade: {
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
     [theme.breakpoints.down('md')]: {
       height: '15rem',
       width: '2px',
@@ -223,11 +226,35 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '8.5rem'
     },
 
+  },
+  bladeTop: {
+    [theme.breakpoints.down('md')]: {
+      position: "absolute",
+      color: 'orangered',
+      fontSize: '.7rem',
+      top: '-1rem'
+    },
+    [theme.breakpoints.down('xs')]: {
+       fontSize: '.4rem'
+    },
+    
+  },
+  bladeBottom: {
+    [theme.breakpoints.down('md')]: {
+      position: "absolute",
+      color: 'orangered',
+      fontSize: '.7rem',
+      bottom: '-1rem'
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '.4rem'
+   },
   }
 }));
 const Hylse = (props) => {
 
   
+  console.log(props);
   
  
   
@@ -241,11 +268,19 @@ const Hylse = (props) => {
           </div>
         )
       })}
-      <div className={classes.blade}></div>
+      <div className={classes.blade}>
+      <Typography className={classes.bladeTop}>{props.post.sagsnitt[0].toFixed(1)}</Typography>
+        <Typography className={classes.bladeBottom}>{props.post.bladeThickness}</Typography>
+      </div>
       {props.post.rawInput.map((rawIn) => {
         return (
           <div>
-            <RawRings rawVal={rawIn.input} ringVal={rawIn.ring} shimVal={rawIn.shims}/>
+            <RawRings
+             rawVal={rawIn.input} 
+             ringVal={rawIn.ring} 
+             shimVal={rawIn.shims}
+             postInfo={props.post}
+             />
           </div>
         )
       })}
