@@ -18,6 +18,17 @@ const useStyles = makeStyles((theme) => ({
        marginLeft: '3.2em'
     },
   },
+  ringContainer: {
+     width: '100%',
+     display: 'flex',
+     height: '20em',
+     marginTop: '3.8rem',
+     [theme.breakpoints.down('xs')]: {
+       marginTop: '1.5vw',
+       alignItems: 'center',
+       
+     },
+  },
   hylse: {
     background: 'linear-gradient(rgb(200, 200, 200), rgb(66, 66, 66))',
     height: '10rem',
@@ -47,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     height: '3.5rem',
     width: '67rem',
     background: 'linear-gradient(rgb(204, 204, 204), rgb(70, 69, 69))',
-    boxShadow: '5px 5px 3px rgb(70, 69, 69)',
+    boxShadow: 'inset 4px 1px 3px rgb(70, 69, 69)',
     borderBottomRightRadius: '10px',
     borderTopRightRadius: '10px',
     display: 'flex',
@@ -63,16 +74,16 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     left: '35em',
     [theme.breakpoints.down('md')]: {
-       width: '35em',
+       width: '86.2vw',
        height: '1.5rem',
-       marginTop: '10.6rem',
-       marginRight: '-3rem',
-       left: '33em'
+       marginTop: '20.5vh',
+       left: '29em'
     },
     [theme.breakpoints.down('xs')]: {
-       width: '16rem',
+       width: '19.3rem',
        height: '.8rem',
-       marginTop: '10rem'
+       marginTop: '18.5vw',
+       left: '29.5em'
     },
   },
   hylseScrewHole: {
@@ -176,16 +187,17 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
        height: '2.9rem',
+       width: '2rem'
        
     },
   },
   gang: {
-    height: '10rem',
+    height: '6rem',
     width: '0.1em',
-    background: 'rgb(189, 188, 188)',
+    background: 'gray',
     margin: '0 0.1rem',
     [theme.breakpoints.down('md')]: {
-       height: '2rem',
+       height: '10rem',
     },
   },
   "&last-child": {
@@ -203,7 +215,7 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: 'inset 1px 9px 3px black',
       [theme.breakpoints.down('md')]: {
         width: '2rem',
-        height: '2rem'    
+        height: '1.5rem'    
        },
        [theme.breakpoints.down('xs')]: {
          width: '1.5rem',
@@ -218,12 +230,12 @@ const useStyles = makeStyles((theme) => ({
       height: '15rem',
       width: '2px',
       background: 'orange',
-      marginTop: '8rem',
+      marginTop: '4.2rem',
       boxShadow: '5px 10px 10px black'
     },
     [theme.breakpoints.down('xs')]: {
       height: '20vh',
-      marginTop: '8.5rem'
+      marginTop: '36.5vw'
     },
 
   },
@@ -261,6 +273,7 @@ const Hylse = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.hylseContainer}>
+    <div className={classes.ringContainer}>
       {props.post.startRings.map((ring) => {
         return (
           <div>
@@ -294,7 +307,8 @@ const Hylse = (props) => {
           </div>
         )
       })}
-    {/*   <div className={classes.hylseKile}>
+      </div>
+      <div className={classes.hylseKile}>
         <div className={classes.hylseScrewHole}>
           <div className={classes.screwHead1}>
             <div className={classes.screwHead2}></div>
@@ -310,7 +324,7 @@ const Hylse = (props) => {
             <div className={classes.screwHead2}></div>
           </div>
         </div>
-      </div> */}
+      </div>
       <div className={classes.hylse}>
         <div className={classes.hylseLightReflection}></div>
 
@@ -329,13 +343,7 @@ const Hylse = (props) => {
             <div className={classes.gang}></div>
             <div className={classes.gang}></div>
             <div className={classes.gang}></div>
-            <div className={classes.gang}></div>
-            <div className={classes.gang}></div>
-            <div className={classes.gang}></div>
-            <div className={classes.gang}></div>
-            <div className={classes.gang}></div>
-            <div className={classes.gang}></div>
-            <div className={classes.gang}></div>
+           
         </div>
       </div>
     </div>
