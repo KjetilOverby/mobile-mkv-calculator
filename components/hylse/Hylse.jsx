@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
       width: '19rem',
       height: '3rem',
       left: '.3em',
-      top: '64%'
+      top: '66%'
     },
   },
   
@@ -222,7 +222,7 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: '5px 10px 10px black'
     },
     [theme.breakpoints.down('xs')]: {
-      height: '25vh',
+      height: '20vh',
       marginTop: '8.5rem'
     },
 
@@ -279,6 +279,8 @@ const Hylse = (props) => {
              rawVal={rawIn.input} 
              ringVal={rawIn.ring} 
              shimVal={rawIn.shims}
+             shimsVal2={rawIn.shims2}
+             shimsVal3={rawIn.shims3}
              postInfo={props.post}
              />
           </div>

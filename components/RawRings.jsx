@@ -43,11 +43,12 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: {
       position: 'absolute',
       bottom: '32vh',
-      color: 'red',
+      color: 'blue',
+      fontSize: '.8rem'
     },
     
     [theme.breakpoints.down('xs')]: {
-       bottom: '11vh',
+       bottom: '10vh',
        fontSize: '.5rem'
     },
    
@@ -57,7 +58,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: {
       position: 'absolute',
       bottom: '-6vh',
-      color: 'red',
+      color: 'blue',
       fontSize: '0.8rem',
       fontStyle: 'italic'
     },
@@ -71,7 +72,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: {
       position: 'absolute',
       bottom: '-12vh',
-      color: 'red',
+      color: 'blue',
       fontSize: '0.8rem',
       fontStyle: 'italic',
     },
@@ -79,6 +80,34 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       fontSize: '.5rem',
       bottom: '-5vh'
+    },
+  },
+  shimsVal2: {
+    [theme.breakpoints.down('md')]: {
+      position: 'absolute',
+      bottom: '-17vh',
+      color: 'blue',
+      fontSize: '0.8rem',
+      fontStyle: 'italic',
+    },
+    
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '.5rem',
+      bottom: '-7vh'
+    },
+  },
+  shimsVal3: {
+    [theme.breakpoints.down('md')]: {
+      position: 'absolute',
+      bottom: '-22vh',
+      color: 'blue',
+      fontSize: '0.8rem',
+      fontStyle: 'italic',
+    },
+    
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '.5rem',
+      bottom: '-9vh'
     },
   },
   blade: {
@@ -94,7 +123,7 @@ const useStyles = makeStyles(theme => ({
       boxShadow: '5px 10px 10px black'
     },
     [theme.breakpoints.down('xs')]: {
-      height: '25vh',
+      height: '20vh',
       left: '1.5rem'
     },
 
@@ -123,7 +152,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 const RawRings = (props) => {
- console.log(props.postInfo.bladeThickness);
+ console.log(props);
  
 const classes = useStyles()
 return (
@@ -133,7 +162,9 @@ return (
   <Typography className={classes.rawInput}>{props.rawVal}</Typography>
       <Typography className={classes.rawVal}>{(props.rawVal + 1.4).toFixed(1)}</Typography>
       <Typography className={classes.ringVal}>{props.ringVal}</Typography>
-      <Typography className={classes.shimsVal} className={classes.shimsVal}>{props.shimVal}</Typography>
+      <Typography className={classes.shimsVal}>{props.shimVal}</Typography>
+      <Typography className={classes.shimsVal2}>{props.shimsVal2}</Typography>
+      <Typography className={classes.shimsVal3}>{props.shimsVal3}</Typography>
       <div className={classes.blade}>
         <Typography className={classes.bladeTop}>{props.postInfo.sagsnitt[0].toFixed(1)}</Typography>
         <Typography className={classes.bladeBottom}>{props.postInfo.bladeThickness}</Typography>
