@@ -9,12 +9,11 @@ const useStyles = makeStyles(theme => ({
         height: '7rem',
         width: '2.6rem',
         background: 'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
-        margin: '.2rem',
+        margin: '0 .2rem',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         color: 'white',
-        marginTop: '9.2em',
         zIndex: 100,
         borderRadius: '4px',
         border: '1px solid gray',
@@ -24,8 +23,7 @@ const useStyles = makeStyles(theme => ({
      [theme.breakpoints.down('xs')]: {
         height: '4rem',
         width: '1.5rem',
-        margin: '0.05rem',
-        marginTop: '9.7em',
+        margin: '0 0.05rem',
      },
     },
     

@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import baseUrl from '../../../utils/baseUrl';
 import PostSet from '../../../components/PostSet';
 import { Typography } from '@material-ui/core';
+import Info from '../../../components/Info';
 
 
 const post_id = ({post}) => {
@@ -15,10 +16,11 @@ const post_id = ({post}) => {
             top: '1em',
             left: '2em',
             fontStyle: 'italic',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            color: '#694786'
             }}>{post.type.name}</Typography> 
            <PostSet post={post}/>
-           
+           <Info post={post}/>
         </div>
     )
 }
