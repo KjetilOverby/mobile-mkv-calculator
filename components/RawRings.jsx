@@ -16,12 +16,17 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '4px',
     boxShadow: '5px 5px 30px rgba(0,0,0,.3)',
     flexDirection: 'column',
-    height: '7rem',
-      width: '2.6rem',
-      background:
-        'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(36,149,126,1) 35%, rgba(0,255,229,1) 100%)',
+    height: '14rem',
+    width: '5.5rem',
+    background:
+      'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(36,149,126,1) 35%, rgba(0,255,229,1) 100%)',
+      [theme.breakpoints.down('lg')]: {
+       height: '10rem',
+       width: '4rem'
+      },
     [theme.breakpoints.down('md')]: {
-      
+      height: '7rem',
+      width: '2.6rem',
     },
     [theme.breakpoints.down('xs')]: {
       height: '4rem',
@@ -30,7 +35,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   rawVal: {
+    fontSize: '1.8rem',
+    fontWeight: 'bold',
     position: 'absolute',
+    [theme.breakpoints.down('lg')]: {
+      fontSize: '1.3rem'
+    },
     [theme.breakpoints.down('md')]: {
       fontSize: '.8rem',
     },
@@ -42,23 +52,37 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
 
     color: 'blue',
+    bottom: '10em',
+    fontSize: '1.5rem',
+    bottom: '10em',
+    [theme.breakpoints.down('lg')]: {
+      fontSize: '1rem'
+    },
     [theme.breakpoints.down('md')]: {
       fontSize: '.8rem',
-      bottom: '9em'
+      bottom: '9em',
     },
 
     [theme.breakpoints.down('xs')]: {
       fontSize: '.5rem',
-      bottom: '8em'
+      bottom: '8em',
     },
   },
   ringVal: {
     position: 'absolute',
+    color: 'blue',
+    top: '14.5rem',
+    fontSize: '1.2rem',
+    fontStyle: 'italic',
+    [theme.breakpoints.down('lg')]: {
+     fontSize: '1rem',
+     top: '10rem'
+    },
     [theme.breakpoints.down('md')]: {
       top: '7.5rem',
-      color: 'blue',
+    
       fontSize: '0.8rem',
-      fontStyle: 'italic',
+      
     },
     [theme.breakpoints.down('xs')]: {
       top: '4.5rem',
@@ -67,11 +91,18 @@ const useStyles = makeStyles((theme) => ({
   },
   shimsVal: {
     position: 'absolute',
+    color: 'blue',
+    top: '16.5rem',
+    fontSize: '1.2rem',
+    fontStyle: 'italic',
+    [theme.breakpoints.down('lg')]: {
+     fontSize: '1rem',
+     top: '11.5rem'
+    },
     [theme.breakpoints.down('md')]: {
-      top:'8.7rem',
-      color: 'blue',
+      top: '8.7rem',
+      
       fontSize: '0.8rem',
-      fontStyle: 'italic',
     },
 
     [theme.breakpoints.down('xs')]: {
@@ -80,26 +111,44 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   shimsVal2: {
+    fontStyle: 'italic',
+    position: 'absolute',
+    color: 'blue',
+    top: '18.5rem',
+    fontSize: '1.2rem',
+    [theme.breakpoints.down('lg')]: {
+      fontSize: '1rem',
+      top: '13rem'
+    },
     [theme.breakpoints.down('md')]: {
-      position: 'absolute',
+      
       top: '10rem',
-      color: 'blue',
+      
       fontSize: '0.8rem',
-      fontStyle: 'italic',
+      
     },
 
     [theme.breakpoints.down('xs')]: {
       fontSize: '.5rem',
-      top: '6rem'
+      top: '6rem',
     },
   },
   shimsVal3: {
+    fontStyle: 'italic',
+    position: 'absolute',
+    color: 'blue',
+    top: '20rem',
+    fontSize: '1.2rem',
+    [theme.breakpoints.down('lg')]: {
+      fontSize: '1rem',
+      top: '14.5rem'
+    },
     [theme.breakpoints.down('md')]: {
-      position: 'absolute',
-      top:'11.3rem',
-      color: 'blue',
+      
+      top: '11.3rem',
+      
       fontSize: '0.8rem',
-      fontStyle: 'italic',
+      
     },
 
     [theme.breakpoints.down('xs')]: {
@@ -111,23 +160,31 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     background: 'orange',
-    height: '15rem',
     position: 'absolute',
-    width: '2px',
+    width: '3px',
     right: '0%',
+    boxShadow: '5px 10px 10px black',
+    [theme.breakpoints.down('xl')]: {
+    
+      height: '38rem',
+    },
+    [theme.breakpoints.down('lg')]: {
+      height: '23rem'
+    },
     [theme.breakpoints.down('md')]: {
-     /*  height: '15rem',
-      width: '2px', */
-      boxShadow: '5px 10px 10px black',
+      height: '15rem',
+      width: '2px',
     },
     [theme.breakpoints.down('xs')]: {
       height: '20vh',
     },
   },
   bladeTop: {
+    position: 'absolute',
+    color: 'orangered',
+    top: '-1.5rem',
     [theme.breakpoints.down('md')]: {
-      position: 'absolute',
-      color: 'orangered',
+     
       fontSize: '.7rem',
       top: '-1rem',
     },
@@ -136,9 +193,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   bladeBottom: {
+    position: 'absolute',
+    color: 'orangered',
+    bottom: '-1.5rem',
     [theme.breakpoints.down('md')]: {
-      position: 'absolute',
-      color: 'orangered',
+     
       fontSize: '.7rem',
       bottom: '-1rem',
     },

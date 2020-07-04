@@ -10,9 +10,12 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     justifyContent: 'center',
     alignItems: 'center',
-    
+    margin: '10rem 0',
     [theme.breakpoints.down('md')]: {
-      margin: '10rem 0 10rem 0rem'
+      margin: '5rem 0 0 5rem'
+    },
+    [theme.breakpoints.down('sm')]: {
+      margin: '10rem 0 0rem 0rem'
     },
     [theme.breakpoints.down('xs')]: {
        margin: '3rem 0 0 0rem'
@@ -23,10 +26,24 @@ const useStyles = makeStyles((theme) => ({
      display: 'flex',
      height: '20em',
      position: 'absolute',
-     margin: '0 0 0 3.5em',
+     margin: '0 0 0 4.5em',
      zIndex: 100, 
      alignItems: 'center',
+    
      width: '80vw',
+     [theme.breakpoints.down('xl')]: {
+      marginLeft: '5.5rem'
+     },
+     [theme.breakpoints.down('lg')]: {
+      marginLeft: '7rem'
+     },
+    
+     [theme.breakpoints.down('md')]: {
+      margin: '0 0 0 3.5em',
+     },
+     [theme.breakpoints.down('sm')]: {
+      
+     },
         [theme.breakpoints.down('xs')]: {
        margin: '0 0 0 1.7rem'
      },
@@ -34,15 +51,25 @@ const useStyles = makeStyles((theme) => ({
   hylse: {
     background: 'linear-gradient(rgb(200, 200, 200), rgb(66, 66, 66))',
     height: '10rem',
-    width: '68rem',
+    width: '85rem',
     display: 'flex',
     alignItems: 'center',
     zIndex: -2,
     boxShadow: '1px 1px 20px black',
+    [theme.breakpoints.down('xl')]: {
+     width: '88rem'
+    },
+    [theme.breakpoints.down('lg')]: {
+      width: '65rem',
+      height: '7rem'
+    },
 
     [theme.breakpoints.down('md')]: {
-       width: '92vw',
+       width: '68vw',
        height: '5rem',
+    },
+    [theme.breakpoints.down('sm')]: {
+       width: '92vw'
     },
     [theme.breakpoints.down('xs')]: {
       width: '21.5rem',
@@ -52,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
   
   hylseKile: {
     height: '3.5rem',
-    width: '67rem',
+    width: '80rem',
     background: 'linear-gradient(rgb(204, 204, 204), rgb(70, 69, 69))',
     boxShadow: 'inset 4px 1px 3px rgb(70, 69, 69)',
     borderBottomRightRadius: '10px',
@@ -65,6 +92,14 @@ const useStyles = makeStyles((theme) => ({
     borderBottomLeftRadius: '40px',
     border: '1px solid gray',
     zIndex: 1,
+    [theme.breakpoints.down('xl')]: {
+      width: '90rem',
+      marginLeft: '-2rem'
+    },
+    [theme.breakpoints.down('lg')]: {
+      width: '67rem',
+      height: '2rem'
+    },
     [theme.breakpoints.down('md')]: {
        width: '86.2vw',
        height: '1.5rem',
@@ -121,7 +156,6 @@ const useStyles = makeStyles((theme) => ({
   },
   hylseStart: {
     height: '14rem',
-    width: '4rem',
     background: 'linear-gradient(rgb(184, 184, 184), rgb(56, 56, 56))',
     borderRadius: '5px',
     boxShadow: '10px 10px 30px black',
@@ -129,6 +163,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     border: '1px solid gray',
+    width: '6rem',
+    [theme.breakpoints.down('lg')]: {
+     height: '10rem',
+     width: '4.5rem',
+
+    
+    },
     [theme.breakpoints.down('md')]: {
       height: '7rem',
       width: '3rem',
@@ -161,7 +202,9 @@ const useStyles = makeStyles((theme) => ({
     borderBottomRightRadius: '5px',
     borderTopRightRadius: '5px',
     overflow: 'hidden',
-    
+    [theme.breakpoints.down('lg')]: {
+     height: '7rem',
+    },
     [theme.breakpoints.down('md')]: {
       height: '5rem',
       width: '3rem'
@@ -194,6 +237,10 @@ const useStyles = makeStyles((theme) => ({
       borderBottomRightRadius: '50px',
       marginLeft: '-.5em',
       boxShadow: 'inset 1px 9px 3px black',
+      [theme.breakpoints.down('lg')]: {
+       height: '2rem',
+       width: '2rem'
+      },
       [theme.breakpoints.down('md')]: {
         width: '1.5rem',
         height: '1.5rem'    
@@ -208,23 +255,34 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     background: 'orange',
-    height: '15rem',
-    width: '2px',
+    
+    width: '3px',
     zIndex: 200,
+    height: '30rem',
+    boxShadow: '5px 10px 10px black',
+    [theme.breakpoints.down('xl')]: {
+      height: '38rem',
+    },
+    [theme.breakpoints.down('lg')]: {
+      height: '23rem'
+    },
     [theme.breakpoints.down('md')]: {
-      
-      boxShadow: '5px 10px 10px black'
+      width: '2px',
+      height: '15rem',
     },
     [theme.breakpoints.down('xs')]: {
       height: '20vh',
-      
+      width: '2px',
     },
 
   },
   bladeTop: {
+    color: 'orangered',
+    position: "absolute",
+    top: '-1.5rem',
     [theme.breakpoints.down('md')]: {
-      position: "absolute",
-      color: 'orangered',
+      
+      
       fontSize: '.7rem',
       top: '-1rem'
     },
@@ -234,9 +292,11 @@ const useStyles = makeStyles((theme) => ({
     
   },
   bladeBottom: {
-    [theme.breakpoints.down('md')]: {
-      position: "absolute",
+    position: "absolute",
       color: 'orangered',
+      bottom: '-1.5rem',
+    [theme.breakpoints.down('md')]: {
+      
       fontSize: '.7rem',
       bottom: '-1rem'
     },
