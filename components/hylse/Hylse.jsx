@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Grid, Typography } from '@material-ui/core';
+import { makeStyles, Grid, Typography, Hidden } from '@material-ui/core';
 import FillRings from '../FillRings';
 import RawRings from '../RawRings';
 
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '5.5rem'
      },
      [theme.breakpoints.down('lg')]: {
-      marginLeft: '7rem'
+      marginLeft: '4.2rem'
      },
     
      [theme.breakpoints.down('md')]: {
@@ -396,6 +396,13 @@ const Hylse = (props) => {
             <div className={classes.gang}></div>
             <div className={classes.gang}></div>
             <div className={classes.gang}></div>
+            <Hidden smDown>
+            <div className={classes.gang}></div>
+            <div className={classes.gang}></div>
+            <div className={classes.gang}></div>
+            <div className={classes.gang}></div>
+            <div className={classes.gang}></div>
+            </Hidden>
            
         </div>
       
