@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     height: '14rem',
     width: '5.5rem',
     background:
-      'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(36,149,126,1) 35%, rgba(0,255,229,1) 100%)',
+      'linear-gradient(4deg, rgba(214,190,88,1) 0%, rgba(248,255,143,1) 50%, rgba(221,206,49,1) 100%)',
       [theme.breakpoints.down('lg')]: {
        height: '10rem',
        width: '4rem'
@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       height: '7rem',
       width: '2.6rem',
+      background:
+      'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(36,149,126,1) 35%, rgba(0,255,229,1) 100%)',
     },
     [theme.breakpoints.down('xs')]: {
       height: '4rem',
@@ -38,11 +40,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.8rem',
     fontWeight: 'bold',
     position: 'absolute',
+    color:'orangered',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1.3rem'
     },
     [theme.breakpoints.down('md')]: {
       fontSize: '.8rem',
+      color: 'white',
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '0.5rem',

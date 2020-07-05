@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     margin: '10rem 0',
+    [theme.breakpoints.down('xl')]: {
+      marginTop: '20rem',
+    },
     [theme.breakpoints.down('md')]: {
       margin: '5rem 0 0 5rem'
     },
@@ -35,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '5.5rem'
      },
      [theme.breakpoints.down('lg')]: {
-      marginLeft: '4.2rem'
+      marginLeft: '3.8rem'
      },
     
      [theme.breakpoints.down('md')]: {
@@ -60,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
      width: '88rem'
     },
     [theme.breakpoints.down('lg')]: {
-      width: '65rem',
+      width: '58rem',
       height: '7rem'
     },
 
@@ -312,7 +315,7 @@ const Hylse = (props) => {
 
   
  
-  
+  const firstBladeValueTop = props.post.sagsnitt[0].toFixed(1);
  
   
   const classes = useStyles();
@@ -335,7 +338,7 @@ const Hylse = (props) => {
 
       <div className={classes.blade}>
        <span className={classes.content}>Content</span>
-      <Typography className={classes.bladeTop}>{props.post.sagsnitt[0].toFixed(1)}</Typography>
+      <Typography className={classes.bladeTop}>{firstBladeValueTop}</Typography>
         <Typography className={classes.bladeBottom}>{props.post.bladeThickness}</Typography>
       </div>
       
@@ -349,6 +352,7 @@ const Hylse = (props) => {
              shimsVal2={rawIn.shims2}
              shimsVal3={rawIn.shims3}
              postInfo={props.post}
+             
              />
           </div>
         )

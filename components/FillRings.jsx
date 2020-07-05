@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
 
       height: '14rem',
       width: '5.5rem',
-      background: 'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
+      background: 'linear-gradient(4deg, rgba(67,42,108,1) 0%, rgba(80,179,221,1) 50%, rgba(187,167,221,1) 100%)',
       margin: '0 .2rem',
       display: 'flex',
       justifyContent: 'center',
@@ -25,6 +25,7 @@ const useStyles = makeStyles(theme => ({
       },
 
      [theme.breakpoints.down('md')]: {
+      background: 'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
         height: '7rem',
         width: '2.6rem',
         margin: '0 .2rem',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   makeStyles,
   Typography,
@@ -15,16 +15,26 @@ const useStyles = makeStyles((theme) => ({
       'linear-gradient(4deg, rgba(44,214,230,1) 0%, rgba(81,153,235,1) 50%, rgba(17,79,57,1) 100%)',
   },
   ok: {
-    height: '1rem',
-    width: '1rem',
+    height: '1.2rem',
+    width: '1.2rem',
     background: '#4cdd8e',
     borderRadius: '50%',
+    [theme.breakpoints.down('md')]: {
+      height: '1rem',
+    width: '1rem',
+    },
   },
   notOk: {
-    height: '1rem',
-    width: '1rem',
+    height: '1.2rem',
+    width: '1.2rem',
     background: 'indianred',
     borderRadius: '50%',
+    [theme.breakpoints.down('md')]: {
+      height: '1rem',
+      width: '1rem',
+     
+   
+    },
   },
   dotContainer: {
     display: 'flex',
@@ -34,7 +44,10 @@ const useStyles = makeStyles((theme) => ({
   typography: {
     fontStyle: 'italic',
     color: '#430d4e',
-    fontSize: '1rem',
+    fontSize: '1.2rem',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1rem'
+    },
   },
   span: {
     color: '#e6eb51',
@@ -43,21 +56,27 @@ const useStyles = makeStyles((theme) => ({
     margin: '1rem 0',
     fontStyle: 'italic',
     color: '#4e3861',
+    fontSize: '1.5rem',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1.2rem',
+      fontWeight: 'bold' 
+    },
   },
   infoText: {
     fontStyle: 'italic',
     color: '#4e3861',
+    fontSize: '1rem'
   },
   divider: {
     margin: '1rem 0',
   },
   infoText2: {
     fontStyle: 'italic',
-    fontSize: '.6rem',
+    fontSize: '.7rem',
     color: '#4e3861',
   },
 }));
-const Info = ({ post }) => {
+const Info = ({ post, firstBladeValueTop }) => {
   const startRingsVal = 200;
   const endRingVal = 217.2;
 
@@ -82,10 +101,18 @@ const Info = ({ post }) => {
   const numberOfBlades = numberOfRings;
   const bladeThicknesSum = (bladeThick * numberOfBlades).toFixed(2);
   const sagSnitt = post.sagsnitt;
-  const singleBlade = post.sagsnitt[0];
   const sagSnittSum = sagSnitt.reduce((num1, num) => num1 + num);
-  const allBlades = sagSnittSum + singleBlade;
+  const [allBlades, setAllBlades] = useState(sagSnittSum + firstBladeValueTop);
+   console.log('allBlades' + sagSnitt);
 
+   useEffect(() => {
+    if (sagSnitt.length === 1) {
+      setAllBlades(firstBladeValueTop)
+   } else {
+     setAllBlades(sagSnittSum + firstBladeValueTop)
+   }
+   }, [])
+  
   const rawInputCalc = (allBlades + rawInputSum) / 2 - 0.7;
   const finalCalcForStartRings = (startRingsVal - rawInputCalc).toFixed(2);
   const finalCalcForEndRings = (endRingVal - rawInputCalc).toFixed(2);
@@ -99,6 +126,7 @@ const Info = ({ post }) => {
   ).toFixed(2);
 
   //ENDRINGS
+
 
   const endRings = post.endRings;
   const endRingSum = endRings
