@@ -5,6 +5,7 @@ import {
   Input,
   TextField,
   Grid,
+  Button,
 } from '@material-ui/core';
 import Link from 'next/link';
 
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     background: '#badbd5',
     width: '100vw',
     paddingTop: '2rem',
-    paddingBottom: '2rem'
+    paddingBottom: '2rem',
   },
   postheader: {
     marginBottom: '.5rem',
@@ -31,7 +32,12 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid black',
     color: '#abe3d8',
     boxShadow: '10px 10px 10px rgba(0,0,0,.5)',
+    "&:hover": {
+      background: 'linear-gradient(4deg, rgba(0,255,229,1) 0%, rgba(36,149,126,1) 35%, rgba(2,0,36,1) 100%)'
+    }
+
   },
+   
   searchContainer: {
     padding: '2.5rem',
     background: 'linear-gradient(4deg, rgba(219,218,231,1) 0%, rgba(182,241,230,1) 35%, rgba(0,255,229,1) 100%)',
@@ -46,8 +52,13 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'row',
     },
   },
+  btn: {
+    marginLeft: '5rem'
+  }
 }));
 const PostSearch = ({ posts }) => {
+  console.log(posts);
+  
   const classes = useStyles();
 
   const [searchInput, setSearchInput] = useState('');
@@ -75,6 +86,11 @@ const PostSearch = ({ posts }) => {
           <Typography>
             Søkeresultat: {searchInput ? search.length : 'Ingen søk'}
           </Typography>
+        </Grid>
+        <Grid item>
+        <Link href='/create'>
+          <Button variant='contained' className={classes.btn}>Lag ny post</Button>
+          </Link>
         </Grid>
       </Grid>
       <div className={classes.postSearchContainer}>

@@ -20,9 +20,10 @@ const useStyles = makeStyles(theme => ({
       borderRadius: '4px',
       boxShadow: '10px 10px 30px black',
       [theme.breakpoints.down('lg')]: {
-       height: '10rem',
-       width: '4rem'
+       height: '12rem',
+       width: '5rem'
       },
+     
 
      [theme.breakpoints.down('md')]: {
       background: 'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
@@ -41,7 +42,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: '1.8rem',
       fontWeight: 'bold',
       [theme.breakpoints.down('lg')]: {
-        fontSize: '1.3rem',
+        fontSize: '1.6rem',
       },
       [theme.breakpoints.down('md')]: {
         fontSize: '.8rem'
@@ -59,7 +60,7 @@ const classes = useStyles()
 return (
 <div className={classes.fillRingContainer}>
   <div className={classes.fillRing}>
-      <Typography className={classes.value}>{props.fillRingVal}</Typography>
+      <Typography className={classes.value}>{props.fillRingVal} {props.value}</Typography>
   </div>
  
 </div>

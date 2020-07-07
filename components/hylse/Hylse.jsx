@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xl')]: {
       marginTop: '20rem',
     },
+    [theme.breakpoints.down('lg')]: {
+      marginTop: '15em',
+    },
     [theme.breakpoints.down('md')]: {
       margin: '5rem 0 0 5rem'
     },
@@ -38,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '5.5rem'
      },
      [theme.breakpoints.down('lg')]: {
-      marginLeft: '3.8rem'
+      marginLeft: '4.5rem'
      },
     
      [theme.breakpoints.down('md')]: {
@@ -63,8 +66,8 @@ const useStyles = makeStyles((theme) => ({
      width: '88rem'
     },
     [theme.breakpoints.down('lg')]: {
-      width: '58rem',
-      height: '7rem'
+      width: '71rem',
+      height: '9rem'
     },
 
     [theme.breakpoints.down('md')]: {
@@ -101,7 +104,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('lg')]: {
       width: '67rem',
-      height: '2rem'
+      height: '2.5rem'
     },
     [theme.breakpoints.down('md')]: {
        width: '86.2vw',
@@ -168,7 +171,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid gray',
     width: '6rem',
     [theme.breakpoints.down('lg')]: {
-     height: '10rem',
+     height: '12rem',
      width: '4.5rem',
 
     
@@ -206,7 +209,7 @@ const useStyles = makeStyles((theme) => ({
     borderTopRightRadius: '5px',
     overflow: 'hidden',
     [theme.breakpoints.down('lg')]: {
-     height: '7rem',
+     height: '9rem',
     },
     [theme.breakpoints.down('md')]: {
       height: '5rem',
@@ -223,6 +226,9 @@ const useStyles = makeStyles((theme) => ({
     width: '0.1em',
     background: 'gray',
     margin: '0 0.1rem',
+    [theme.breakpoints.down('lg')]: {
+    height: '12rem'
+    },
     [theme.breakpoints.down('md')]: {
        height: '10rem',
     },
@@ -241,7 +247,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '-.5em',
       boxShadow: 'inset 1px 9px 3px black',
       [theme.breakpoints.down('lg')]: {
-       height: '2rem',
+       height: '2.5rem',
        width: '2rem'
       },
       [theme.breakpoints.down('md')]: {
@@ -267,7 +273,7 @@ const useStyles = makeStyles((theme) => ({
       height: '38rem',
     },
     [theme.breakpoints.down('lg')]: {
-      height: '23rem'
+      height: '30rem'
     },
     [theme.breakpoints.down('md')]: {
       width: '2px',

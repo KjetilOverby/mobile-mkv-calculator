@@ -19,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
     height: '14rem',
     width: '5.5rem',
     background:
-      'linear-gradient(4deg, rgba(214,190,88,1) 0%, rgba(248,255,143,1) 50%, rgba(221,206,49,1) 100%)',
+      'linear-gradient(4deg, rgb(173, 154, 75) 0%, rgba(248,255,143,1) 50%, rgb(169, 158, 40) 100%)',
       [theme.breakpoints.down('lg')]: {
-       height: '10rem',
-       width: '4rem'
+       height: '12rem',
+       width: '5rem'
       },
     [theme.breakpoints.down('md')]: {
       height: '7rem',
@@ -40,9 +40,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.8rem',
     fontWeight: 'bold',
     position: 'absolute',
-    color:'orangered',
+    color:'#803418',
     [theme.breakpoints.down('lg')]: {
-      fontSize: '1.3rem'
+      fontSize: '1.6rem'
     },
     [theme.breakpoints.down('md')]: {
       fontSize: '.8rem',
@@ -58,9 +58,9 @@ const useStyles = makeStyles((theme) => ({
     color: 'blue',
     bottom: '10em',
     fontSize: '1.5rem',
-    bottom: '10em',
     [theme.breakpoints.down('lg')]: {
-      fontSize: '1rem'
+      fontSize: '1rem',
+      bottom: '12.5rem'
     },
     [theme.breakpoints.down('md')]: {
       fontSize: '.8rem',
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'italic',
     [theme.breakpoints.down('lg')]: {
      fontSize: '1rem',
-     top: '10rem'
+     top: '12.5rem'
     },
     [theme.breakpoints.down('md')]: {
       top: '7.5rem',
@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'italic',
     [theme.breakpoints.down('lg')]: {
      fontSize: '1rem',
-     top: '11.5rem'
+     top: '14rem'
     },
     [theme.breakpoints.down('md')]: {
       top: '8.7rem',
@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.2rem',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1rem',
-      top: '13rem'
+      top: '15.5rem'
     },
     [theme.breakpoints.down('md')]: {
       
@@ -145,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.2rem',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1rem',
-      top: '14.5rem'
+      top: '17rem'
     },
     [theme.breakpoints.down('md')]: {
       
@@ -173,7 +173,7 @@ const useStyles = makeStyles((theme) => ({
       height: '38rem',
     },
     [theme.breakpoints.down('lg')]: {
-      height: '23rem'
+      height: '30rem'
     },
     [theme.breakpoints.down('md')]: {
       height: '15rem',

@@ -103,7 +103,6 @@ const Info = ({ post, firstBladeValueTop }) => {
   const sagSnitt = post.sagsnitt;
   const sagSnittSum = sagSnitt.reduce((num1, num) => num1 + num);
   const [allBlades, setAllBlades] = useState(sagSnittSum + firstBladeValueTop);
-   console.log('allBlades' + sagSnitt);
 
    useEffect(() => {
     if (sagSnitt.length === 1) {
@@ -150,7 +149,6 @@ const Info = ({ post, firstBladeValueTop }) => {
   const differenceEnd = (finalCalcForEndRings - endRingSum).toFixed(2);
 
   const classes = useStyles();
-  console.log(differenceEnd);
 
   return (
     <>

@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
     fontSize: '2rem',
     [theme.breakpoints.down('lg')]: {
-      fontSize: '1.5rem'
+      fontSize: '2.2rem'
     },
     color: '#694786',
     [theme.breakpoints.down('md')]: {
