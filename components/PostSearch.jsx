@@ -6,6 +6,7 @@ import {
   TextField,
   Grid,
   Button,
+  Hidden,
 } from '@material-ui/core';
 import Link from 'next/link';
 
@@ -88,9 +89,11 @@ const PostSearch = ({ posts }) => {
           </Typography>
         </Grid>
         <Grid item>
+        <Hidden mdDown>
         <Link href='/create'>
           <Button variant='contained' className={classes.btn}>Lag ny post</Button>
           </Link>
+          </Hidden>
         </Grid>
       </Grid>
       <div className={classes.postSearchContainer}>

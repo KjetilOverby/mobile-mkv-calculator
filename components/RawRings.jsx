@@ -212,17 +212,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 const RawRings = (props) => {
   const classes = useStyles();
+
+  const ringShimsVal = ((Number(props.value) + 1.4) - props.ringVal).toFixed(1)
+ 
   return (
     <div className={classes.rawRingContainer}>
       <div className={classes.rawDistanceRing}>
-        <Typography className={classes.rawInput}>{props.rawVal}</Typography>
+         <Typography className={classes.rawInput}>{props.value}</Typography>
         <Typography className={classes.rawVal}>
-          {(props.rawVal + 1.4).toFixed(1)}
+          {(Number(props.value) + 1.4).toFixed(1)}
         </Typography>
+        
         <Typography className={classes.ringVal}>{props.ringVal}</Typography>
-        <Typography className={classes.shimsVal}>{props.shimVal}</Typography>
-        <Typography className={classes.shimsVal2}>{props.shimsVal2}</Typography>
+        
+       {props.ringVal && (
+        <Typography className={classes.shimsVal}>{(Number(ringShimsVal) - Number(props.shimsVal2)).toFixed(1)}</Typography>
+       )}
+       
+        <Typography className={classes.shimsVal2}>{props.shimsVal2 - props.shimsVal3}</Typography>
+        
         <Typography className={classes.shimsVal3}>{props.shimsVal3}</Typography>
+         {/*
         <div className={classes.blade}>
           <Typography className={classes.bladeTop}>
             {props.postInfo.sagsnitt[0].toFixed(1)}
@@ -230,7 +240,7 @@ const RawRings = (props) => {
           <Typography className={classes.bladeBottom}>
             {props.postInfo.bladeThickness}
           </Typography>
-        </div>
+        </div> */}
       </div>
     </div>
   );
