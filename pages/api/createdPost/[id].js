@@ -1,5 +1,5 @@
-import dbConnect from '../../utils/dbConnect';
-import Poster from '../../models/Poster';
+import dbConnect from '../../../utils/dbConnect';
+import Poster from '../../../models/Poster';
 
 dbConnect();
 

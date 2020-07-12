@@ -60,21 +60,32 @@ const useStyles = makeStyles((theme) => ({
 const PostSearch = ({ posts }) => {
   console.log(posts);
   
-  const classes = useStyles();
+   const classes = useStyles();
 
-  const [searchInput, setSearchInput] = useState('');
+  // const [searchInput, setSearchInput] = useState('');
 
-  const getSearch = (e) => {
-    setSearchInput(e.target.value);
-  };
+  // const getSearch = (e) => {
+  //   setSearchInput(e.target.value);
+  // };
 
-  const search = posts.data.filter((post) =>
-    post.type.name.includes(searchInput)
-  );
+  // const search = posts.data.filter((post) =>
+  //   post.type.name.includes(searchInput)
+  // );
 
   return (
     <div>
-      <Grid container className={classes.searchContainer}>
+    {posts.data.map((post) => {
+        return (
+          
+            <Link href={`/post_id/${post._id}`}>
+              <Typography className={classes.postheader}>
+                {post.header}
+              </Typography>
+            </Link>
+          
+        );
+      })}
+      {/* <Grid container className={classes.searchContainer}>
         <Grid item>
           <TextField
             className={classes.textField}
@@ -108,7 +119,7 @@ const PostSearch = ({ posts }) => {
           
         );
       })}
-      </div>
+      </div> */}
     </div>
   );
 };

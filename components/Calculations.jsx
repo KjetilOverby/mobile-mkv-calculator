@@ -29,13 +29,16 @@ const Calculations = (props) => {
     //FirstLabel
     
     const firstLabel = 200 - Number(totalRawRingDivided - 1.4)
-    const firstLabelMinusStartRings = (firstLabel - startRingSum)
+    const firstLabelMinusStartRings = (firstLabel - startRingSum).toFixed(2)
 
-    .toFixed(2);
+    //Second Label
+
+    const secondLabel = 217.2 - Number(totalRawRingDivided - 1.4)
+    const secondLabelMinusEndRings = (secondLabel - endRingSum).toFixed(2);
   const classes = useStyles();
   console.log(firstLabel);
-  console.log(startRingSum);
   return <div>
+       <h1>{firstLabel}</h1>
       <h1>{firstLabelMinusStartRings}</h1>
   </div>;
 };

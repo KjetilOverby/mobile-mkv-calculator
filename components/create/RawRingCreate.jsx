@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '4px',
     boxShadow: '5px 5px 30px rgba(0,0,0,.3)',
     flexDirection: 'column',
-    height: '14rem',
-    width: '5.5rem',
+    height: '10rem',
+    width: '4.5rem',
     background:
       'linear-gradient(4deg, rgb(173, 154, 75) 0%, rgba(248,255,143,1) 50%, rgb(169, 158, 40) 100%)',
       [theme.breakpoints.down('lg')]: {
@@ -170,7 +170,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '5px 10px 10px black',
     [theme.breakpoints.down('xl')]: {
     
-      height: '38rem',
+      height: '30rem',
     },
     [theme.breakpoints.down('lg')]: {
       height: '30rem'
@@ -237,7 +237,6 @@ const RawRings = (props) => {
     //     </div>
     //   </div>
     // </div>
-    
 
 
    <div className={classes.rawRingContainer}>
