@@ -85,6 +85,9 @@ const PostSearch = ({ posts }) => {
           
         );
       })}
+
+
+      
       {/* <Grid container className={classes.searchContainer}>
         <Grid item>
           <TextField

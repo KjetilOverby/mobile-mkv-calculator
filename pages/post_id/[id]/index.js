@@ -27,7 +27,7 @@ const post_id = ({ post }) => {
   const classes = useStyles();
   return (
     <div>
-      <Typography className={classes.header}>{post.type.name}</Typography>
+      <Typography className={classes.header}>{post.header}</Typography>
       <PostSet post={post} />
       {/* <Info post={post} /> */}
     </div>
@@ -35,7 +35,7 @@ const post_id = ({ post }) => {
 };
 
 post_id.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`${baseUrl}/api/${id}`);
+  const res = await fetch(`${baseUrl}/api/createdPost/${id}`);
   const { data } = await res.json();
   return { post: data };
 };

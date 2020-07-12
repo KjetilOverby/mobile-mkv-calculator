@@ -77,82 +77,82 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Info = ({ post, firstBladeValueTop }) => {
-  const startRingsVal = 200;
-  const endRingVal = 217.2;
+  // const startRingsVal = 200;
+  // const endRingVal = 217.2;
 
-  const startRings = post.startRings;
-  const startRingSum = startRings
-    .reduce((num, { input }) => Number(num) + Number(input), 0)
-    .toFixed(2);
+  // const startRings = post.startRings;
+  // const startRingSum = startRings
+  //   .reduce((num, { input }) => Number(num) + Number(input), 0)
+  //   .toFixed(2);
 
-  // RAW INPUT CALCULATIONS
+  // // RAW INPUT CALCULATIONS
 
-  const rawRings = post.rawInput;
-  const rawInputSum = rawRings.reduce(
-    (num, { input }) => Number(num) + Number(input),
-    0
-  );
+  // const rawRings = post.rawInput;
+  // const rawInputSum = rawRings.reduce(
+  //   (num, { input }) => Number(num) + Number(input),
+  //   0
+  // );
 
-  const numberOfRings = Number(rawRings.length + 1);
-  const onlyNumberOfRings = rawRings.length * 1.4;
-  const rawRingSum = (rawInputSum + onlyNumberOfRings).toFixed(2);
+  // const numberOfRings = Number(rawRings.length + 1);
+  // const onlyNumberOfRings = rawRings.length * 1.4;
+  // const rawRingSum = (rawInputSum + onlyNumberOfRings).toFixed(2);
 
-  const bladeThick = Number(post.bladeThickness);
-  const numberOfBlades = numberOfRings;
-  const bladeThicknesSum = (bladeThick * numberOfBlades).toFixed(2);
-  const sagSnitt = post.sagsnitt;
-  const sagSnittSum = sagSnitt.reduce((num1, num) => num1 + num);
-  const [allBlades, setAllBlades] = useState(sagSnittSum + firstBladeValueTop);
+  // const bladeThick = Number(post.bladeThickness);
+  // const numberOfBlades = numberOfRings;
+  // const bladeThicknesSum = (bladeThick * numberOfBlades).toFixed(2);
+  // const sagSnitt = post.sagsnitt;
+  // const sagSnittSum = sagSnitt.reduce((num1, num) => num1 + num);
+  // const [allBlades, setAllBlades] = useState(sagSnittSum + firstBladeValueTop);
 
-   useEffect(() => {
-    if (sagSnitt.length === 1) {
-      setAllBlades(firstBladeValueTop)
-   } else {
-     setAllBlades(sagSnittSum + firstBladeValueTop)
-   }
-   }, [])
+  //  useEffect(() => {
+  //   if (sagSnitt.length === 1) {
+  //     setAllBlades(firstBladeValueTop)
+  //  } else {
+  //    setAllBlades(sagSnittSum + firstBladeValueTop)
+  //  }
+  //  }, [])
   
-  const rawInputCalc = (allBlades + rawInputSum) / 2 - 0.7;
-  const finalCalcForStartRings = (startRingsVal - rawInputCalc).toFixed(2);
-  const finalCalcForEndRings = (endRingVal - rawInputCalc).toFixed(2);
+  // const rawInputCalc = (allBlades + rawInputSum) / 2 - 0.7;
+  // const finalCalcForStartRings = (startRingsVal - rawInputCalc).toFixed(2);
+  // const finalCalcForEndRings = (endRingVal - rawInputCalc).toFixed(2);
 
-  const sumRawRingBlade = (
-    Number(rawRingSum) + Number(bladeThicknesSum)
-  ).toFixed(2);
-  const sumRawRingBladeDivided = (
-    (Number(rawRingSum) + Number(bladeThicknesSum)) /
-    2
-  ).toFixed(2);
+  // const sumRawRingBlade = (
+  //   Number(rawRingSum) + Number(bladeThicknesSum)
+  // ).toFixed(2);
+  // const sumRawRingBladeDivided = (
+  //   (Number(rawRingSum) + Number(bladeThicknesSum)) /
+  //   2
+  // ).toFixed(2);
 
-  //ENDRINGS
+  // //ENDRINGS
 
 
-  const endRings = post.endRings;
-  const endRingSum = endRings
-    .reduce((num, { input }) => Number(num) + Number(input), 0)
-    .toFixed(2);
+  // const endRings = post.endRings;
+  // const endRingSum = endRings
+  //   .reduce((num, { input }) => Number(num) + Number(input), 0)
+  //   .toFixed(2);
 
-  const toCenter = (
-    Number(startRingSum) + Number(sumRawRingBladeDivided)
-  ).toFixed(2);
-  const fromCenter = (
-    Number(endRingSum) + Number(sumRawRingBladeDivided)
-  ).toFixed(2);
-  const totalEstimate = (
-    Number(startRingSum) +
-    Number(endRingSum) +
-    Number(rawRingSum) +
-    Number(bladeThicknesSum)
-  ).toFixed(2);
+  // const toCenter = (
+  //   Number(startRingSum) + Number(sumRawRingBladeDivided)
+  // ).toFixed(2);
+  // const fromCenter = (
+  //   Number(endRingSum) + Number(sumRawRingBladeDivided)
+  // ).toFixed(2);
+  // const totalEstimate = (
+  //   Number(startRingSum) +
+  //   Number(endRingSum) +
+  //   Number(rawRingSum) +
+  //   Number(bladeThicknesSum)
+  // ).toFixed(2);
 
-  const differenceStart = (finalCalcForStartRings - startRingSum).toFixed(2);
-  const differenceEnd = (finalCalcForEndRings - endRingSum).toFixed(2);
+  // const differenceStart = (finalCalcForStartRings - startRingSum).toFixed(2);
+  // const differenceEnd = (finalCalcForEndRings - endRingSum).toFixed(2);
 
   const classes = useStyles();
 
   return (
     <>
-    <Hidden only='sm'>
+    {/* <Hidden only='sm'>
       <div className={classes.infoContainer}>
         <Typography className={classes.typography} variant="h6">
           Verdi foran:{' '}
@@ -290,7 +290,7 @@ const Info = ({ post, firstBladeValueTop }) => {
           </Grid>
         </Grid>
       </div>
-      </Hidden>
+      </Hidden> */}
     </>
   );
 };

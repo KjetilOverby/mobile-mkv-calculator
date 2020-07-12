@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 const PostSet = (props) => {
   const classes = useStyles();
   const router = useRouter();
-  const firstBladeValueTop = props.post.sagsnitt[0]
+  // const firstBladeValueTop = props.post.sagsnitt
   
  
  
@@ -53,9 +53,11 @@ const PostSet = (props) => {
      
       </Grid>
       </Hidden>
-     <Info firstBladeValueTop={firstBladeValueTop} post={props.post}/>
+     <Info  post={props.post}/>
     </div>
   );
 };
 
 export default PostSet;
+
+//firstBladeValueTop={firstBladeValueTop}

@@ -23,7 +23,7 @@ export default function Index({posts}) {
 }
 
 Index.getInitialProps = async () => {
-  const res = await fetch(`${baseUrl}/api/posts`);
+  const res = await fetch(`${baseUrl}/api/createdPost/posts`);
   const data = await res.json();
   return { posts: data };
 };

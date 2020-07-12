@@ -215,7 +215,7 @@ const RawRings = (props) => {
 
   const ringShimsVal = (Number(props.value) + 1.4) - props.ringVal
 
-  console.log(props.value);
+  console.log(props);
   return (
     // <div className={classes.rawRingContainer}>
     //   <div className={classes.rawDistanceRing}>

@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, Grid, Typography, Hidden } from '@material-ui/core';
 import FillRings from '../FillRings';
 import RawRings from '../RawRings';
+import RawRingCreate from '../../components/create/RawRingCreate'
 
 const useStyles = makeStyles((theme) => ({
   hylseContainer: {
@@ -321,7 +322,7 @@ const Hylse = (props) => {
 
   
  
-  const firstBladeValueTop = props.post.sagsnitt[0].toFixed(1);
+  //const firstBladeValueTop = props.post.sagsnitt[0].toFixed(1);
  
   
   const classes = useStyles();
@@ -332,7 +333,7 @@ const Hylse = (props) => {
       
      
       
-      <div className={classes.hylse}>
+       <div className={classes.hylse}>
       <div className={classes.ringContainer}>
       {props.post.startRings.map((ring) => {
         return (
@@ -344,11 +345,12 @@ const Hylse = (props) => {
 
       <div className={classes.blade}>
        <span className={classes.content}>Content</span>
-      <Typography className={classes.bladeTop}>{firstBladeValueTop}</Typography>
-        <Typography className={classes.bladeBottom}>{props.post.bladeThickness}</Typography>
+      <Typography className={classes.bladeTop}>{(props.post.blades.bladStamme + 1.4).toFixed(1)}</Typography>
+        <Typography className={classes.bladeBottom}>{props.post.blades.bladStamme}</Typography>
       </div>
       
       {props.post.rawInput.map((rawIn) => {
+       
         return (
           <div>
             <RawRings
@@ -358,6 +360,7 @@ const Hylse = (props) => {
              shimsVal2={rawIn.shims2}
              shimsVal3={rawIn.shims3}
              postInfo={props.post}
+             
              
              />
           </div>
@@ -416,7 +419,7 @@ const Hylse = (props) => {
            
         </div>
       
-    </div>
+    </div> 
     </div>
     </>
   );
