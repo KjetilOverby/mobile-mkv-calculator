@@ -213,37 +213,102 @@ const useStyles = makeStyles((theme) => ({
 const RawRings = (props) => {
   const classes = useStyles();
 
-  const ringShimsVal = ((Number(props.value) + 1.4) - props.ringVal).toFixed(1)
- 
+  const ringShimsVal = (Number(props.value) + 1.4) - props.ringVal
+
+  console.log(props.value);
   return (
-    <div className={classes.rawRingContainer}>
-      <div className={classes.rawDistanceRing}>
-         <Typography className={classes.rawInput}>{props.value}</Typography>
-        <Typography className={classes.rawVal}>
-          {(Number(props.value) + 1.4).toFixed(1)}
-        </Typography>
-        
-        <Typography className={classes.ringVal}>{props.ringVal}</Typography>
-        
-       {props.ringVal && (
-        <Typography className={classes.shimsVal}>{(Number(ringShimsVal) - Number(props.shimsVal2)).toFixed(1)}</Typography>
-       )}
-       
-        <Typography className={classes.shimsVal2}>{props.shimsVal2 - props.shimsVal3}</Typography>
-        
-        <Typography className={classes.shimsVal3}>{props.shimsVal3}</Typography>
-         {/*
-        <div className={classes.blade}>
-          <Typography className={classes.bladeTop}>
-            {props.postInfo.sagsnitt[0].toFixed(1)}
-          </Typography>
-          <Typography className={classes.bladeBottom}>
-            {props.postInfo.bladeThickness}
-          </Typography>
-        </div> */}
-      </div>
-    </div>
+    // <div className={classes.rawRingContainer}>
+    //   <div className={classes.rawDistanceRing}>
+    //     <Typography className={classes.rawInput}>{props.rawVal}</Typography>
+    //     <Typography className={classes.rawVal}>
+    //       {(props.rawVal + 1.4).toFixed(1)}
+    //     </Typography>
+    //     <Typography className={classes.ringVal}>{props.ringVal}</Typography>
+    //     <Typography className={classes.shimsVal}>{props.shimVal}</Typography>
+    //     <Typography className={classes.shimsVal2}>{props.shimsVal2}</Typography>
+    //     <Typography className={classes.shimsVal3}>{props.shimsVal3}</Typography>
+    //     <div className={classes.blade}>
+    //       <Typography className={classes.bladeTop}>
+    //         {props.postInfo.sagsnitt[0].toFixed(1)}
+    //       </Typography>
+    //       <Typography className={classes.bladeBottom}>
+    //         {props.postInfo.bladeThickness}
+    //       </Typography>
+    //     </div>
+    //   </div>
+    // </div>
+
+
+   <div className={classes.rawRingContainer}>
+<div className={classes.rawDistanceRing}>
+   <Typography className={classes.rawInput}>{props.value}</Typography>
+  <Typography className={classes.rawVal}>
+    {(Number(props.value) + 1.4).toFixed(1)}
+  </Typography>
+  
+  <Typography className={classes.ringVal}>{props.ringVal}</Typography>
+  
+ {props.ringVal && (
+  <Typography className={classes.shimsVal}>{(Number(ringShimsVal) - Number(props.shimsVal2)).toFixed(1)}</Typography>
+ )}
+ 
+ {props.shimsVal2 && (
+  <Typography className={classes.shimsVal2}>{props.shimsVal2 - props.shimsVal3}</Typography>
+ )}
+  
+  {props.shimsVal2 && (
+    <Typography className={classes.shimsVal3}>{props.shimsVal3}</Typography>
+  )}
+   
+  <div className={classes.blade}>
+    <Typography className={classes.bladeTop}>
+      {(Number(props.bladStamme) + 1.4).toFixed(1)}
+    </Typography>
+    
+    <Typography className={classes.bladeBottom}>
+      {props.bladStamme}
+    </Typography>
+  </div>
+</div>
+</div> 
+
+
+
   );
 };
 
 export default RawRings;
+
+
+{/* <div className={classes.rawRingContainer}>
+<div className={classes.rawDistanceRing}>
+   <Typography className={classes.rawInput}>{props.value}</Typography>
+  <Typography className={classes.rawVal}>
+    {(Number(props.value) + 1.4).toFixed(1)}
+  </Typography>
+  
+  <Typography className={classes.ringVal}>{props.ringVal}</Typography>
+  
+ {props.ringVal && (
+  <Typography className={classes.shimsVal}>{(Number(ringShimsVal) - Number(props.shimsVal2)).toFixed(1)}</Typography>
+ )}
+ 
+ {props.shimsVal2 && (
+  <Typography className={classes.shimsVal2}>{props.shimsVal2 - props.shimsVal3}</Typography>
+ )}
+  
+  {props.shimsVal2 && (
+    <Typography className={classes.shimsVal3}>{props.shimsVal3}</Typography>
+  )}
+   
+  <div className={classes.blade}>
+    <Typography className={classes.bladeTop}>
+      {(Number(props.bladStamme) + 1.4).toFixed(1)}
+    </Typography>
+    
+    <Typography className={classes.bladeBottom}>
+      {props.bladStamme}
+    </Typography>
+  </div>
+</div>
+</div> */}
