@@ -15,8 +15,8 @@ const useStyles = makeStyles(theme => ({
          width: '60rem'
         },
         [theme.breakpoints.down('lg')]: {
-          width: '58rem',
-          height: '7rem',
+          width: '40rem',
+          height: '5rem',
          
         },
     
@@ -53,8 +53,9 @@ const useStyles = makeStyles(theme => ({
           marginLeft: '-2rem',
         },
         [theme.breakpoints.down('lg')]: {
-          width: '67rem',
-          height: '2rem'
+          width: '65rem',
+          height: '1.5rem',
+          marginLeft: '-1.2rem',
         },
         [theme.breakpoints.down('md')]: {
            width: '86.2vw',
@@ -75,6 +76,10 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        [theme.breakpoints.down('lg')]: {
+           height: '1rem',
+           width: '1rem'        
+        },
         [theme.breakpoints.down('md')]: {
           height: '1rem',
           width: '1rem'
@@ -92,6 +97,9 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        [theme.breakpoints.down('lg')]: {
+         height: '0.7rem',
+        },
         [theme.breakpoints.down('md')]: {
           height: '0.7rem'
         },
@@ -121,8 +129,8 @@ const useStyles = makeStyles(theme => ({
         border: '1px solid gray',
         width: '6rem',
         [theme.breakpoints.down('lg')]: {
-         height: '10rem',
-         width: '6rem',
+         height: '6.5rem',
+         width: '4.5rem',
     
         
         },
@@ -159,7 +167,8 @@ const useStyles = makeStyles(theme => ({
         borderTopRightRadius: '5px',
         overflow: 'hidden',
         [theme.breakpoints.down('lg')]: {
-         height: '7rem',
+         height: '5rem',
+         width: '3.5rem'
         },
         [theme.breakpoints.down('md')]: {
           height: '5rem',
@@ -194,8 +203,8 @@ const useStyles = makeStyles(theme => ({
           marginLeft: '-.5em',
           boxShadow: 'inset 1px 9px 3px black',
           [theme.breakpoints.down('lg')]: {
-           height: '2rem',
-           width: '2rem'
+           height: '1.5rem',
+           width: '1.5rem'
           },
           [theme.breakpoints.down('md')]: {
             width: '1.5rem',

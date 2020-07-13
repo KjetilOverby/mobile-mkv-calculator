@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
     background:
       'linear-gradient(4deg, rgb(173, 154, 75) 0%, rgba(248,255,143,1) 50%, rgb(169, 158, 40) 100%)',
       [theme.breakpoints.down('lg')]: {
-       height: '12rem',
-       width: '5rem'
+       height: '6.5rem',
+       width: '3rem'
       },
     [theme.breakpoints.down('md')]: {
       height: '7rem',
@@ -37,12 +37,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   rawVal: {
-    fontSize: '1.8rem',
+    fontSize: '1.4rem',
     fontWeight: 'bold',
     position: 'absolute',
     color:'#803418',
     [theme.breakpoints.down('lg')]: {
-      fontSize: '1.6rem'
+      fontSize: '1rem'
     },
     [theme.breakpoints.down('md')]: {
       fontSize: '.8rem',
@@ -56,11 +56,11 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
 
     color: 'blue',
-    bottom: '10em',
-    fontSize: '1.5rem',
+    bottom: '9em',
+    fontSize: '1.2rem',
     [theme.breakpoints.down('lg')]: {
-      fontSize: '1rem',
-      bottom: '12.5rem'
+      fontSize: '.8rem',
+      bottom: '7.5rem'
     },
     [theme.breakpoints.down('md')]: {
       fontSize: '.8rem',
@@ -173,7 +173,7 @@ const useStyles = makeStyles((theme) => ({
       height: '30rem',
     },
     [theme.breakpoints.down('lg')]: {
-      height: '30rem'
+      height: '20rem'
     },
     [theme.breakpoints.down('md')]: {
       height: '15rem',
@@ -187,6 +187,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     color: 'orangered',
     top: '-1.5rem',
+    fontSize: '.8rem',
     [theme.breakpoints.down('md')]: {
      
       fontSize: '.7rem',
@@ -200,6 +201,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     color: 'orangered',
     bottom: '-1.5rem',
+    fontSize: '.8rem',
     [theme.breakpoints.down('md')]: {
      
       fontSize: '.7rem',

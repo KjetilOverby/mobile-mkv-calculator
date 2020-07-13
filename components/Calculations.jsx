@@ -16,7 +16,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    left: '75em'
+    left: '75em',
+    [theme.breakpoints.down('lg')]: {
+    left: '50em',
+    },
   }
 }));
 

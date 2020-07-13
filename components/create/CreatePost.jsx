@@ -31,6 +31,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     position: 'relative',
     width: '70em',
+    height: '40em',
+    marginTop: '5em',
+    [theme.breakpoints.down('lg')]: {
+      width: '50em',
+      marginLeft: '-5rem'
+    },
     [theme.breakpoints.down('md')]: {
       width: '45em',
       marginLeft: '-12rem',
@@ -50,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   formContainer: {
     background: 'khaki',
     padding: '1rem',
-    width: '30em',
+    width: '35em',
     margin: '1rem',
   },
   radioLabelContainer: {
@@ -77,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
       height: '30rem',
     },
     [theme.breakpoints.down('lg')]: {
-      height: '30rem',
+      height: '20rem',
     },
     [theme.breakpoints.down('md')]: {
       height: '15rem',
@@ -91,6 +97,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     color: 'orangered',
     top: '-1.5rem',
+    fontSize: '.8rem',
     [theme.breakpoints.down('md')]: {
       fontSize: '.7rem',
       top: '-1rem',
@@ -103,6 +110,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     color: 'orangered',
     bottom: '-1.5rem',
+    fontSize: '.8rem',
     [theme.breakpoints.down('md')]: {
       fontSize: '.7rem',
       bottom: '-1rem',
@@ -133,7 +141,8 @@ const useStyles = makeStyles((theme) => ({
     color: 'indianred'
   },
   formSectionHeader: {
-    marginBottom: '1rem'
+    marginBottom: '1rem',
+    color: 'indianred'
   }
 }));
 const CreatePost = (props) => {
@@ -187,7 +196,7 @@ const CreatePost = (props) => {
             <div className={classes.formContainer}>
               <form onSubmit={handleSubmit}>
               <Typography className={classes.formSectionHeader} variant="h6">Post overskrift</Typography>
-                <Field placeholder="Overskrift" type="text" name="header" />
+                <Field placeholder="Overskrift" type="text" name="header" as={TextField} variant='filled'/>
                 <FieldArray name="blades">
                   {(arrayHelpers) => (
                     <div>
@@ -313,7 +322,7 @@ const CreatePost = (props) => {
                       {values.startRings.map((startRing, index) => {
                         return (
                           <div>
-                            <Field className={classes.field} name={`startRings.${index}.input`} />
+                            <Field className={classes.field} name={`startRings.${index}.input`} as={TextField} />
                             <Button onClick={() => arrayHelpers.remove(index)}>
                             <DeleteIcon className={classes.deleteIcon} />
                             </Button>
@@ -343,21 +352,25 @@ const CreatePost = (props) => {
                               className={classes.field}
                               placeholder="Råmål"
                               name={`rawInput.${index}.input`}
+                              as={TextField}
                             />
                             <Field
                               className={classes.field}
                               placeholder="Ring"
                               name={`rawInput.${index}.ring`}
+                              as={TextField}
                             />
                             <Field
                               className={classes.field}
                               placeholder="Skims2"
                               name={`rawInput.${index}.shims2`}
+                              as={TextField}
                             />
                             <Field
                               className={classes.field}
                               placeholder="Skims3"
                               name={`rawInput.${index}.shims3`}
+                              as={TextField}
                             />
                             <Button onClick={() => arrayHelpers.remove(index)}>
                             <DeleteIcon className={classes.deleteIcon} />
@@ -387,6 +400,7 @@ const CreatePost = (props) => {
                             <Field
                               className={classes.field}
                               name={`endRings.${index}.input`}
+                              as={TextField}
                             />
                             <Button onClick={() => arrayHelpers.remove(index)}>
                               <DeleteIcon className={classes.deleteIcon} />

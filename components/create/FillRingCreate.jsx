@@ -20,8 +20,8 @@ const useStyles = makeStyles(theme => ({
       borderRadius: '4px',
       boxShadow: '10px 10px 30px black',
       [theme.breakpoints.down('lg')]: {
-       height: '12rem',
-       width: '5rem'
+        height: '6.5rem',
+        width: '3rem'
       },
      
 
@@ -39,10 +39,10 @@ const useStyles = makeStyles(theme => ({
     },
     
     value: {
-      fontSize: '1.8rem',
+      fontSize: '1.4rem',
       fontWeight: 'bold',
       [theme.breakpoints.down('lg')]: {
-        fontSize: '1.6rem',
+        fontSize: '1rem',
       },
       [theme.breakpoints.down('md')]: {
         fontSize: '.8rem'
