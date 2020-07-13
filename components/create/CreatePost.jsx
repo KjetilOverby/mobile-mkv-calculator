@@ -23,7 +23,6 @@ import { Formik, FieldArray, Field } from 'formik';
 import Calculations from '../Calculations';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useRouter } from 'next/router';
-import ErrorModal from '../create/ErrorModal'
 import { set } from 'mongoose';
 
 const useStyles = makeStyles((theme) => ({
@@ -140,14 +139,9 @@ const useStyles = makeStyles((theme) => ({
 const CreatePost = (props) => {
   const classes = useStyles();
    const router = useRouter()
-  const [errorModal, setErrorModal] = useState(false)
 
   const [correctLabels, setCorrectLabels] = useState(false)
-  //
 
-  // const { register, handleSubmit, errors } = useForm();
-  // const onSubmit = (data) => console.log(data);
-console.log(props);
   return (
     <div className={classes.inputContainer}>
    
