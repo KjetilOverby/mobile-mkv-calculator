@@ -1,7 +1,24 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  labelContainer: {
+    position: 'absolute',
+    height: '30em',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    left: '7em'
+  },
+  labelContainer2: {
+    position: 'absolute',
+    height: '30em',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    left: '75em'
+  }
+}));
 
 const Calculations = (props) => {
 
@@ -28,19 +45,28 @@ const Calculations = (props) => {
     const firstSawBlade = props.data.blades.bladStamme / 2
     //FirstLabel
     
-    const firstLabel = 200 - firstSawBlade - totalRawRingDivided
+    const firstLabel = (200 - firstSawBlade - totalRawRingDivided).toFixed(2)
     const firstLabelMinusStartRings = (firstLabel - startRingSum).toFixed(2)
 
     //Second Label
 
-    const secondLabel = 217.2 - Number(totalRawRingDivided - 1.4)
+    const secondLabel = (217.2 - firstSawBlade - totalRawRingDivided).toFixed(2)
     const secondLabelMinusEndRings = (secondLabel - endRingSum).toFixed(2);
+
+
   const classes = useStyles();
-  console.log(rawInputRings);
-  return <div>
+  return (
+    <>
+   <div className={classes.labelContainer}>
        <h1>{firstLabel}</h1>
       <h1>{firstLabelMinusStartRings}</h1>
-  </div>;
+  </div>
+   <div className={classes.labelContainer2}>
+       <h1>{secondLabel}</h1>
+      <h1>{secondLabelMinusEndRings}</h1>
+  </div>
+  </>
+  )
 };
 
 export default Calculations;
