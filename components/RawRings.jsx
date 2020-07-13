@@ -213,7 +213,7 @@ const useStyles = makeStyles((theme) => ({
 const RawRings = (props) => {
   const classes = useStyles();
 
-  const ringShimsVal = (Number(props.value) + 1.4) - props.ringVal
+  const ringShimsVal = (Number(props.rawVal) + 1.4) - Number(props.ringVal)
 
   console.log(props.value);
   return (
