@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -53,7 +53,14 @@ const Calculations = (props) => {
     const secondLabel = (217.2 - firstSawBlade - totalRawRingDivided).toFixed(2)
     const secondLabelMinusEndRings = (secondLabel - endRingSum).toFixed(2);
 
-
+    useEffect(() => {
+     if(firstLabelMinusStartRings <= 0.05 && firstLabelMinusStartRings >= -0.05 && secondLabelMinusEndRings <= 0.05 && secondLabelMinusEndRings >= -0.05) {
+      
+       props.correctLabels(false)
+     } else {
+       props.correctLabels(true)
+     }
+    }, [firstLabel, firstLabelMinusStartRings, secondLabelMinusEndRings, secondLabel])
   const classes = useStyles();
   return (
     <>

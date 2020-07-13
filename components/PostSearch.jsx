@@ -62,33 +62,20 @@ const PostSearch = ({ posts }) => {
   
    const classes = useStyles();
 
-  // const [searchInput, setSearchInput] = useState('');
+  const [searchInput, setSearchInput] = useState('');
 
-  // const getSearch = (e) => {
-  //   setSearchInput(e.target.value);
-  // };
+  const getSearch = (e) => {
+    setSearchInput(e.target.value);
+  };
 
-  // const search = posts.data.filter((post) =>
-  //   post.type.name.includes(searchInput)
-  // );
+  const search = posts.data.filter((post) =>
+    post.header.includes(searchInput)
+  );
+  console.log('Search: ' + search)
 
   return (
     <div>
-    {posts.data.map((post) => {
-        return (
-          
-            <Link href={`/post_id/${post._id}`}>
-              <Typography className={classes.postheader}>
-                {post.header}
-              </Typography>
-            </Link>
-          
-        );
-      })}
-
-
-      
-      {/* <Grid container className={classes.searchContainer}>
+    <Grid container className={classes.searchContainer}>
         <Grid item>
           <TextField
             className={classes.textField}
@@ -111,18 +98,20 @@ const PostSearch = ({ posts }) => {
         </Grid>
       </Grid>
       <div className={classes.postSearchContainer}>
-      {search.map((post) => {
+    {search.map((post) => {
         return (
           
             <Link href={`/post_id/${post._id}`}>
               <Typography className={classes.postheader}>
-                {post.type.name}
+                {post.header}
               </Typography>
             </Link>
           
         );
       })}
-      </div> */}
+</div>
+
+  
     </div>
   );
 };

@@ -22,6 +22,10 @@ import { useForm } from 'react-hook-form';
 import { Formik, FieldArray, Field } from 'formik';
 import Calculations from '../Calculations';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { useRouter } from 'next/router';
+import ErrorModal from '../create/ErrorModal'
+import { set } from 'mongoose';
+
 const useStyles = makeStyles((theme) => ({
   postContainer: {
     display: 'flex',
@@ -135,7 +139,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 const CreatePost = (props) => {
   const classes = useStyles();
+   const router = useRouter()
+  const [errorModal, setErrorModal] = useState(false)
 
+  const [correctLabels, setCorrectLabels] = useState(false)
   //
 
   // const { register, handleSubmit, errors } = useForm();
@@ -171,6 +178,7 @@ console.log(props);
         body: JSON.stringify(data),
         // body: form
       });
+      router.push('/')
         }}
       >
         {({ values, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
@@ -401,13 +409,16 @@ console.log(props);
                     color="primary"
                     variant="contained"
                     type="submit"
+                   
                     onClick={handleSubmit}
+                    disabled={correctLabels}
                   >
                     Lagre post
                   </Button>
                 </div>
 
-                <pre>{JSON.stringify(values, null, 2)}</pre>
+               
+                {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
               </form>
               
             </div>
@@ -416,7 +427,7 @@ console.log(props);
             <div className={classes.postContainer}>
               <HylseCreate />
 
-              <Calculations data={values} />
+              <Calculations data={values} correctLabels={setCorrectLabels} />
               <div className={classes.ringContainer}>
                 {values.startRings.map((startRing) =>
                   startRing != undefined ? (
