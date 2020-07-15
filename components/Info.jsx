@@ -118,9 +118,7 @@ const Info = ({ post, firstBladeValueTop }) => {
 
   // Start rings
 
-  console.log('====================================');
-  console.log(startRingSum);
-  console.log('====================================');
+
 
   // const sagSnitt = post.sagsnitt;
   // const sagSnittSum = sagSnitt.reduce((num1, num) => num1 + num);

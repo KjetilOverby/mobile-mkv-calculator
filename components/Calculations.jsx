@@ -27,11 +27,23 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '.6rem',
     height: '40em'
     },
-  }
+  },
+  labelCalc: props => {
+    return {
+    color: props.firstLabelMinusStartRings >= -0.05 && props.firstLabelMinusStartRings <= 0.05 ? 'green' : 'red'
+    
+    }
+  },
+  labelCalc2: props => {
+    return {
+    color: props.secondLabelMinusEndRings >= -0.05 && props.secondLabelMinusEndRings <= 0.05 ? 'green' : 'red'
+    
+    }
+  },
+  
 }));
 
 const Calculations = (props) => {
-console.log(props);
     //Start rings
   const startRings = props.data.startRings;
   {}
@@ -71,16 +83,16 @@ console.log(props);
        props.correctLabels(true)
      }
     }, [firstLabel, firstLabelMinusStartRings, secondLabelMinusEndRings, secondLabel, props.data.header])
-  const classes = useStyles();
+  const classes = useStyles({firstLabelMinusStartRings, secondLabelMinusEndRings});
   return (
     <>
    <div className={classes.labelContainer}>
        <h1>{firstLabel}</h1>
-      <h1>{firstLabelMinusStartRings}</h1>
+      <h1 className={classes.labelCalc}>{firstLabelMinusStartRings}</h1>
   </div>
    <div className={classes.labelContainer2}>
        <h1>{secondLabel}</h1>
-      <h1>{secondLabelMinusEndRings}</h1>
+      <h1 className={classes.labelCalc2}>{secondLabelMinusEndRings}</h1>
   </div>
   </>
   )

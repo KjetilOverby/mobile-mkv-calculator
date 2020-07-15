@@ -276,9 +276,10 @@ const useStyles = makeStyles((theme) => ({
     background: 'orange',
     
     width: '3px',
-    zIndex: 200,
+    zIndex: 1,
     height: '30rem',
     boxShadow: '5px 10px 10px black',
+
     [theme.breakpoints.down('xl')]: {
       height: '38rem',
     },

@@ -143,7 +143,7 @@ const useStyles = makeStyles((theme) => ({
   },
   formSectionHeader: {
     marginBottom: '1rem',
-    color: 'purple'
+    color: '#195550'
   }
 }));
 const CreatePost = (props) => {

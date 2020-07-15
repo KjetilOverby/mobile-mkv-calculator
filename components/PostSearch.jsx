@@ -34,7 +34,8 @@ const useStyles = makeStyles((theme) => ({
     color: '#abe3d8',
     boxShadow: '10px 10px 10px rgba(0,0,0,.5)',
     "&:hover": {
-      background: 'linear-gradient(4deg, rgba(0,255,229,1) 0%, rgba(36,149,126,1) 35%, rgba(2,0,36,1) 100%)'
+      background: 'linear-gradient(4deg, rgba(0,255,229,1) 0%, rgba(36,149,126,1) 35%, rgba(2,0,36,1) 100%)',
+      cursor: 'pointer'
     }
 
   },

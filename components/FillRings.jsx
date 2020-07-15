@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid darkgrey',
     borderRadius: '5px',
     boxShadow: '10px 10px 30px black',
+    zIndex: 200,
     [theme.breakpoints.down('lg')]: {
       height: '12rem',
       width: '5rem',
