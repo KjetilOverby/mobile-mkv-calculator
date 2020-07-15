@@ -11,19 +11,21 @@ import Info from './Info';
 
 const useStyles = makeStyles((theme) => ({
   backBtn: {
-    position: 'absolute',
+   position: 'absolute',
+   left: '5vw',
+   bottom: '4vh'
   },
   postContainer: {
-    marginTop: '-3rem',
-    position: 'relative',
+    height: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    [theme.breakpoints.down('xs')]: {
+      height: '40vh'
+    },
   },
-  rotationLogo: {
-    position: 'absolute',
-    top: '15rem',
-    left: '3rem',
-    fontSize: '2rem',
-    color: 'green',
-  },
+  
   buttonContainer: {
     margin: '0 0 0 3rem',
     paddingBottom: '3rem'
@@ -40,21 +42,26 @@ const PostSet = (props) => {
  
  
   return (
+    <>
     <div className={classes.postContainer}>
       <Hylse post={props.post} />
       <Hidden smDown>
-      <Grid className={classes.buttonContainer} container>
+      <div className={classes.buttonContainer} container>
     
      <Link href='/'>
-      <Button className={classes.btn} variant='outlined'>Tilbake</Button>
+      <Button className={classes.backBtn} variant='contained'>Tilbake</Button>
       </Link>
     
        
      
-      </Grid>
+      </div>
       </Hidden>
-     <Info  post={props.post}/>
+    
     </div>
+    <Hidden only='sm'>
+    <Info  post={props.post}/>
+    </Hidden>
+    </>
   );
 };
 

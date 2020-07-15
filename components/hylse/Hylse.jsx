@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Grid, Typography, Hidden } from '@material-ui/core';
 import FillRings from '../FillRings';
 import RawRings from '../RawRings';
 import RawRingCreate from '../../components/create/RawRingCreate'
+import { useEffect } from 'react';
 
 const useStyles = makeStyles((theme) => ({
+  background: {
+    
+   
+  },
   hylseContainer: {
     display: 'flex',
     height: '50vh',
@@ -12,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     margin: '10rem 0',
+    zIndex: 10,
     [theme.breakpoints.down('xl')]: {
       marginTop: '20rem',
     },
@@ -22,14 +28,14 @@ const useStyles = makeStyles((theme) => ({
       margin: '5rem 0 0 5rem'
     },
     [theme.breakpoints.down('sm')]: {
-      margin: '10rem 0 0rem 0rem'
+      margin: '1rem 0 0rem 0rem'
     },
     [theme.breakpoints.down('xs')]: {
-       margin: '3rem 0 0 0rem'
+       height: '30vh',
+       
     },
   },
   ringContainer: {
-     width: '100%',
      display: 'flex',
      height: '20em',
      position: 'absolute',
@@ -37,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
      zIndex: 100, 
      alignItems: 'center',
     
-     width: '80vw',
+     width: '70vw',
      [theme.breakpoints.down('xl')]: {
       marginLeft: '5.5rem'
      },
@@ -58,25 +64,25 @@ const useStyles = makeStyles((theme) => ({
   hylse: {
     background: 'linear-gradient(rgb(200, 200, 200), rgb(66, 66, 66))',
     height: '10rem',
-    width: '85rem',
+    width: '75rem',
     display: 'flex',
     alignItems: 'center',
     zIndex: -2,
     boxShadow: '1px 1px 20px black',
     [theme.breakpoints.down('xl')]: {
-     width: '88rem'
+     width: '80rem'
     },
     [theme.breakpoints.down('lg')]: {
-      width: '71rem',
+      width: '65rem',
       height: '9rem'
     },
 
     [theme.breakpoints.down('md')]: {
-       width: '68vw',
+       width: '65vw',
        height: '5rem',
     },
     [theme.breakpoints.down('sm')]: {
-       width: '92vw'
+       width: '75vw'
     },
     [theme.breakpoints.down('xs')]: {
       width: '21.5rem',
@@ -170,17 +176,20 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     border: '1px solid gray',
-    width: '6rem',
+    width: '6.5rem',
     [theme.breakpoints.down('lg')]: {
      height: '12rem',
-     width: '4.5rem',
+     width: '4.8rem',
 
     
     },
     [theme.breakpoints.down('md')]: {
       height: '7rem',
-      width: '3rem',
+      width: '4rem',
 
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '3rem'
     },
     [theme.breakpoints.down('xs')]: {
        width: '1.6rem',
@@ -201,7 +210,7 @@ const useStyles = makeStyles((theme) => ({
   // },
   hylseEnd: {
     height: '10rem',
-    width: '5rem',
+    width: '6.5rem',
     background: 'linear-gradient(rgb(175, 175, 175), rgb(85, 85, 85))',
     right: '-2rem',
     display: 'flex',
@@ -320,20 +329,34 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Hylse = (props) => {
 
-  
- 
+  const startRingsCount = props.post.startRings.length
+  const rawRingsCount = props.post.rawInput.length
+  const endRingsCount = props.post.endRings.length
+  const countAllRings = startRingsCount + rawRingsCount + endRingsCount
   //const firstBladeValueTop = props.post.sagsnitt[0].toFixed(1);
- 
   
+  // const [hylseWidth, setHylseWidth] = useState('80rem')
+  // const [starHylse, setStarHylse] = useState('3rem')
+
+  // useEffect(() => {
+  //   if(countAllRings === 9) {
+  //     setHylseWidth('62rem')
+  //   } else if (countAllRings === 10) {
+  //     setHylseWidth('67rem')
+  //   }
+  // }, [countAllRings])
+
+
   const classes = useStyles();
   return (
     <>
+    <div className={classes.background}>
     <div className={classes.hylseContainer}>
   
       
      
       
-       <div className={classes.hylse}>
+       <div className={`hylse ${classes.hylse}`}>
       <div className={classes.ringContainer}>
       {props.post.startRings.map((ring) => {
         return (
@@ -377,7 +400,7 @@ const Hylse = (props) => {
       })}
       </div>
       
-        <div className={classes.hylseStart}>
+        <div className={`hylse-start ${classes.hylseStart}`}>
           <div className={classes.kileSpor}></div>
         </div>
         <div className={classes.hylseKile}>
@@ -420,6 +443,13 @@ const Hylse = (props) => {
         </div>
       
     </div> 
+    {/* <style jsx>{`
+      .hylse {
+        width: ${hylseWidth};
+      },
+      
+    `}</style> */}
+    </div>
     </div>
     </>
   );

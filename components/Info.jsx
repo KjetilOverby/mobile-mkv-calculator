@@ -10,6 +10,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   infoContainer: {
+    
     padding: '3rem 3rem',
     background:
       'linear-gradient(4deg, rgba(44,214,230,1) 0%, rgba(81,153,235,1) 50%, rgba(17,79,57,1) 100%)',
@@ -152,6 +153,12 @@ const Info = ({ post, firstBladeValueTop }) => {
 
   return (
     <>
+
+
+<Grid className={classes.infoContainer} container>
+    <Typography variant='h1'>Info</Typography>
+    </Grid>
+
     {/* <Hidden only='sm'>
       <div className={classes.infoContainer}>
         <Typography className={classes.typography} variant="h6">

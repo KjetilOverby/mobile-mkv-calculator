@@ -35,7 +35,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '5em',
     [theme.breakpoints.down('lg')]: {
       width: '50em',
-      marginLeft: '-5rem'
+      marginLeft: '-5rem',
+      marginTop: '-1rem',
     },
     [theme.breakpoints.down('md')]: {
       width: '45em',
@@ -54,10 +55,11 @@ const useStyles = makeStyles((theme) => ({
     margin: '1rem',
   },
   formContainer: {
-    background: 'khaki',
     padding: '1rem',
     width: '35em',
-    margin: '1rem',
+    margin: '-4rem 1rem',
+    borderRadius: '5px',
+    boxShadow: '5px 5px 30px rgba(0,0,0,.5)'
   },
   radioLabelContainer: {
     display: 'flex',
@@ -121,17 +123,16 @@ const useStyles = makeStyles((theme) => ({
   },
   headerContainer: {
     height: '5em',
-    width: '50em',
-    background: 'khaki',
+    width: '40em',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '0 auto',
+    margin: '0 50%',
   },
   header: {
     fontWeight: 'bold',
     fontStyle: 'italic',
-    color: 'indianred',
+    color: 'blue',
   },
   field: {
     width: '5em',
@@ -142,7 +143,7 @@ const useStyles = makeStyles((theme) => ({
   },
   formSectionHeader: {
     marginBottom: '1rem',
-    color: 'indianred'
+    color: 'purple'
   }
 }));
 const CreatePost = (props) => {

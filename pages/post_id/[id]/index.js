@@ -6,6 +6,23 @@ import { Typography, makeStyles } from '@material-ui/core';
 import Info from '../../../components/Info';
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    background: 'url("https://images.unsplash.com/photo-1469735139965-2d27590468a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80")',
+    position: 'relative',
+    
+    width: '100vw',
+    height: '100vh',
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
+    
+    [theme.breakpoints.down('sm')]: {
+     background: 'white'
+    },
+    [theme.breakpoints.down('xs')]: {
+      
+      height: '40vh',
+    },
+  },  
   header: {
     position: 'absolute',
     top: '1em',
@@ -13,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'italic',
     fontWeight: 'bold',
     fontSize: '2rem',
+    
     [theme.breakpoints.down('lg')]: {
       fontSize: '2.2rem'
     },
@@ -20,13 +38,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       fontSize: '1.2rem',
     },
+   
   },
 }));
 
 const post_id = ({ post }) => {
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.container}>
       <Typography className={classes.header}>{post.header}</Typography>
       <PostSet post={post} />
       {/* <Info post={post} /> */}

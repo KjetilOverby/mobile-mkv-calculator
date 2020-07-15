@@ -8,7 +8,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    left: '7em'
+    left: '7em',
+    [theme.breakpoints.down('lg')]: {
+      fontSize: '.6rem',
+      height: '40em',
+      left: '9em'
+    },
   },
   labelContainer2: {
     position: 'absolute',
@@ -18,7 +23,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     left: '75em',
     [theme.breakpoints.down('lg')]: {
-    left: '50em',
+    left: '75em',
+    fontSize: '.6rem',
+    height: '40em'
     },
   }
 }));

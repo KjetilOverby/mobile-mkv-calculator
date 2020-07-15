@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: '100',
     border: '1px solid gray',
     borderRadius: '4px',
-    boxShadow: '5px 5px 30px rgba(0,0,0,.3)',
+    boxShadow: '10px 10px 30px black',
     flexDirection: 'column',
     height: '14rem',
     width: '5.5rem',
