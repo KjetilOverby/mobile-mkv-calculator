@@ -48,7 +48,7 @@ const post_id = ({ post }) => {
     <div className={classes.container}>
       <Typography className={classes.header}>{post.header}</Typography>
       <PostSet post={post} />
-      {/* <Info post={post} /> */}
+      
     </div>
   );
 };

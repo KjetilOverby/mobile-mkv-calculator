@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Calculations = (props) => {
-
+console.log(props);
     //Start rings
   const startRings = props.data.startRings;
   {}

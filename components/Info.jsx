@@ -10,10 +10,14 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   infoContainer: {
-    
     padding: '3rem 3rem',
     background:
       'linear-gradient(4deg, rgba(44,214,230,1) 0%, rgba(81,153,235,1) 50%, rgba(17,79,57,1) 100%)',
+  },
+  infoSectionContainer: {
+    flexDirection: 'row',
+    width: '20vw',
+    justifyContent: 'space-between',
   },
   ok: {
     height: '1.2rem',
@@ -22,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '50%',
     [theme.breakpoints.down('md')]: {
       height: '1rem',
-    width: '1rem',
+      width: '1rem',
     },
   },
   notOk: {
@@ -33,8 +37,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       height: '1rem',
       width: '1rem',
-     
-   
     },
   },
   dotContainer: {
@@ -47,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#430d4e',
     fontSize: '1.2rem',
     [theme.breakpoints.down('md')]: {
-      fontSize: '1rem'
+      fontSize: '1rem',
     },
   },
   span: {
@@ -60,13 +62,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.5rem',
     [theme.breakpoints.down('md')]: {
       fontSize: '1.2rem',
-      fontWeight: 'bold' 
+      fontWeight: 'bold',
     },
   },
   infoText: {
     fontStyle: 'italic',
     color: '#4e3861',
-    fontSize: '1rem'
+    fontSize: '1rem',
   },
   divider: {
     margin: '1rem 0',
@@ -81,26 +83,33 @@ const Info = ({ post, firstBladeValueTop }) => {
   // const startRingsVal = 200;
   // const endRingVal = 217.2;
 
-  // const startRings = post.startRings;
-  // const startRingSum = startRings
-  //   .reduce((num, { input }) => Number(num) + Number(input), 0)
-  //   .toFixed(2);
+  const startRings = post.startRings;
+  const startRingSum = startRings
+    .reduce((num, { input }) => Number(num) + Number(input), 0)
+    .toFixed(2);
 
-  // // RAW INPUT CALCULATIONS
+  // RAW INPUT CALCULATIONS
 
-  // const rawRings = post.rawInput;
-  // const rawInputSum = rawRings.reduce(
-  //   (num, { input }) => Number(num) + Number(input),
-  //   0
-  // );
+  const rawRings = post.rawInput;
+  const rawInputSum = rawRings.reduce(
+    (num, { input }) => Number(num) + Number(input),
+    0
+  );
+  const numberOfRings = rawRings.length;
 
-  // const numberOfRings = Number(rawRings.length + 1);
-  // const onlyNumberOfRings = rawRings.length * 1.4;
-  // const rawRingSum = (rawInputSum + onlyNumberOfRings).toFixed(2);
+  const singleBladeSagSnitt = (post.blades.bladStamme + 1.4).toFixed(1);
+  const sagSnittSum =
+    singleBladeSagSnitt * numberOfRings + Number(singleBladeSagSnitt);
+  const finalRawRing = (sagSnittSum + rawInputSum) / 2;
 
-  // const bladeThick = Number(post.bladeThickness);
-  // const numberOfBlades = numberOfRings;
-  // const bladeThicknesSum = (bladeThick * numberOfBlades).toFixed(2);
+  console.log(rawInputSum);
+  console.log(singleBladeSagSnitt);
+  console.log(numberOfRings);
+  console.log(finalRawRing);
+
+  const firstLabelVal = 200 - finalRawRing + 0.7;
+  const secondLabel = 217.2 - finalRawRing + 0.7
+
   // const sagSnitt = post.sagsnitt;
   // const sagSnittSum = sagSnitt.reduce((num1, num) => num1 + num);
   // const [allBlades, setAllBlades] = useState(sagSnittSum + firstBladeValueTop);
@@ -112,7 +121,7 @@ const Info = ({ post, firstBladeValueTop }) => {
   //    setAllBlades(sagSnittSum + firstBladeValueTop)
   //  }
   //  }, [])
-  
+
   // const rawInputCalc = (allBlades + rawInputSum) / 2 - 0.7;
   // const finalCalcForStartRings = (startRingsVal - rawInputCalc).toFixed(2);
   // const finalCalcForEndRings = (endRingVal - rawInputCalc).toFixed(2);
@@ -126,7 +135,6 @@ const Info = ({ post, firstBladeValueTop }) => {
   // ).toFixed(2);
 
   // //ENDRINGS
-
 
   // const endRings = post.endRings;
   // const endRingSum = endRings
@@ -150,16 +158,48 @@ const Info = ({ post, firstBladeValueTop }) => {
   // const differenceEnd = (finalCalcForEndRings - endRingSum).toFixed(2);
 
   const classes = useStyles();
-
   return (
     <>
+      <div className={classes.infoContainer}>
+        <Grid className={classes.infoSectionContainer} container>
+          <Grid item>
+            <Typography className={classes.infoText}>Verdi foran</Typography>
+          </Grid>
+          <Grid item>
+            <Typography className={classes.infoText}></Typography>
+            {firstLabelVal}
+          </Grid>
+        </Grid>
 
+        <Grid className={classes.infoSectionContainer} container>
+          <Grid item>
+            <Typography className={classes.infoText}>
+              Status verdi foran
+            </Typography>
+          </Grid>
+          <Grid itme>Dot</Grid>
+        </Grid>
 
-<Grid className={classes.infoContainer} container>
-    <Typography variant='h1'>Info</Typography>
-    </Grid>
+        <Grid className={classes.infoSectionContainer} container>
+          <Grid item>
+            <Typography className={classes.infoText}>Verdi bak</Typography>
+          </Grid>
+          <Grid item>
+            <Typography className={classes.infoText}></Typography>
+            {secondLabel}
+          </Grid>
+        </Grid>
 
-    {/* <Hidden only='sm'>
+        <Grid className={classes.infoSectionContainer} container>
+          <Grid item>
+            <Typography className={classes.infoText}>
+              Status verdi bak
+            </Typography>
+          </Grid>
+          <Grid itme>Dot</Grid>
+        </Grid>
+      </div>
+      {/* <Hidden only='sm'>
       <div className={classes.infoContainer}>
         <Typography className={classes.typography} variant="h6">
           Verdi foran:{' '}
