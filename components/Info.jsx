@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     width: '20vw',
     justifyContent: 'space-between',
+    [theme.breakpoints.down('xs')]: {
+      width: '70vw',
+    },
   },
   ok: {
     height: '1.2rem',
@@ -44,6 +47,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     marginLeft: '1rem',
   },
+  infoHeaders: {
+    margin: '1rem 0'
+  }, 
   typography: {
     fontStyle: 'italic',
     color: '#430d4e',
@@ -95,20 +101,26 @@ const Info = ({ post, firstBladeValueTop }) => {
     (num, { input }) => Number(num) + Number(input),
     0
   );
+
+  const endRings = post.endRings;
+  const endRingSum = endRings
+    .reduce((num, { input }) => Number(num) + Number(input), 0)
+    .toFixed(2);
   const numberOfRings = rawRings.length;
 
-  const singleBladeSagSnitt = (post.blades.bladStamme + 1.4).toFixed(1);
+  const singleBladeSagSnitt = (post.blades.bladStamme + 1.4).toFixed(2);
   const sagSnittSum =
     singleBladeSagSnitt * numberOfRings + Number(singleBladeSagSnitt);
   const finalRawRing = (sagSnittSum + rawInputSum) / 2;
 
-  console.log(rawInputSum);
-  console.log(singleBladeSagSnitt);
-  console.log(numberOfRings);
-  console.log(finalRawRing);
+  const firstLabelVal = (200 - finalRawRing + 0.7).toFixed(2);
+  const secondLabel = (217.2 - finalRawRing + 0.7).toFixed(2);
 
-  const firstLabelVal = 200 - finalRawRing + 0.7;
-  const secondLabel = 217.2 - finalRawRing + 0.7
+  // Start rings
+
+  console.log('====================================');
+  console.log(startRingSum);
+  console.log('====================================');
 
   // const sagSnitt = post.sagsnitt;
   // const sagSnittSum = sagSnitt.reduce((num1, num) => num1 + num);
@@ -136,10 +148,7 @@ const Info = ({ post, firstBladeValueTop }) => {
 
   // //ENDRINGS
 
-  // const endRings = post.endRings;
-  // const endRingSum = endRings
-  //   .reduce((num, { input }) => Number(num) + Number(input), 0)
-  //   .toFixed(2);
+  
 
   // const toCenter = (
   //   Number(startRingSum) + Number(sumRawRingBladeDivided)
@@ -177,7 +186,12 @@ const Info = ({ post, firstBladeValueTop }) => {
               Status verdi foran
             </Typography>
           </Grid>
-          <Grid itme>Dot</Grid>
+
+          {startRingSum === firstLabelVal ?
+            <div className={classes.ok}></div>
+            :
+            <div className={classes.notOk}></div>
+          }
         </Grid>
 
         <Grid className={classes.infoSectionContainer} container>
@@ -196,7 +210,61 @@ const Info = ({ post, firstBladeValueTop }) => {
               Status verdi bak
             </Typography>
           </Grid>
-          <Grid itme>Dot</Grid>
+          {endRingSum === secondLabel ?
+            <div className={classes.ok}></div>
+            :
+            <div className={classes.notOk}></div>
+          }
+          
+        </Grid>
+
+        <Grid direction='column' container>
+          <Typography variant='h5' className={classes.infoHeaders}>Ringer foran</Typography>
+          <Grid className={classes.infoSectionContainer} container>
+          <Grid item>
+            <Typography className={classes.infoText}>Sum ringer foran</Typography>
+          </Grid>
+          <Grid item>
+            <Typography className={classes.infoText}></Typography>
+            {startRingSum}
+          </Grid>
+        </Grid>
+        </Grid>
+        <Grid direction='column' container>
+          
+          <Grid className={classes.infoSectionContainer} container>
+          <Grid item>
+            <Typography className={classes.infoText}>Differanse</Typography>
+          </Grid>
+          <Grid item>
+            <Typography className={classes.infoText}></Typography>
+            {(firstLabelVal - startRingSum ).toFixed(2)}
+          </Grid>
+        </Grid>
+        </Grid>
+        <Grid direction='column' container>
+          <Typography variant='h5' className={classes.infoHeaders}>Ringer bak</Typography>
+          <Grid className={classes.infoSectionContainer} container>
+          <Grid item>
+            <Typography className={classes.infoText}>Sum ringer bak</Typography>
+          </Grid>
+          <Grid item>
+            <Typography className={classes.infoText}></Typography>
+            {endRingSum}
+          </Grid>
+        </Grid>
+        </Grid>
+        <Grid direction='column' container>
+          
+          <Grid className={classes.infoSectionContainer} container>
+          <Grid item>
+            <Typography className={classes.infoText}>Differanse</Typography>
+          </Grid>
+          <Grid item>
+            <Typography className={classes.infoText}></Typography>
+            {(secondLabel - endRingSum).toFixed(2)}
+          </Grid>
+        </Grid>
         </Grid>
       </div>
       {/* <Hidden only='sm'>
