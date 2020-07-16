@@ -26,6 +26,7 @@ import { useRouter } from 'next/router';
 import { set } from 'mongoose';
 
 const useStyles = makeStyles((theme) => ({
+ 
   postContainer: {
     display: 'flex',
     alignItems: 'center',
@@ -163,7 +164,7 @@ const CreatePost = (props) => {
       <Formik
         initialValues={{
           startRings: [],
-          rawInput: [],
+          rawInput: [{input: '', ring: '', shims2: '', shims3: ''}],
           endRings: [],
           blades: '',
           header: '',
@@ -186,7 +187,7 @@ const CreatePost = (props) => {
         }}
       >
         {({ values, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
-          <div>
+          <div className={classes.container}>
             <div className={classes.headerContainer}>
               <Typography className={classes.header} variant="h4">
                 {values.header}

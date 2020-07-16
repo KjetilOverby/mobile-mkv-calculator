@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
      margin: '0 0 0 4.5em',
      zIndex: 100, 
      alignItems: 'center',
-    
+    zIndex: '200',
      width: '70vw',
      [theme.breakpoints.down('xl')]: {
       marginLeft: '5.5rem'
