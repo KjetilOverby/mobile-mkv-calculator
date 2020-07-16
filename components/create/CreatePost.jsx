@@ -356,23 +356,31 @@ const CreatePost = (props) => {
                               name={`rawInput.${index}.input`}
                               as={TextField}
                             />
+                           
+                        
                             <Field
                               className={classes.field}
                               placeholder="Ring"
                               name={`rawInput.${index}.ring`}
                               as={TextField}
+                              
                             />
-                            <Field
+                          
+                          
+                         
+                           <Field
                               className={classes.field}
                               placeholder="Skims2"
                               name={`rawInput.${index}.shims2`}
                               as={TextField}
+                              
                             />
                             <Field
                               className={classes.field}
                               placeholder="Skims3"
                               name={`rawInput.${index}.shims3`}
                               as={TextField}
+                              
                             />
                             <Button onClick={() => arrayHelpers.remove(index)}>
                             <DeleteIcon className={classes.deleteIcon} />
