@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
   },
   shimsVal: {
     position: 'absolute',
-    color: 'green',
+    color: 'brown',
     top: '16.5rem',
     fontSize: '1.2rem',
     fontStyle: 'italic',
@@ -117,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
   shimsVal2: {
     fontStyle: 'italic',
     position: 'absolute',
-    color: 'green',
+    color: 'orange',
     top: '18.5rem',
     fontSize: '1.2rem',
     [theme.breakpoints.down('lg')]: {
@@ -216,7 +216,16 @@ const RawRings = (props) => {
   const classes = useStyles();
 
   const ringShimsVal = ((Number(props.value) + 1.4) - Number(props.ringVal)).toFixed(2)
+  const ringPlusVigg = (Number(props.value) + 1.4).toFixed(1)
+  const shimsValue2 = props.shimsVal2 != undefined
   console.log('shimsVal: ' + props.shimsVal2);
+
+  // const shimsVal1Variable = ((Number(ringShimsVal) - (props.shimsVal2 != undefined && Number(props.shimsVal2))).toFixed(1))
+  // const shimsVal1Variable2 = ((Number(ringShimsVal) - props.shimsVal3 - (props.shimsVal2 != undefined && Number(props.shimsVal2))).toFixed(1))
+  const secondLabel = (ringPlusVigg - props.ringVal).toFixed(1)
+  const secondLabelFinal = ((secondLabel) - (props.shimsVal2 != undefined && props.shimsVal2)).toFixed(1)
+  const thirdLabel = ((props.shimsVal2) - (props.shimsVal3 != undefined && props.shimsVal3)).toFixed(1)
+  
  
   return (
  
@@ -226,22 +235,43 @@ const RawRings = (props) => {
 <div className={classes.rawDistanceRing}>
    <Typography className={classes.rawInput}>{props.value}</Typography>
   <Typography className={classes.rawVal}>
-    {(Number(props.value) + 1.4).toFixed(1)}
+    {ringPlusVigg}
   </Typography>
   
-  <Typography className={classes.ringVal}>{props.ringVal}</Typography>
   
- {props.ringVal &&  (
-  <Typography className={classes.shimsVal}>{(Number(ringShimsVal) - (props.shimsVal2 != undefined && Number(props.shimsVal2)))}</Typography>
+  {/* <Typography className={classes.ringVal}>{props.ringVal}</Typography>
+  
+ {props.shimsVal2 &&  (
+  <Typography className={classes.shimsVal}>{props.shimsVal2}</Typography>
  )}
  
- {props.shimsVal2 && (
-  <Typography className={classes.shimsVal2}>{props.shimsVal2 - props.shimsVal2 != undefined && props.shimsVal2}</Typography>
+ {props.ringVal && (
+  <Typography className={classes.shimsVal2}>{props.shimsVal3 === undefined ? shimsVal1Variable : shimsVal1Variable - props.shimsVal3}</Typography>
  )}
   
-  {props.shimsVal2 && (
+  {props.shimsVal2 &&  (
+    <Typography className={classes.shimsVal3}>{props.shimsVal - props.shimsVal3 != undefined && props.shimsVal3}</Typography>
+  )} */}
+
+
+
+  <Typography className={classes.ringVal}>{props.ringVal}</Typography>
+ 
+
+   
+  {props.ringVal && (
+    <Typography className={classes.shimsVal}>{secondLabelFinal}</Typography>
+  )}
+  {
+    props.shimsVal2 && (
+      <Typography className={classes.shimsVal2}>{thirdLabel}</Typography>
+    )
+  }
+
+  {props.shimsVal3 && (
     <Typography className={classes.shimsVal3}>{props.shimsVal3}</Typography>
   )}
+  
    
   <div className={classes.blade}>
     <Typography className={classes.bladeTop}>

@@ -141,7 +141,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'italic',
     position: 'absolute',
     color: 'blue',
-    top: '20rem',
+    top: '20.5rem',
     fontSize: '1.2rem',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1rem',
@@ -215,7 +215,9 @@ const RawRings = (props) => {
 
   const ringShimsVal = (Number(props.rawVal) + 1.4) - Number(props.ringVal)
 
-  console.log(props.value);
+
+
+   console.log('now: ' + ringShimsVal);
   return (
   
     
@@ -231,17 +233,21 @@ const RawRings = (props) => {
   <Typography className={classes.ringVal}>{props.ringVal}</Typography>
   
  {props.ringVal && (
-  <Typography className={classes.shimsVal}>{(Number(ringShimsVal) - Number(props.shimsVal2)).toFixed(1)}</Typography>
+  <Typography className={classes.shimsVal}>{(Number(ringShimsVal) - Number(props.shimsVal2 != undefined && props.shimsVal2)).toFixed(1)}</Typography>
  )}
  
  {props.shimsVal2 && (
-  <Typography className={classes.shimsVal2}>{props.shimsVal2 - props.shimsVal3}</Typography>
+  <Typography className={classes.shimsVal2}>{props.shimsVal2 - (props.shimsVal3 != undefined && props.shimsVal3)}</Typography>
  )}
   
   {props.shimsVal2 && (
     <Typography className={classes.shimsVal3}>{props.shimsVal3}</Typography>
   )}
-   
+
+
+
+
+
   <div className={classes.blade}>
     <Typography className={classes.bladeTop}>
       {(Number(props.postInfo.blades.bladStamme) + 1.4).toFixed(1)}

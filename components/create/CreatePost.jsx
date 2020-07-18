@@ -164,7 +164,7 @@ const CreatePost = (props) => {
       <Formik
         initialValues={{
           startRings: [],
-          rawInput: [{input: '', ring: '', shims2: '', shims3: ''}],
+          rawInput: [],
           endRings: [],
           blades: '',
           header: '',
@@ -436,7 +436,7 @@ const CreatePost = (props) => {
                 </div>
 
                
-                {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+                <pre>{JSON.stringify(values, null, 2)}</pre>
               </form>
               
             </div>
