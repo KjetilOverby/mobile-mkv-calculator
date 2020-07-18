@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
   ringVal: {
     position: 'absolute',
     color: 'blue',
-    top: '14.5rem',
+    top: '10.5rem',
     fontSize: '1.2rem',
     fontStyle: 'italic',
     [theme.breakpoints.down('lg')]: {
@@ -96,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
   shimsVal: {
     position: 'absolute',
     color: 'brown',
-    top: '16.5rem',
+    top: '12.5rem',
     fontSize: '1.2rem',
     fontStyle: 'italic',
     [theme.breakpoints.down('lg')]: {
@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'italic',
     position: 'absolute',
     color: 'orange',
-    top: '18.5rem',
+    top: '14.5rem',
     fontSize: '1.2rem',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1rem',
@@ -141,7 +141,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'italic',
     position: 'absolute',
     color: 'green',
-    top: '20rem',
+    top: '16.5rem',
     fontSize: '1.2rem',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1rem',

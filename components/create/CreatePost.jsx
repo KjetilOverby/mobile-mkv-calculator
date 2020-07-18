@@ -128,12 +128,17 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '0 50%',
+    margin: '0 30%',
   },
   header: {
     fontWeight: 'bold',
     fontStyle: 'italic',
-    color: 'blue',
+    color: 'orange',
+    fontSize: '3rem',
+    padding: '0 2rem',
+    width: '60em',
+    fontFamily: 'Shojumaru, cursive',
+    fontFamily: 'Quantico',
   },
   field: {
     width: '5em',
@@ -436,7 +441,7 @@ const CreatePost = (props) => {
                 </div>
 
                
-                <pre>{JSON.stringify(values, null, 2)}</pre>
+                {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
               </form>
               
             </div>
