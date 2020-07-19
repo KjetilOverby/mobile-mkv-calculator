@@ -124,11 +124,14 @@ const useStyles = makeStyles((theme) => ({
   },
   headerContainer: {
     height: '5em',
-    width: '40em',
+    width: '58em',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     margin: '0 30%',
+    [theme.breakpoints.down('lg')]: {
+     marginLeft: '40%' 
+    },
   },
   header: {
     fontWeight: 'bold',
@@ -136,9 +139,12 @@ const useStyles = makeStyles((theme) => ({
     color: 'orange',
     fontSize: '3rem',
     padding: '0 2rem',
-    width: '60em',
+    width: '70em',
     fontFamily: 'Shojumaru, cursive',
     fontFamily: 'Quantico',
+    [theme.breakpoints.down('lg')]: {
+     
+    },
   },
   field: {
     width: '5em',

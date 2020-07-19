@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'italic',
     [theme.breakpoints.down('lg')]: {
      fontSize: '1rem',
-     top: '12.5rem'
+     top: '7.5rem'
     },
     [theme.breakpoints.down('md')]: {
       top: '7.5rem',
@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'italic',
     [theme.breakpoints.down('lg')]: {
      fontSize: '1rem',
-     top: '14rem'
+     top: '9rem'
     },
     [theme.breakpoints.down('md')]: {
       top: '8.7rem',
@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.2rem',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1rem',
-      top: '15.5rem'
+      top: '10.5rem'
     },
     [theme.breakpoints.down('md')]: {
       
@@ -145,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.2rem',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1rem',
-      top: '17rem'
+      top: '12rem'
     },
     [theme.breakpoints.down('md')]: {
       
