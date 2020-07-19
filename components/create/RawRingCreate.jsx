@@ -218,7 +218,6 @@ const RawRings = (props) => {
   const ringShimsVal = ((Number(props.value) + 1.4) - Number(props.ringVal)).toFixed(2)
   const ringPlusVigg = (Number(props.value) + 1.4).toFixed(1)
   const shimsValue2 = props.shimsVal2 != undefined
-  console.log('shimsVal: ' + props.shimsVal2);
 
   // const shimsVal1Variable = ((Number(ringShimsVal) - (props.shimsVal2 != undefined && Number(props.shimsVal2))).toFixed(1))
   // const shimsVal1Variable2 = ((Number(ringShimsVal) - props.shimsVal3 - (props.shimsVal2 != undefined && Number(props.shimsVal2))).toFixed(1))

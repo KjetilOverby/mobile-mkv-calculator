@@ -9,6 +9,7 @@ import {
   RadioGroup,
   Grid,
   Typography,
+  Divider,
 } from '@material-ui/core';
 import Hylse from '../hylse/Hylse';
 import HylseCreate from './HylseCreate';
@@ -16,14 +17,12 @@ import Link from 'next/link';
 import { useState } from 'react';
 import FillRingCreate from './FillRingCreate';
 import RawRingCreate from './RawRingCreate';
-import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
 
 import { Formik, FieldArray, Field } from 'formik';
 import Calculations from '../Calculations';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useRouter } from 'next/router';
-import { set } from 'mongoose';
+import RawList from '../Lists/RawList';
 
 const useStyles = makeStyles((theme) => ({
  
@@ -60,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     width: '35em',
     margin: '-4rem 1rem',
     borderRadius: '5px',
-    boxShadow: '5px 5px 30px rgba(0,0,0,.5)'
+    boxShadow: 'inset 2px 2px 20px rgba(90,50,30,.8)'
   },
   radioLabelContainer: {
     display: 'flex',
@@ -129,6 +128,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     margin: '0 30%',
+    padding: '15px',
     [theme.breakpoints.down('lg')]: {
      marginLeft: '40%' 
     },
@@ -136,12 +136,14 @@ const useStyles = makeStyles((theme) => ({
   header: {
     fontWeight: 'bold',
     fontStyle: 'italic',
-    color: 'orange',
-    fontSize: '3rem',
+    color: 'white',
+    fontSize: '3.5rem',
     padding: '0 2rem',
     width: '70em',
     fontFamily: 'Shojumaru, cursive',
     fontFamily: 'Quantico',
+    textShadow: '5px 10px 20px black',
+    
     [theme.breakpoints.down('lg')]: {
      
     },
@@ -156,6 +158,9 @@ const useStyles = makeStyles((theme) => ({
   formSectionHeader: {
     marginBottom: '1rem',
     color: '#195550'
+  },
+  divider: {
+    margin: '3rem'
   }
 }));
 const CreatePost = (props) => {
@@ -509,6 +514,8 @@ const CreatePost = (props) => {
           </div>
         )}
       </Formik>
+      <Divider className={classes.divider} /> 
+      <RawList />
     </div>
   );
 };

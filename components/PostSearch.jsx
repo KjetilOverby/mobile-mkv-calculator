@@ -11,32 +11,50 @@ import {
 import Link from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
+  
   postSearchContainer: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    paddingLeft: '3rem',
     background: '#badbd5',
     width: '100vw',
     paddingTop: '2rem',
     paddingBottom: '2rem',
+    
+    [theme.breakpoints.down('md')]: {
+      alignItems: 'center',
+      paddingLeft: '0',
+    },
   },
   postheader: {
     marginBottom: '.5rem',
     marginTop: '.5rem',
-    background:
-      'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(36,149,126,1) 35%, rgba(0,255,229,1) 100%)',
-    width: '90vw',
+  
+    width: '25vw',
     padding: '1rem 0 1rem 1rem',
     fontSize: '1.2rem',
     fontWeight: 'bold',
     borderRadius: '10px',
     border: '1px solid black',
-    color: '#abe3d8',
-    boxShadow: '10px 10px 10px rgba(0,0,0,.5)',
+    color: 'gray',
+    boxShadow: 'inset 10px 10px 10px rgba(0,0,0,.5)',
+    transition: '1s',
     "&:hover": {
-      background: 'linear-gradient(4deg, rgba(0,255,229,1) 0%, rgba(36,149,126,1) 35%, rgba(2,0,36,1) 100%)',
-      cursor: 'pointer'
-    }
+      background: 'lightgray',
+      cursor: 'pointer',
+      boxShadow: '10px 10px 20px rgba(0,0,0,.5)'
+     
+    },
+    [theme.breakpoints.down('lg')]: {
+      width: '40vw'
+    },
+    [theme.breakpoints.down('md')]: {
+      background:
+      'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(36,149,126,1) 35%, rgba(0,255,229,1) 100%)',
+      color: '#abe3d8',
+      width: '90vw',
+      boxShadow: '10px 10px 10px rgba(0,0,0,.5)',
+    },
 
   },
    

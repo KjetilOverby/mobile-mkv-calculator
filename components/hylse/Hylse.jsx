@@ -370,7 +370,7 @@ const Hylse = (props) => {
       <div className={classes.blade}>
        <span className={classes.content}>Content</span>
       <Typography className={classes.bladeTop}>{(props.post.blades.bladStamme + 1.4).toFixed(1)}</Typography>
-        <Typography className={classes.bladeBottom}>{props.post.blades.bladStamme}</Typography>
+        <Typography className={classes.bladeBottom}>{(props.post.blades.bladStamme).toFixed(1)}</Typography>
       </div>
       
       {props.post.rawInput.map((rawIn) => {

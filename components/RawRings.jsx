@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('md')]: {
       top: '7.5rem',
-    
+      color: 'blue',
       fontSize: '0.8rem',
       
     },
@@ -107,6 +107,7 @@ const useStyles = makeStyles((theme) => ({
       top: '8.7rem',
       
       fontSize: '0.8rem',
+      color: 'blue'
     },
 
     [theme.breakpoints.down('xs')]: {
@@ -129,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
       top: '10rem',
       
       fontSize: '0.8rem',
-      
+      color: 'blue'
     },
 
     [theme.breakpoints.down('xs')]: {
@@ -152,7 +153,7 @@ const useStyles = makeStyles((theme) => ({
       top: '11.3rem',
       
       fontSize: '0.8rem',
-      
+      color: 'blue'
     },
 
     [theme.breakpoints.down('xs')]: {
@@ -254,7 +255,7 @@ const RawRings = (props) => {
     </Typography>
     
     <Typography className={classes.bladeBottom}>
-      {props.postInfo.blades.bladStamme}
+      {(props.postInfo.blades.bladStamme).toFixed(1)}
     </Typography>
   </div>
 </div>
