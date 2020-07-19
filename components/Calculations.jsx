@@ -84,8 +84,10 @@ const Calculations = (props) => {
      }
     }, [firstLabel, firstLabelMinusStartRings, secondLabelMinusEndRings, secondLabel, props.data.header])
   const classes = useStyles({firstLabelMinusStartRings, secondLabelMinusEndRings});
+  console.log(firstLabel);
   return (
     <>
+    
    <div className={classes.labelContainer}>
        <h1>{firstLabel}</h1>
       <h1 className={classes.labelCalc}>{firstLabelMinusStartRings}</h1>

@@ -232,6 +232,7 @@ const CreatePost = (props) => {
                                 as={Radio}
                               />
                             </Grid>
+                            <Grid item>3.6</Grid>
                           </Grid>
                           <Grid
                             className={classes.radioLabelContainer}
@@ -248,6 +249,7 @@ const CreatePost = (props) => {
                                 as={Radio}
                               />
                             </Grid>
+                            <Grid item>3.8</Grid>
                           </Grid>
                           <Grid
                             className={classes.radioLabelContainer}
@@ -264,6 +266,7 @@ const CreatePost = (props) => {
                                 as={Radio}
                               />
                             </Grid>
+                            <Grid item>4.0</Grid>
                           </Grid>
                           <Grid
                             className={classes.radioLabelContainer}
@@ -280,6 +283,7 @@ const CreatePost = (props) => {
                                 as={Radio}
                               />
                             </Grid>
+                            <Grid item>4.2</Grid>
                           </Grid>
                           <Grid
                             className={classes.radioLabelContainer}
@@ -296,6 +300,7 @@ const CreatePost = (props) => {
                                 as={Radio}
                               />
                             </Grid>
+                            <Grid item>4.4</Grid>
                           </Grid>
                           <Grid
                             className={classes.radioLabelContainer}
@@ -312,6 +317,7 @@ const CreatePost = (props) => {
                                 as={Radio}
                               />
                             </Grid>
+                            <Grid item>4.6</Grid>
                           </Grid>
                         </Grid>
                         <hr />
