@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '5.5rem'
      },
      [theme.breakpoints.down('lg')]: {
-      marginLeft: '4.5rem'
+      marginLeft: '4.3rem'
      },
     
      [theme.breakpoints.down('md')]: {
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
        width: '75vw'
     },
     [theme.breakpoints.down('xs')]: {
-      width: '21.5rem',
+      width: '20.5rem',
       height: '3rem',
     },
   },
@@ -94,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
     height: '3.5rem',
     width: '80rem',
     background: 'linear-gradient(rgb(204, 204, 204), rgb(70, 69, 69))',
-    boxShadow: 'inset 4px 1px 3px rgb(70, 69, 69)',
+    boxShadow: 'inset 14px 1px 3px rgba(0, 0, 0, 0.8)',
     borderBottomRightRadius: '10px',
     borderTopRightRadius: '10px',
     display: 'flex',
@@ -107,21 +107,21 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
     [theme.breakpoints.down('xl')]: {
       width: '90rem',
-      marginLeft: '-2rem'
+      marginLeft: '-2rem',
     },
     [theme.breakpoints.down('lg')]: {
       width: '67rem',
-      height: '2.5rem'
+      height: '3rem'
     },
     [theme.breakpoints.down('md')]: {
        width: '86.2vw',
-       height: '1.5rem',
-       marginLeft: '-1.5rem'
+       height: '1.8rem',
+       marginLeft: '-1.2rem'
     },
     [theme.breakpoints.down('xs')]: {
        width: '19.3rem',
-       height: '.8rem',
-       marginLeft: '-1rem'
+       height: '1.1rem',
+       marginLeft: '-0.6rem'
     },
   },
   hylseScrewHole: {
@@ -220,14 +220,15 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     [theme.breakpoints.down('lg')]: {
      height: '9rem',
+     width: '5.6rem',
     },
     [theme.breakpoints.down('md')]: {
       height: '5rem',
-      width: '3rem'
+      width: '3.5rem'
     },
     [theme.breakpoints.down('xs')]: {
        height: '2.9rem',
-       width: '2rem'
+       width: '1.8rem'
        
     },
   },
@@ -257,23 +258,23 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '-.5em',
       boxShadow: 'inset 1px 9px 3px black',
       [theme.breakpoints.down('lg')]: {
-       height: '2.5rem',
+       height: '2.9rem',
        width: '2rem'
       },
       [theme.breakpoints.down('md')]: {
         width: '1.5rem',
-        height: '1.5rem'    
+        height: '1.7rem'    
        },
        [theme.breakpoints.down('xs')]: {
          width: '1.2rem',
-         height: '.8rem'
+         height: '1rem'
        },
   },
   blade: {
     position: 'relative',
     display: 'flex',
     justifyContent: 'center',
-    background: 'orange',
+    background: 'linear-gradient(0deg, rgba(255,242,93,1) 0%, rgba(163,82,11,1) 100%)',
     
     width: '3px',
     zIndex: 1,
@@ -434,6 +435,9 @@ const Hylse = (props) => {
             <div className={classes.gang}></div>
             <div className={classes.gang}></div>
             <Hidden smDown>
+            <div className={classes.gang}></div>
+            <div className={classes.gang}></div>
+            <div className={classes.gang}></div>
             <div className={classes.gang}></div>
             <div className={classes.gang}></div>
             <div className={classes.gang}></div>

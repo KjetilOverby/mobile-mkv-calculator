@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     height: '14rem',
     width: '5.5rem',
     background:
-      'linear-gradient(4deg, rgba(67,42,108,1) 0%, rgba(80,179,221,1) 50%, rgba(187,167,221,1) 100%)',
+      'linear-gradient(4deg, rgb(12, 3, 6)0%, rgba(80,179,221,1) 50%, rgb(2, 82, 82) 100%)',
     margin: '0 .2rem',
     display: 'flex',
     justifyContent: 'center',
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     zIndex: 100,
     borderRadius: '4px',
-    border: '1px solid darkgrey',
+    border: '1px solid slategrey',
     borderRadius: '5px',
     boxShadow: '10px 10px 30px black',
     zIndex: 200,
@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
   value: {
     fontSize: '1.8rem',
     fontWeight: 'bold',
+    textShadow: '10px 10px 15px black',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1.6rem',
     },

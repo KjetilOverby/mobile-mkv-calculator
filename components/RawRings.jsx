@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     height: '14rem',
     width: '5.5rem',
     background:
-      'linear-gradient(4deg, rgb(173, 154, 75) 0%, rgba(248,255,143,1) 50%, rgb(169, 158, 40) 100%)',
+      'linear-gradient(4deg, rgb(30, 0, 10) 0%, rgba(248,255,143,1) 50%, rgb(144, 91, 59) 100%)',
       [theme.breakpoints.down('lg')]: {
        height: '12rem',
        width: '5rem'
@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
     position: 'absolute',
     color:'#803418',
+    textShadow: '10px 10px 15px black',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1.6rem'
     },
@@ -164,7 +165,7 @@ const useStyles = makeStyles((theme) => ({
   blade: {
     display: 'flex',
     justifyContent: 'center',
-    background: 'orange',
+    background: 'linear-gradient(0deg, rgba(255,242,93,1) 0%, rgba(163,82,11,1) 100%)',
     position: 'absolute',
     width: '3px',
     right: '0%',

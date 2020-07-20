@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.2rem',
     fontWeight: 'bold',
     borderRadius: '10px',
-    border: '1px solid black',
     color: 'gray',
     boxShadow: 'inset 10px 10px 10px rgba(0,0,0,.5)',
     transition: '1s',

@@ -24,13 +24,9 @@ export default async (req, res) => {
     case 'PUT':
       try {
         
-        const postEdit = await Poster.findByIdAndUpdate(id, {
+        const postEdit = await Poster.findByIdAndUpdate(id, req.body, {
           
-          $push: {
-            performer: req.body.performer,
-            date: req.body.date,
-            comment: req.body.comment,
-          },
+         
         });
        
        
