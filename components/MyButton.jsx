@@ -5,7 +5,7 @@ import { makeStyles, Typography } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
  
   firstContainer: {
-      boxShadow: '10px 10px 25px rgba(0,0,0,.5)',
+      boxShadow: '4px 4px 25px rgba(0,0,0,.5)',
       height: '4em',
       width: '30em',
       borderRadius: '30px',
@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
       },
   },
   secondContainer: {
-      boxShadow: '-5px -5px 25px white',
+      boxShadow: '-4px -4px 15px rgb(208, 247, 247)',
       height: '4em',
       width: '30em',
       borderRadius: '30px',

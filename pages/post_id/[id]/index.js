@@ -49,7 +49,9 @@ const post_id = ({ post }) => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
+    
       <Typography className={classes.header}>{post.header}</Typography>
+      
       <PostSet post={post} />
       
     </div>

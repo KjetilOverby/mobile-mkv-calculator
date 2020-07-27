@@ -10,24 +10,32 @@ import {
 } from '@material-ui/core';
 import Link from 'next/link';
 import MyButton from './MyButton';
-
+import Header from './Header';
+//linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)
 const useStyles = makeStyles((theme) => ({
+  mainContainer: {
+    flexDirection: 'row',
+    marginTop: '3.5rem'
+  },
   postSearchContainer: {
     display: 'flex',
     flexDirection: 'column',
     paddingLeft: '3rem',
-    background: 'linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)', 
-    width: '100vw',
+    background:
+      'radial-gradient(circle, rgba(174,238,211,1) 0%, rgba(148,187,233,1) 100%)',
+    width: '50vw',
     paddingTop: '2rem',
     paddingBottom: '2rem',
+    alignItems: 'center',
+    minHeight: '100vh',
 
     [theme.breakpoints.down('md')]: {
       alignItems: 'center',
       paddingLeft: '0',
+      width: '100vw',
     },
-   
   },
- /*  postheader: {
+  /*  postheader: {
     marginBottom: '.5rem',
     marginTop: '.5rem',
     background:
@@ -58,13 +66,24 @@ const useStyles = makeStyles((theme) => ({
   }, */
 
   searchContainer: {
+    width: '50vw',
     padding: '2.5rem',
+    flexDirection: 'column',
     background:
-      'linear-gradient(4deg, rgba(219,218,231,1) 0%, rgba(182,241,230,1) 35%, rgba(0,255,229,1) 100%)',
-    [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
+      'linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)',
+      [theme.breakpoints.up('lg')]: {
+        paddingLeft: '10vw',
+       paddingTop: '15rem'
+      },
+
+    [theme.breakpoints.down('md')]: {
+      width: '100vw',
+      maxHeight: '50vh',
     },
-   
+    [theme.breakpoints.down('sm')]: {
+      background:
+        'linear-gradient(4deg, rgba(219,218,231,1) 0%, rgba(182,241,230,1) 35%, rgba(0,255,229,1) 100%)',
+    },
   },
   textField: {
     marginRight: '3rem',
@@ -81,13 +100,18 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     [theme.breakpoints.down('xs')]: {
-      width: '100vw'
+      width: '100vw',
+    },
+  },
+  info: {
+    fontStyle: 'italic',
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '2.5rem',
+      color: 'gray'
     },
   }
 }));
 const PostSearch = ({ posts }) => {
-  console.log(posts);
-
   const classes = useStyles();
 
   const [searchInput, setSearchInput] = useState('');
@@ -97,48 +121,57 @@ const PostSearch = ({ posts }) => {
   };
 
   const search = posts.data.filter((post) => post.header.includes(searchInput));
-  console.log('Search: ' + search);
 
   return (
-    <div>
+    <>
+    <Header getSearch={getSearch}/>
+    <Grid container className={classes.mainContainer}>
       <Grid container className={classes.searchContainer}>
+      <Grid item>
         <Grid item>
-          <TextField
+        {/*   <TextField
+            inputProps={{
+              style: { fontSize: 20 },
+              
+            }}
             className={classes.textField}
             placeholder="Søk"
             onChange={getSearch}
-          />
+          /> */}
         </Grid>
         <Grid item>
-          <Typography>Antall poster: {posts.data.length}</Typography>
-          <Typography>
-            Søkeresultat: {searchInput ? search.length : 'Ingen søk'}
+          <Typography className={classes.info}>Antall poster: {posts.data.length}</Typography>
+          <Typography className={classes.info}>
+          <p>Søkeresultat: {searchInput ? <span style={{color: 'green'}}>{search.length}</span> : <span style={{color: 'indianred'}}>Ingen søk</span>} </p>
           </Typography>
         </Grid>
+        </Grid>
         <Grid item>
-          <Hidden mdDown>
+        {/*   <Hidden mdDown>
             <Link href="/create">
               <Button variant="contained" className={classes.btn}>
                 Lag ny post
               </Button>
             </Link>
-          </Hidden>
+          </Hidden> */}
         </Grid>
       </Grid>
-      
-      <div className={classes.postSearchContainer}>
-        {search.map((post) => {
-          return (
-            <Link href={`/post_id/${post._id}`}>
-             <div className={classes.myButtonContainer}>
-              <MyButton header={post.header} />
-              </div>
-              
-            </Link>
-          );
-        })}
-      </div>
-    </div>
+
+      <Grid item>
+        <div className={classes.postSearchContainer}>
+          {search.map((post) => {
+            return (
+              <Link href={`/post_id/${post._id}`}>
+                <div className={classes.myButtonContainer}>
+                  <MyButton header={post.header} />
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </Grid>
+    </Grid>
+    </>
   );
 };
 
