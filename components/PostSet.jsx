@@ -8,6 +8,8 @@ import fetch from 'isomorphic-unfetch'
 import { useRouter } from 'next/router';
 import Info from './Info';
 
+import DeleteModal from '../components/modals/DeleteModal';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -71,7 +73,8 @@ const PostSet = (props) => {
     </div>
     <Hidden only='sm'>
     <Info  post={props.post}/>
-    <Button onClick={deletePost}>Delete</Button>
+    
+    <DeleteModal delete={deletePost} post={props.post}/>
     </Hidden>
     </>
   );
