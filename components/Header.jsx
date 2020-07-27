@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   search: {
     position: 'relative',
+    marginRight: '2vw',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {
@@ -68,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
       'linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)',
   },
   newBtn: {
-    marginRight: '3rem',
+    marginRight: '50vw',
     border: '1px solid white',
     color: 'white'
   },
@@ -93,16 +94,7 @@ export default function SearchAppBar(props) {
           <Typography className={classes.title} variant="h6" noWrap>
             MKV POSTARKIV
           </Typography>
-          <Hidden mdDown>
-            <Link href="/create">
-              <Button
-                className={classes.newBtn}
-                variant="outlined"
-              >
-                lag ny post
-              </Button>
-            </Link>
-          </Hidden>
+         
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -117,6 +109,16 @@ export default function SearchAppBar(props) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
+          <Hidden mdDown>
+            <Link href="/create">
+              <Button
+                className={classes.newBtn}
+                variant="outlined"
+              >
+                lag ny post
+              </Button>
+            </Link>
+          </Hidden>
         </Toolbar>
       </AppBar>
     </div>

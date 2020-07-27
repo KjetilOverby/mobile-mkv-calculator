@@ -52,7 +52,7 @@ const post_id = ({ post }) => {
     
       <Typography className={classes.header}>{post.header}</Typography>
       
-      <PostSet post={post} />
+      <PostSet post={post} deleteUrl={`${baseUrl}/api/createdPost`} pushUrl='/'/>
       
     </div>
   );

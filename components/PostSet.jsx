@@ -3,6 +3,7 @@ import { makeStyles, Button, Hidden, Grid } from '@material-ui/core';
 import Hylse from './hylse/Hylse';
 import ScreenRotationIcon from '@material-ui/icons/ScreenRotation';
 import Link from 'next/link'
+import fetch from 'isomorphic-unfetch'
 
 import { useRouter } from 'next/router';
 import Info from './Info';
@@ -39,7 +40,17 @@ const PostSet = (props) => {
   const router = useRouter();
   // const firstBladeValueTop = props.post.sagsnitt
   
- 
+  const deletePost = async () => {
+    const postId = router.query.id;
+    try {
+      const deleted = await fetch(`${props.deleteUrl}/${postId}`, {
+        method: 'DELETE',
+      });
+      router.push(props.pushUrl);
+    } catch (error) {
+      console.log(error);
+    }
+  };
  
   return (
     <>
@@ -60,6 +71,7 @@ const PostSet = (props) => {
     </div>
     <Hidden only='sm'>
     <Info  post={props.post}/>
+    <Button onClick={deletePost}>Delete</Button>
     </Hidden>
     </>
   );
