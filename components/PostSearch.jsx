@@ -99,6 +99,7 @@ const useStyles = makeStyles((theme) => ({
     width: '30em',
     display: 'flex',
     justifyContent: 'center',
+    
     [theme.breakpoints.down('xs')]: {
       width: '100vw',
     },

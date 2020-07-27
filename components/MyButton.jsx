@@ -17,6 +17,9 @@ const useStyles = makeStyles(theme => ({
       },
       [theme.breakpoints.down('xs')]: {
         width: '90vw',
+        "&:hover": {
+            boxShadow: '4px 4px 25px rgba(0,0,0,.5)',
+        }
       },
   },
   secondContainer: {
@@ -34,13 +37,17 @@ const useStyles = makeStyles(theme => ({
         boxShadow: 'inset -5px -5px 5px white',
       },
       [theme.breakpoints.down('xs')]: {
-        width: '90vw'
+        width: '90vw',
+        '&:hover': {
+            boxShadow: '-4px -4px 15px rgb(208, 247, 247)',
+          },
       },
   },
   header: {
-      color: '#555',
+      color: '#315975',
       fontSize: '1.2rem',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      textShadow: '5px 5px 10px rgba(0,0,0,.3)'
   }
 }))
 const MyButton = (props) => {

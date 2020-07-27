@@ -20,6 +20,12 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     display: 'none',
+    fontFamily: 'Faster One, cursive',
+    fontSize: '2.2rem',
+    color: '#33a3a3',
+    textShadow: '5px 5px 20px rgb(151, 255, 201)',
+    /* fontFamily: 'Yeseva One, cursive',
+    fontFamily: 'Kumar One, cursive', */
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -69,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
       'linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)',
   },
   newBtn: {
-    marginRight: '50vw',
+    marginRight: '30vw',
     border: '1px solid white',
     color: 'white'
   },
@@ -92,7 +98,7 @@ export default function SearchAppBar(props) {
           </IconButton>
 
           <Typography className={classes.title} variant="h6" noWrap>
-            MKV POSTARKIV
+            MKV - POST~ARKIV
           </Typography>
          
           <div className={classes.search}>

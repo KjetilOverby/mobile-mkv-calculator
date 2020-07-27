@@ -10,6 +10,17 @@ export default class MyDocument extends Document {
         <Head>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
+
+
+          <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet"/>
+         {/*  font-family: 'Faster One', cursive; */}
+
+         <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet"/>
+         {/* font-family: 'Yeseva One', cursive; */}
+
+         <link href="https://fonts.googleapis.com/css2?family=Kumar+One&display=swap" rel="stylesheet"></link>
+         {/* font-family: 'Kumar One', cursive; */}
+
          <link href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet"></link>
           <link
             rel="stylesheet"
