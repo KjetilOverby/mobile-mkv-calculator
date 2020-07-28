@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     width: '35em',
     margin: '-4rem 1rem',
     borderRadius: '5px',
-    boxShadow: 'inset 2px 2px 20px rgba(90,50,30,.8)'
+    boxShadow: 'inset 2px 2px 20px rgba(90,50,30,.8)',
   },
   radioLabelContainer: {
     display: 'flex',
