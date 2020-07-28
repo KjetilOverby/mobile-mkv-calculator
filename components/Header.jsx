@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: 'none',
     fontFamily: 'Faster One, cursive',
-    fontSize: '2.2rem',
+    fontSize: '1.6rem',
     color: '#33a3a3',
     textShadow: '5px 5px 20px rgb(151, 255, 201)',
     /* fontFamily: 'Yeseva One, cursive',

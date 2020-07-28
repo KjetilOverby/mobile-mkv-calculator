@@ -5,6 +5,7 @@ import RawRings from '../RawRings';
 import RawRingCreate from '../../components/create/RawRingCreate'
 import { useEffect } from 'react';
 
+
 const useStyles = makeStyles((theme) => ({
   background: {
     
@@ -448,12 +449,7 @@ const Hylse = (props) => {
         </div>
       
     </div> 
-    {/* <style jsx>{`
-      .hylse {
-        width: ${hylseWidth};
-      },
-      
-    `}</style> */}
+   
     </div>
     </div>
     </>

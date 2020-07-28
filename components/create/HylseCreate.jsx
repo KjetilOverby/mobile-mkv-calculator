@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
         height: '7rem',
         display: 'flex',
         alignItems: 'center',
-        zIndex: -2,
+        zIndex: 0.5,
         boxShadow: '1px 1px 20px black',
         margin: '40% 10em',
         [theme.breakpoints.down('xl')]: {
@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
         borderTopLeftRadius: '40px',
         borderBottomLeftRadius: '40px',
         border: '1px solid gray',
-        zIndex: 1,
+        zIndex: 0.5,
         [theme.breakpoints.down('xl')]: {
           width: '90rem',
           marginLeft: '-2rem',

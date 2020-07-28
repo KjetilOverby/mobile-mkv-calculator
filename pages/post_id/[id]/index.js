@@ -4,7 +4,7 @@ import baseUrl from '../../../utils/baseUrl';
 import PostSet from '../../../components/PostSet';
 import { Typography, makeStyles } from '@material-ui/core';
 import Info from '../../../components/Info';
-
+import Head from 'next/head'
 
 
 //https://images.unsplash.com/photo-1594480464691-7d223cab32b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2667&q=80
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('lg')]: {
       fontSize: '2.2rem'
     },
-    color: '#694786',
+    color: '#394c78',
     [theme.breakpoints.down('md')]: {
       fontSize: '1.2rem',
     },
@@ -51,7 +51,9 @@ const post_id = ({ post }) => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-    
+    <Head>
+      <title>{post.header}</title>
+    </Head>
       <Typography className={classes.header}>{post.header}</Typography>
       
       <PostSet post={post} deleteUrl={`${baseUrl}/api/createdPost`} pushUrl='/'/>

@@ -219,7 +219,7 @@ const RawRings = (props) => {
 
 
 
-   console.log('now: ' + ringShimsVal);
+  
   return (
   
     

@@ -12,6 +12,8 @@ import DeleteModal from '../components/modals/DeleteModal';
 
 
 
+
+
 const useStyles = makeStyles((theme) => ({
   backBtn: {
    position: 'absolute',
@@ -56,6 +58,7 @@ const PostSet = (props) => {
  
   return (
     <>
+    
     <div className={classes.postContainer}>
       <Hylse post={props.post} />
       <Hidden smDown>
@@ -66,7 +69,7 @@ const PostSet = (props) => {
       </Link>
     
        
-     
+      
       </div>
       </Hidden>
     

@@ -514,8 +514,7 @@ const CreatePost = (props) => {
           </div>
         )}
       </Formik>
-      <Divider className={classes.divider} /> 
-      <RawList />
+     
     </div>
   );
 };

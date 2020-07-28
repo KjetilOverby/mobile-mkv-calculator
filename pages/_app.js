@@ -15,11 +15,11 @@ export default function MyApp(props) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
-
+console.log();
   return (
     <React.Fragment>
       <Head>
-        <title>Mkv Calculator Mobile</title>
+        <title>MKV POSTARKIV</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
