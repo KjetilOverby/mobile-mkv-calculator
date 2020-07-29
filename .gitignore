@@ -18,4 +18,4 @@ yarn-error.log*
 /.next
 
 .vercel
-.next.config.js
+next.config.js
