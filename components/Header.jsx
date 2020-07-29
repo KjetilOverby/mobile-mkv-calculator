@@ -88,7 +88,9 @@ export default function SearchAppBar(props) {
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
+        <Hidden mdUp>
         <DrawerComponent />
+        </Hidden>
           <IconButton
             edge="start"
             className={classes.menuButton}

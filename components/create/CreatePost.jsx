@@ -391,7 +391,7 @@ const CreatePost = (props) => {
                         color='secondary'
                         size='small'
                       >
-                        RawInput
+                        Legg til råmål
                       </Button>
                       {values.rawInput.map((rawInput, index) => {
                         return (

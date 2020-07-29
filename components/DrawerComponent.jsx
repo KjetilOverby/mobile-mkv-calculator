@@ -12,6 +12,8 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Link from 'next/link';
+import CreateIcon from '@material-ui/icons/Create';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   list: {
@@ -51,7 +53,8 @@ export default function TemporaryDrawer() {
       <List>
         <Link href='/create'>
           <ListItem button>
-          Lag Ny Post
+          <CreateIcon style={{margin: '0 3rem 0 1rem'}}/>
+          <Typography>NY POST</Typography>
             <ListItemIcon></ListItemIcon>
             <ListItemText />
           </ListItem>
