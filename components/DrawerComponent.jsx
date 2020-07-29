@@ -42,7 +42,7 @@ export default function TemporaryDrawer() {
   };
 
   const list = (anchor) => (
-    <div
+    <div 
       className={clsx(classes.list, {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
@@ -50,11 +50,11 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <List style={{background: '#d8d8d8'}}>
         <Link href='/create'>
           <ListItem button>
-          <CreateIcon style={{margin: '0 3rem 0 1rem'}}/>
-          <Typography>NY POST</Typography>
+          <CreateIcon style={{margin: '0 2rem 0 1rem', color: 'indianred'}}/>
+          <Typography style={{color: 'seagreen', fontWeight: 'bold', fontStyle: 'italic'}}>Ny post</Typography>
             <ListItemIcon></ListItemIcon>
             <ListItemText />
           </ListItem>

@@ -143,7 +143,7 @@ const PostSearch = ({ posts }) => {
         <Grid item>
           <Typography className={classes.info}>Antall poster: {posts.data.length}</Typography>
           <Typography className={classes.info}>
-          <p>Søkeresultat: {searchInput ? <span style={{color: 'green'}}>{search.length}</span> : <span style={{color: 'indianred'}}>Ingen søk</span>} </p>
+          Søkeresultat: {!searchInput && ' Ingen søk'} {searchInput && search.length != 0 && <span style={{color: 'yellow'}}>{search.length}</span>} {search.length === 0 && <span style={{color: 'red'}}>Ingen treff</span>}
           </Typography>
         </Grid>
         </Grid>
