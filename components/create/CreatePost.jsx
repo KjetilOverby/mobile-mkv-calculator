@@ -43,12 +43,24 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '-12rem',
       marginTop: '4rem'
     },
+    [theme.breakpoints.down('xs')]: {
+     width: '100vw'
+    },
+  },
+  gridItemPostContainer: {
+   width: '100vw'
   },
   ringContainer: {
     position: 'absolute',
     left: '15em',
     display: 'flex',
     flexDirection: 'row',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '3rem'
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: '2rem'
+    },
     
   },
   backBtn: {
@@ -60,12 +72,17 @@ const useStyles = makeStyles((theme) => ({
     margin: '-4rem 1rem',
     borderRadius: '5px',
     boxShadow: 'inset 2px 2px 20px rgba(90,50,30,.8)',
+    [theme.breakpoints.down('xs')]: {
+     width: '90vw',
+    },
   },
   radioLabelContainer: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+    },
   },
   firstBladeContainer: {
     position: 'relative',
@@ -132,6 +149,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('lg')]: {
      marginLeft: '40%' 
     },
+    [theme.breakpoints.down('xs')]: {
+      width: 0
+    },
   },
   header: {
     fontWeight: 'bold',
@@ -146,6 +166,11 @@ const useStyles = makeStyles((theme) => ({
     
     [theme.breakpoints.down('lg')]: {
      
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+      position: 'absolute',
+      top: '3.5em'
     },
   },
   field: {
@@ -210,7 +235,7 @@ const CreatePost = (props) => {
               </Typography>
             </div>
             <Grid container>
-            <Grid item>
+            <Grid item style={{width: '95vw'}}>
             <div className={classes.formContainer}>
               <form onSubmit={handleSubmit}>
               <Typography className={classes.formSectionHeader} variant="h6">Post overskrift</Typography>
@@ -225,11 +250,12 @@ const CreatePost = (props) => {
                           <Grid
                             className={classes.radioLabelContainer}
                             Container
+                            
                           >
-                            <Grid item>
+                            <Grid item >
                               <label>2.2</label>
                             </Grid>
-                            <Grid item>
+                            <Grid item >
                               <Field
                                 type="radio"
                                 name="blades.bladStamme"
@@ -462,8 +488,8 @@ const CreatePost = (props) => {
               </form>
               
             </div>
-            </Grid>
-            <Grid item>
+            </Grid >
+            <Grid item className={classes.gridItemPostContainer}>
             <div className={classes.postContainer}>
               <HylseCreate />
 

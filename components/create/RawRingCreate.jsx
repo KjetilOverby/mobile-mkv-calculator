@@ -4,6 +4,8 @@ import { makeStyles, Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   rawRingContainer: {
     position: 'relative',
+    [theme.breakpoints.down('xs')]: {
+    },
   },
   rawDistanceRing: {
     margin: '0 .2rem',

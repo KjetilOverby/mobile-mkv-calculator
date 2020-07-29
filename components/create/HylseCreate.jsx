@@ -26,11 +26,14 @@ const useStyles = makeStyles(theme => ({
            
         },
         [theme.breakpoints.down('sm')]: {
-           width: '92vw'
+           width: '92vw',
+           marginLeft: '13rem'
         },
         [theme.breakpoints.down('xs')]: {
           width: '21.5rem',
           height: '3rem',
+          marginLeft: '13rem'
+        
         },
       },
     hylseKile: {

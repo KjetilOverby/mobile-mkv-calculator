@@ -6,6 +6,10 @@ const useStyles = makeStyles((theme) => ({
     width: '35em',
     marginLeft: '1.5em',
     boxShadow: '10px 10px 20px rgba(0,0,0,.5)',
+    [theme.breakpoints.down('xs')]: {
+      width: '100vw',
+      marginLeft: 0
+    },
   },
   rawListContainer: {
       width: '40%',

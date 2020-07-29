@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
       height: '40em',
       left: '9em'
     },
+    [theme.breakpoints.down('xs')]: {
+      left: '22.5em'
+    },
   },
   labelContainer2: {
     position: 'absolute',
@@ -26,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     left: '75em',
     fontSize: '.6rem',
     height: '40em'
+    },
+    [theme.breakpoints.down('xs')]: {
+      left: '50em',
     },
   },
   labelCalc: props => {
