@@ -47,9 +47,7 @@ const useStyles = makeStyles((theme) => ({
      width: '100vw'
     },
   },
-  gridItemPostContainer: {
-   width: '100vw'
-  },
+ 
   ringContainer: {
     position: 'absolute',
     left: '15em',
@@ -235,7 +233,7 @@ const CreatePost = (props) => {
               </Typography>
             </div>
             <Grid container>
-            <Grid item style={{width: '95vw'}}>
+            <Grid item >
             <div className={classes.formContainer}>
               <form onSubmit={handleSubmit}>
               <Typography className={classes.formSectionHeader} variant="h6">Post overskrift</Typography>
@@ -489,7 +487,7 @@ const CreatePost = (props) => {
               
             </div>
             </Grid >
-            <Grid item className={classes.gridItemPostContainer}>
+            <Grid item>
             <div className={classes.postContainer}>
               <HylseCreate />
 

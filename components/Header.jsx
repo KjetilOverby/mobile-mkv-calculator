@@ -5,11 +5,11 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
+
 import SearchIcon from '@material-ui/icons/Search';
 import { Button, Hidden } from '@material-ui/core';
 import Link from 'next/link';
-
+import DrawerComponent from './DrawerComponent';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -88,13 +88,14 @@ export default function SearchAppBar(props) {
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
+        <DrawerComponent />
           <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
           >
-            <MenuIcon />
+           
           </IconButton>
 
           <Typography className={classes.title} variant="h6" noWrap>
@@ -127,6 +128,7 @@ export default function SearchAppBar(props) {
           </Hidden>
         </Toolbar>
       </AppBar>
+      
     </div>
   );
 }
