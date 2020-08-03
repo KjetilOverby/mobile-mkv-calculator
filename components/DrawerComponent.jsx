@@ -77,7 +77,7 @@ export default function TemporaryDrawer(props) {
           </Link>
        }
        {!props.user || !props.user.error &&
-        <Link href='/api/authentication/login'>
+        <Link href='/api/authentication/logout'>
           <ListItem className={classes.listItemBtn} button>
           <LockIcon style={{margin: '0 2rem 0 1rem', color: 'indianred'}}/>
           <Typography style={{color: 'gray', fontWeight: 'bold'}}>Logout</Typography>
