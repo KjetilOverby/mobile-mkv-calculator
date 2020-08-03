@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 const PostSet = (props) => {
+  console.log(props.user);
   const classes = useStyles();
   const router = useRouter();
   // const firstBladeValueTop = props.post.sagsnitt
@@ -76,8 +77,24 @@ const PostSet = (props) => {
     </div>
     <Hidden only='sm'>
     <Info  post={props.post}/>
+   {/* My account */}
+    {props.user !== undefined &&
+      props.user.sub === 'google-oauth2|106500081074791056792' &&
+      
+      <DeleteModal delete={deletePost} post={props.post} user={props.user}/>
+    }
+    {/* work account */}
+    {props.user !== undefined &&
+      props.user.sub === 'auth0|5f27b78668033f003d618d38' &&
+      <DeleteModal delete={deletePost} post={props.post} user={props.user}/>
+      }
+
+      {/* work account google auth */}
+    {props.user !== undefined &&
+      props.user.sub === 'google-oauth2|101843312488184148257' &&
+      <DeleteModal delete={deletePost} post={props.post} user={props.user}/>
+      }
     
-    <DeleteModal delete={deletePost} post={props.post}/>
     </Hidden>
     </>
   );

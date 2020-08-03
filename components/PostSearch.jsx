@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }
 }));
-const PostSearch = ({ posts }) => {
+const PostSearch = ({ posts, user }) => {
   const classes = useStyles();
 
   const [searchInput, setSearchInput] = useState('');
@@ -125,20 +125,12 @@ const PostSearch = ({ posts }) => {
 
   return (
     <>
-    <Header getSearch={getSearch}/>
+    <Header getSearch={getSearch} user={user}/>
     <Grid container className={classes.mainContainer}>
       <Grid container className={classes.searchContainer}>
       <Grid item>
         <Grid item>
-        {/*   <TextField
-            inputProps={{
-              style: { fontSize: 20 },
-              
-            }}
-            className={classes.textField}
-            placeholder="Søk"
-            onChange={getSearch}
-          /> */}
+      
         </Grid>
         <Grid item>
           <Typography className={classes.info}>Antall poster: {posts.data.length}</Typography>
@@ -148,13 +140,7 @@ const PostSearch = ({ posts }) => {
         </Grid>
         </Grid>
         <Grid item>
-        {/*   <Hidden mdDown>
-            <Link href="/create">
-              <Button variant="contained" className={classes.btn}>
-                Lag ny post
-              </Button>
-            </Link>
-          </Hidden> */}
+      
         </Grid>
       </Grid>
 

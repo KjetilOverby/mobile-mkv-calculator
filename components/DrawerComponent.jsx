@@ -8,12 +8,15 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import LockOpenIcon from '@material-ui/icons/LockOpen';
+import LockIcon from '@material-ui/icons/Lock';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Link from 'next/link';
 import CreateIcon from '@material-ui/icons/Create';
 import { Typography } from '@material-ui/core';
+import { loadGetInitialProps } from 'next/dist/next-server/lib/utils';
 
 const useStyles = makeStyles({
   list: {
@@ -22,9 +25,12 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
+  listItemBtn: {
+    padding: '1.5rem 0'
+  }
 });
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer(props) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -50,18 +56,44 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List style={{background: '#d8d8d8'}}>
+      <List>
         <Link href='/create'>
-          <ListItem button>
+          <ListItem className={classes.listItemBtn} button>
           <CreateIcon style={{margin: '0 2rem 0 1rem', color: 'indianred'}}/>
-          <Typography style={{color: 'seagreen', fontWeight: 'bold', fontStyle: 'italic'}}>Ny post</Typography>
+          <Typography style={{color: 'gray', fontWeight: 'bold'}}>Ny post</Typography>
             <ListItemIcon></ListItemIcon>
             <ListItemText />
           </ListItem>
           </Link>
-       
+          <Divider />
+       {!props.user || props.user.error &&
+        <Link href='/api/authentication/login'>
+          <ListItem className={classes.listItemBtn} button>
+          <LockOpenIcon style={{margin: '0 2rem 0 1rem', color: 'indianred'}}/>
+          <Typography style={{color: 'gray', fontWeight: 'bold'}}>Login</Typography>
+            <ListItemIcon></ListItemIcon>
+            <ListItemText />
+          </ListItem>
+          </Link>
+       }
+       {!props.user || !props.user.error &&
+        <Link href='/api/authentication/login'>
+          <ListItem className={classes.listItemBtn} button>
+          <LockIcon style={{margin: '0 2rem 0 1rem', color: 'indianred'}}/>
+          <Typography style={{color: 'gray', fontWeight: 'bold'}}>Logout</Typography>
+            <ListItemIcon></ListItemIcon>
+            <ListItemText />
+          </ListItem>
+          </Link>
+       }
+          
+          <Divider />
+          {props.user && 
+            <p style={{marginLeft: '1.3rem'}}>Logget inn som {props.user.name}</p>
+          }
+          
       </List>
-      <Divider />
+    
      
     </div>
   );

@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         zIndex: -100
     }
 }))
-const create = () => {
+const create = (props) => {
     const classes = useStyles()
     return (
         <>
@@ -22,7 +22,7 @@ const create = () => {
             <title>Ny post</title>
         </Head>
         <div className={classes.container}>
-            <CreatePost url={`${baseUrl}/api/createdPost/posts`}/>
+            <CreatePost user={props.user} url={`${baseUrl}/api/createdPost/posts`}/>
         </div>
         <Divider className={classes.divider} /> 
       <RawList/>

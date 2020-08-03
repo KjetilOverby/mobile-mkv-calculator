@@ -10,6 +10,9 @@ import SearchIcon from '@material-ui/icons/Search';
 import { Button, Hidden } from '@material-ui/core';
 import Link from 'next/link';
 import DrawerComponent from './DrawerComponent';
+import LockOpenIcon from '@material-ui/icons/LockOpen';
+import LockIcon from '@material-ui/icons/Lock';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -77,33 +80,40 @@ const useStyles = makeStyles((theme) => ({
   newBtn: {
     marginRight: '30vw',
     border: '1px solid white',
-    color: 'white'
+    color: 'white',
   },
+  userImage: {
+    height: '2rem',
+    borderRadius: '50%',
+    margin: '0 2rem',
+    [theme.breakpoints.down('xs')]: {
+      margin: '0 0.5rem'
+    },
+  }
 }));
 
 export default function SearchAppBar(props) {
+
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-        <Hidden mdUp>
-        <DrawerComponent />
-        </Hidden>
+          <Hidden mdUp>
+            <DrawerComponent user={props.user}/>
+          </Hidden>
           <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
-          >
-           
-          </IconButton>
+          ></IconButton>
 
           <Typography className={classes.title} variant="h6" noWrap>
             MKV - POST~ARKIV
           </Typography>
-         
+
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -120,17 +130,42 @@ export default function SearchAppBar(props) {
           </div>
           <Hidden mdDown>
             <Link href="/create">
-              <Button
-                className={classes.newBtn}
-                variant="outlined"
-              >
+              <Button className={classes.newBtn} variant="outlined">
                 lag ny post
               </Button>
             </Link>
+
+            {!props.user || props.user.error &&
+              <Link href="/api/authentication/login">
+            <Button><LockOpenIcon style={{fontSize: '1.2rem', marginRight: '1rem'}} /> Login</Button>
+          </Link>
+            }
+            {
+            !props.user || !props.user.error && 
+            <Link href="/api/authentication/logout">
+            <Button color="inherit"><LockIcon style={{fontSize: '1.2rem', marginRight: '1rem'}} />Logout</Button>
+          </Link>
+          }
+           
           </Hidden>
+          
+          {props.user && (
+            <>
+            <Hidden mdDown>
+              <Typography style={{ marginLeft: '2rem' }}>
+                {props.user.name}
+              </Typography>
+              </Hidden>
+              <img
+              className={classes.userImage}
+               
+                src={props.user.picture}
+                alt=""
+              />
+            </>
+          )}
         </Toolbar>
       </AppBar>
-      
     </div>
   );
 }

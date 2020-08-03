@@ -47,7 +47,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const post_id = ({ post }) => {
+const post_id = ({ post, user }) => {
+ 
+ 
   const classes = useStyles();
   return (
     <div className={classes.container}>
@@ -56,7 +58,7 @@ const post_id = ({ post }) => {
     </Head>
       <Typography className={classes.header}>{post.header}</Typography>
       
-      <PostSet post={post} deleteUrl={`${baseUrl}/api/createdPost`} pushUrl='/'/>
+      <PostSet post={post} deleteUrl={`${baseUrl}/api/createdPost`} pushUrl='/' user={user}/>
       
     </div>
   );

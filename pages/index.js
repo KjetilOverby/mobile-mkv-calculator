@@ -11,12 +11,11 @@ import App from '../components/App';
 import { Button } from '@material-ui/core';
 import PostSearch from '../components/PostSearch';
 
-export default function Index({posts}) {
-  
+export default function Index({posts, user}) {
   return (
    <div>
    
-    <PostSearch posts={posts} />
+    <PostSearch posts={posts} user={user}/>
     
    </div>
   );

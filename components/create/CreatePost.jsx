@@ -469,6 +469,11 @@ const CreatePost = (props) => {
                 </FieldArray>
                 <hr />
                 <div>
+
+               {/*  my account */}
+                {!props.user || !props.user.error &&
+                 props.user.sub === 'google-oauth2|106500081074791056792' && 
+                 
                   <Button
                     color="primary"
                     variant="contained"
@@ -479,6 +484,38 @@ const CreatePost = (props) => {
                   >
                     Lagre post
                   </Button>
+                }
+                {/* work account */}
+                {!props.user || !props.user.error &&
+                  props.user.sub === 'auth0|5f27b78668033f003d618d38' && 
+                 
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    type="submit"
+                   
+                    onClick={handleSubmit}
+                    disabled={correctLabels}
+                  >
+                    Lagre post
+                  </Button>
+                }
+                {/* work account googel auth */}
+                {!props.user || !props.user.error &&
+                  props.user.sub === 'google-oauth2|101843312488184148257' && 
+                 
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    type="submit"
+                   
+                    onClick={handleSubmit}
+                    disabled={correctLabels}
+                  >
+                    Lagre post
+                  </Button>
+                }
+                
                 </div>
 
                
