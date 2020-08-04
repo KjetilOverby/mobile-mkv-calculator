@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     fontFamily: 'Faster One, cursive',
     fontSize: '1.6rem',
-    color: '#33a3a3',
-    textShadow: '5px 5px 20px rgb(151, 255, 201)',
+    color: 'gray',
+    textShadow: '5px 5px 20px white',
     /* fontFamily: 'Yeseva One, cursive',
     fontFamily: 'Kumar One, cursive', */
     [theme.breakpoints.up('sm')]: {
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     background:
-      'linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)',
+      'linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(187,187,187,1) 35%, rgba(128,128,128,1) 100%)',
   },
   newBtn: {
     marginRight: '30vw',

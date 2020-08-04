@@ -24,18 +24,18 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
     },
   },
+  /////////// Experiental search container
   postSearchContainer: {
     display: 'flex',
     flexDirection: 'column',
     paddingLeft: '3rem',
-    background:
-      'radial-gradient(circle, rgba(174,238,211,1) 0%, rgba(148,187,233,1) 100%)',
     flexGrow: '1',
     minWidth: '50vw',
     paddingTop: '2rem',
     paddingBottom: '2rem',
     alignItems: 'center',
     minHeight: '100vh',
+    background: '#f6f6f6',
 
     [theme.breakpoints.down('md')]: {
       alignItems: 'center',
@@ -46,6 +46,30 @@ const useStyles = makeStyles((theme) => ({
        width: '100vw'
     },
   },
+ ////////////// Original Search container
+
+  // postSearchContainer: {
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   paddingLeft: '3rem',
+  //   background:
+  //     'radial-gradient(circle, rgba(174,238,211,1) 0%, rgba(148,187,233,1) 100%)',
+  //   flexGrow: '1',
+  //   minWidth: '50vw',
+  //   paddingTop: '2rem',
+  //   paddingBottom: '2rem',
+  //   alignItems: 'center',
+  //   minHeight: '100vh',
+
+  //   [theme.breakpoints.down('md')]: {
+  //     alignItems: 'center',
+  //     paddingLeft: '0',
+  //     width: '40vw',
+  //   },
+  //   [theme.breakpoints.down('sm')]: {
+  //      width: '100vw'
+  //   },
+  // },
   /*  postheader: {
     marginBottom: '.5rem',
     marginTop: '.5rem',
@@ -76,12 +100,13 @@ const useStyles = makeStyles((theme) => ({
     },
   }, */
 
+
+  /////////////experimantal ///////////
   searchContainer: {
     flexGrow: '1',
     padding: '2.5rem',
     flexDirection: 'column',
-    background:
-      'linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)',
+    background: '#e8e8e8',
       width: '40vw',
     [theme.breakpoints.up('lg')]: {
       paddingLeft: '10vw',
@@ -95,10 +120,37 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('sm')]: {
       background:
-        'linear-gradient(4deg, rgba(219,218,231,1) 0%, rgba(182,241,230,1) 35%, rgba(0,255,229,1) 100%)',
+        '#e8e8e8',
         minHeight: '20vh'
     },
   },
+
+  //////////// original ///////////
+  // searchContainer: {
+  //   flexGrow: '1',
+  //   padding: '2.5rem',
+  //   flexDirection: 'column',
+  //   background:
+  //     'linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)',
+  //     width: '40vw',
+  //   [theme.breakpoints.up('lg')]: {
+  //     paddingLeft: '10vw',
+  //     paddingTop: '15rem',
+  //   },
+
+  //   [theme.breakpoints.down('md')]: {
+  //     width: '40vw',
+  //     minHeight: '100vh',
+  //     background: 'rgba(36,149,126,1)',
+  //   },
+  //   [theme.breakpoints.down('sm')]: {
+  //     background:
+  //       'linear-gradient(4deg, rgba(219,218,231,1) 0%, rgba(182,241,230,1) 35%, rgba(0,255,229,1) 100%)',
+  //       minHeight: '20vh'
+  //   },
+  // },
+
+  
   textField: {
     marginRight: '3rem',
     [theme.breakpoints.down('xs')]: {
@@ -164,6 +216,7 @@ const PostSearch = ({ posts, user }) => {
 
         <Grid item>
           <div className={classes.postSearchContainer}>
+          <Typography style={{margin: '2rem 0', color: 'gray'}} variant='h4'>MKV poster</Typography>
             {search.map((post) => {
               return (
                 <Link href={`/post_id/${post._id}`}>
