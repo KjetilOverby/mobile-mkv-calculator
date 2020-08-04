@@ -81,13 +81,26 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '30vw',
     border: '1px solid white',
     color: 'white',
+    [theme.breakpoints.down('xl')]: {
+      marginRight: '12vw'
+    },
   },
   userImage: {
     height: '2rem',
     borderRadius: '50%',
     margin: '0 2rem',
+    [theme.breakpoints.down('xl')]: {
+    margin: '0 1rem 0 0'
+    },
     [theme.breakpoints.down('xs')]: {
       margin: '0 0.5rem'
+    },
+  },
+  userName: {
+    margin: '0 2rem',
+    [theme.breakpoints.down('xl')]: {
+      width: '8em',
+      
     },
   }
 }));
@@ -152,7 +165,7 @@ export default function SearchAppBar(props) {
           {props.user && (
             <>
             <Hidden mdDown>
-              <Typography style={{ marginLeft: '2rem' }}>
+              <Typography className={classes.userName}>
                 {props.user.name}
               </Typography>
               </Hidden>
