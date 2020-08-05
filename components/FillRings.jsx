@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   value: {
     fontSize: '1.8rem',
     fontWeight: 'bold',
-    textShadow: '10px 10px 15px black',
+    textShadow: '2px 2px 1px black',
     [theme.breakpoints.down('lg')]: {
       fontSize: '1.6rem',
     },

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     fontFamily: 'Faster One, cursive',
     fontSize: '1.6rem',
-    color: 'gray',
+    color: '#2390b5',
     textShadow: '5px 5px 20px white',
     /* fontFamily: 'Yeseva One, cursive',
     fontFamily: 'Kumar One, cursive', */
@@ -79,8 +79,8 @@ const useStyles = makeStyles((theme) => ({
   },
   newBtn: {
     marginRight: '30vw',
-    border: '1px solid white',
-    color: 'white',
+    border: '1px solid #2390b5',
+    color: '#2390b5',
     [theme.breakpoints.down('xl')]: {
       marginRight: '12vw'
     },
@@ -150,13 +150,13 @@ export default function SearchAppBar(props) {
 
             {!props.user || props.user.error &&
               <Link href="/api/authentication/login">
-            <Button><LockOpenIcon style={{fontSize: '1.2rem', marginRight: '1rem'}} /> Login</Button>
+            <Button style={{color: '#027070'}}><LockOpenIcon style={{fontSize: '1.2rem', marginRight: '1rem', color: '#027070'}} /> Login</Button>
           </Link>
             }
             {
             !props.user || !props.user.error && 
             <Link href="/api/authentication/logout">
-            <Button color="inherit"><LockIcon style={{fontSize: '1.2rem', marginRight: '1rem'}} />Logout</Button>
+            <Button style={{color: 'indianred'}}><LockIcon style={{fontSize: '1.2rem', marginRight: '1rem', color: 'indianred'}} />Logout</Button>
           </Link>
           }
            

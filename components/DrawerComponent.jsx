@@ -90,7 +90,7 @@ export default function TemporaryDrawer(props) {
           <Divider />
           {props.user !== undefined && props.user.name ? <p style={{marginLeft: '1.3rem'}}>Logget inn som: {props.user.name}</p> : <p style={{marginLeft: '1.3rem'}}>Ikke innlogget</p>}
           {props.user &&
-            <img style={{height: '8rem', marginLeft: '2rem', marginTop: '2rem'}} src={props.user.picture} alt=""/>
+            <img style={{height: '8rem', marginLeft: '2rem', marginTop: '2rem', borderRadius: '50%'}} src={props.user.picture} alt=""/>
           }
           
           

@@ -11,6 +11,7 @@ import {
 import Link from 'next/link';
 import MyButton from './MyButton';
 import Header from './Header';
+import Footer from './Footer';
 //linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -216,7 +217,7 @@ const PostSearch = ({ posts, user }) => {
 
         <Grid item>
           <div className={classes.postSearchContainer}>
-          <Typography style={{margin: '2rem 0', color: 'gray'}} variant='h4'>MKV poster</Typography>
+          <Typography style={{margin: '2rem 0', color: '#027070'}} variant='h4'>MKV poster</Typography>
             {search.map((post) => {
               return (
                 <Link href={`/post_id/${post._id}`}>
@@ -229,6 +230,7 @@ const PostSearch = ({ posts, user }) => {
           </div>
         </Grid>
       </Grid>
+      <Footer user={user}/>
     </>
   );
 };

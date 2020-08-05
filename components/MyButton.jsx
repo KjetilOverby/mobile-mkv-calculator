@@ -10,9 +10,9 @@ const useStyles = makeStyles(theme => ({
       borderRadius: '30px',
       marginBottom: '2rem',
       cursor: 'pointer',
-      border: '1px solid rgba(0,0,0,.3)',
+      border: '2px solid #027070',
       transition: 'background 0.3s, color 0.9s',
-      background: 'linear-gradient(120deg, white 50%, #5ed0c7 50%)',
+      background: 'linear-gradient(120deg, white 50%, #e8e8e8 50%)',
       backgroundSize: '220%',
       [theme.breakpoints.down('md')]: {
        background: 'white'
@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
       },
   },
   header: {
-      color: '#315975',
+      color: '#027070',
       fontSize: '1.2rem',
       fontWeight: 'bold',
       textShadow: '5px 5px 10px rgba(0,0,0,.3)'
