@@ -12,6 +12,7 @@ import Link from 'next/link';
 import MyButton from './MyButton';
 import Header from './Header';
 import Footer from './Footer';
+import theme from '../src/theme';
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     flexDirection: 'row',
@@ -37,13 +38,15 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     background: theme.palette.background.main,
 
+
     [theme.breakpoints.down('md')]: {
       alignItems: 'center',
       paddingLeft: '0',
       width: '40vw',
     },
     [theme.breakpoints.down('sm')]: {
-       width: '100vw'
+       width: '100vw',
+       boxShadow: '-5px -5px 10px rgba(0,0,0,.4)'
     },
   },
 
@@ -130,10 +133,10 @@ const PostSearch = ({ posts, user }) => {
               <Typography className={classes.info}>
                 Søkeresultat: {!searchInput && ' Ingen søk'}{' '}
                 {searchInput && search.length != 0 && (
-                  <span style={{ color: 'blue' }}>{search.length}</span>
+                  <span style={{ color: theme.palette.text.main }}>{search.length}</span>
                 )}{' '}
                 {search.length === 0 && (
-                  <span style={{ color: 'red' }}>Ingen treff</span>
+                  <span style={{ color: 'indianred' }}>Ingen treff</span>
                 )}
               </Typography>
             </Grid>

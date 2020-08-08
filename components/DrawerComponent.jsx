@@ -18,7 +18,7 @@ import CreateIcon from '@material-ui/icons/Create';
 import { Typography } from '@material-ui/core';
 import { loadGetInitialProps } from 'next/dist/next-server/lib/utils';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   list: {
     width: 250,
   },
@@ -27,8 +27,11 @@ const useStyles = makeStyles({
   },
   listItemBtn: {
     padding: '1.5rem 0'
+  },
+  menuIcon: {
+    color: theme.palette.text.main
   }
-});
+}));
 
 export default function TemporaryDrawer(props) {
   const classes = useStyles();
@@ -104,7 +107,7 @@ export default function TemporaryDrawer(props) {
     <div>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}><MenuIcon /></Button>
+          <Button className={classes.menuIcon} onClick={toggleDrawer(anchor, true)}><MenuIcon /></Button>
           <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
             {list(anchor)}
           </Drawer>

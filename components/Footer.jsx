@@ -85,8 +85,8 @@ export default function SimpleBottomNavigation({ user }) {
       <Grid item className={classes.rightPart}>
         {user && (
           <>
-            <p>Innlogget som: {user.name ? user.name : 'Ikke innlogget'}</p>
-            <img style={{height: '2em', borderRadius: '50%', marginTop:'.5rem'}} src={user.picture} alt=""/>
+            <p>Status: {user.name ? 'innlogget som ' + user.name : 'Ikke innlogget'}</p>
+            <img style={{height: '1.2em', borderRadius: '50%', marginTop:'1rem'}} src={user.picture} alt=""/>
 
             <p>{user.updated_at}</p>
           </>
