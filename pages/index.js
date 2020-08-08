@@ -12,6 +12,7 @@ import { Button } from '@material-ui/core';
 import PostSearch from '../components/PostSearch';
 
 export default function Index({posts, user}) {
+
   return (
    <div>
    

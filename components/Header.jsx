@@ -12,6 +12,7 @@ import Link from 'next/link';
 import DrawerComponent from './DrawerComponent';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import LockIcon from '@material-ui/icons/Lock';
+import theme from '../src/theme';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,8 +26,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     fontFamily: 'Faster One, cursive',
     fontSize: '1.6rem',
-    color: '#2390b5',
-    textShadow: '5px 5px 20px white',
+    color: theme.palette.headerTitle.main,
+    textShadow: '1px 1px 10px white',
+    padding: '0 1rem',
     /* fontFamily: 'Yeseva One, cursive',
     fontFamily: 'Kumar One, cursive', */
     [theme.breakpoints.up('sm')]: {
@@ -74,13 +76,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    background:
-      'linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(187,187,187,1) 35%, rgba(128,128,128,1) 100%)',
+    background: theme.palette.header.main,
   },
   newBtn: {
     marginRight: '30vw',
-    border: '1px solid #2390b5',
-    color: '#2390b5',
+    border: `1px solid ${theme.palette.text.main}`,
+    color: theme.palette.text.main,
     [theme.breakpoints.down('xl')]: {
       marginRight: '12vw'
     },
@@ -150,7 +151,7 @@ export default function SearchAppBar(props) {
 
             {!props.user || props.user.error &&
               <Link href="/api/authentication/login">
-            <Button style={{color: '#027070'}}><LockOpenIcon style={{fontSize: '1.2rem', marginRight: '1rem', color: '#027070'}} /> Login</Button>
+            <Button style={{color: theme.palette.text.main}}><LockOpenIcon style={{fontSize: '1.2rem', marginRight: '1rem', color: theme.palette.text.main}} /> Login</Button>
           </Link>
             }
             {

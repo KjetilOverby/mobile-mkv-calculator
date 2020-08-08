@@ -14,10 +14,11 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     width: '100vw',
     alignItems: 'center',
-    background: '#2390b5',
+    background: theme.palette.footer.main,
     justifyContent: 'space-between',
     padding: '0 2rem',
-    height: '3em'
+    height: '3em',
+    boxShadow: '-5px -5px 10px rgba(0,0,0,.2)'
   },
   leftPart: {
     color: 'white',
@@ -33,6 +34,16 @@ const useStyles = makeStyles((theme) => ({
        width: '35vw'
     },
   },
+  classicCalcBtn: {
+    color: theme.palette.text.main
+  },
+  copyRight: {
+    
+    color: 'white',
+    position: 'absolute',
+    marginLeft: '50%',
+    transform: 'translateX(-70%)'
+  }
 }));
 
 export default function SimpleBottomNavigation({ user }) {
@@ -53,11 +64,10 @@ export default function SimpleBottomNavigation({ user }) {
       <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} /> */}
       <Hidden mdDown>
       <Grid item className={classes.leftPart}>
-        <Button>
+        <Button className={classes.classicCalcBtn}>
           {' '}
-          <a
+          <a className={classes.classicCalcBtn}
             style={{
-              color: 'white',
               textDecoration: 'none',
               fontSize: '.8rem',
             }}
@@ -69,6 +79,9 @@ export default function SimpleBottomNavigation({ user }) {
           </a>
         </Button>
       </Grid>
+       
+       <Typography className={classes.copyRight}>© Copyright 2020</Typography>
+   
       <Grid item className={classes.rightPart}>
         {user && (
           <>

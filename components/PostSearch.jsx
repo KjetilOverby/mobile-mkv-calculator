@@ -12,7 +12,6 @@ import Link from 'next/link';
 import MyButton from './MyButton';
 import Header from './Header';
 import Footer from './Footer';
-//linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     flexDirection: 'row',
@@ -36,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '2rem',
     alignItems: 'center',
     minHeight: '100vh',
-    background: '#f6f6f6',
+    background: theme.palette.background.main,
 
     [theme.breakpoints.down('md')]: {
       alignItems: 'center',
@@ -47,59 +46,7 @@ const useStyles = makeStyles((theme) => ({
        width: '100vw'
     },
   },
- ////////////// Original Search container
 
-  // postSearchContainer: {
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   paddingLeft: '3rem',
-  //   background:
-  //     'radial-gradient(circle, rgba(174,238,211,1) 0%, rgba(148,187,233,1) 100%)',
-  //   flexGrow: '1',
-  //   minWidth: '50vw',
-  //   paddingTop: '2rem',
-  //   paddingBottom: '2rem',
-  //   alignItems: 'center',
-  //   minHeight: '100vh',
-
-  //   [theme.breakpoints.down('md')]: {
-  //     alignItems: 'center',
-  //     paddingLeft: '0',
-  //     width: '40vw',
-  //   },
-  //   [theme.breakpoints.down('sm')]: {
-  //      width: '100vw'
-  //   },
-  // },
-  /*  postheader: {
-    marginBottom: '.5rem',
-    marginTop: '.5rem',
-    background:
-      'linear-gradient(4deg, rgb(30, 0, 10) 0%, rgba(248,255,143,1) 50%, rgb(144, 91, 59) 100%)',
-    width: '25vw',
-    padding: '1rem 0 1rem 1rem',
-    fontSize: '1.2rem',
-    fontWeight: 'bold',
-    borderRadius: '10px',
-    color: 'gray',
-    boxShadow: '5px 5px 10px rgba(0,0,0,.5)',
-    transition: '1s',
-    '&:hover': {
-      background: 'lightgray',
-      cursor: 'pointer',
-      boxShadow: '10px 10px 20px rgba(0,0,0,.5)',
-    },
-    [theme.breakpoints.down('lg')]: {
-      width: '40vw',
-    },
-    [theme.breakpoints.down('md')]: {
-      background:
-        'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(36,149,126,1) 35%, rgba(0,255,229,1) 100%)',
-      color: '#abe3d8',
-      width: '90vw',
-      boxShadow: '10px 10px 10px rgba(0,0,0,.5)',
-    },
-  }, */
 
 
   /////////////experimantal ///////////
@@ -107,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: '1',
     padding: '2.5rem',
     flexDirection: 'column',
-    background: '#e8e8e8',
+    background: theme.palette.leftBackground.main,
       width: '40vw',
     [theme.breakpoints.up('lg')]: {
       paddingLeft: '10vw',
@@ -117,39 +64,13 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       width: '40vw',
       minHeight: '100vh',
-      background: 'rgba(36,149,126,1)',
     },
     [theme.breakpoints.down('sm')]: {
-      background:
-        '#e8e8e8',
+    
         minHeight: '20vh'
     },
   },
 
-  //////////// original ///////////
-  // searchContainer: {
-  //   flexGrow: '1',
-  //   padding: '2.5rem',
-  //   flexDirection: 'column',
-  //   background:
-  //     'linear-gradient(353deg, rgba(223,223,223,1) 0%, rgba(126,180,222,1) 35%, rgba(153,226,222,1) 100%)',
-  //     width: '40vw',
-  //   [theme.breakpoints.up('lg')]: {
-  //     paddingLeft: '10vw',
-  //     paddingTop: '15rem',
-  //   },
-
-  //   [theme.breakpoints.down('md')]: {
-  //     width: '40vw',
-  //     minHeight: '100vh',
-  //     background: 'rgba(36,149,126,1)',
-  //   },
-  //   [theme.breakpoints.down('sm')]: {
-  //     background:
-  //       'linear-gradient(4deg, rgba(219,218,231,1) 0%, rgba(182,241,230,1) 35%, rgba(0,255,229,1) 100%)',
-  //       minHeight: '20vh'
-  //   },
-  // },
 
   
   textField: {
@@ -173,11 +94,16 @@ const useStyles = makeStyles((theme) => ({
   },
   info: {
     fontStyle: 'italic',
+    color: theme.palette.textLeft.main,
     [theme.breakpoints.up('lg')]: {
       fontSize: '2.5rem',
-      color: 'gray',
+     
     },
   },
+  postHeader: {
+    margin: '2rem 0', 
+    color: theme.palette.text.main
+  }
 }));
 const PostSearch = ({ posts, user }) => {
   const classes = useStyles();
@@ -217,7 +143,7 @@ const PostSearch = ({ posts, user }) => {
 
         <Grid item>
           <div className={classes.postSearchContainer}>
-          <Typography style={{margin: '2rem 0', color: '#027070'}} variant='h4'>MKV poster</Typography>
+          <Typography className={classes.postHeader} variant='h4'>MKV poster</Typography>
             {search.map((post) => {
               return (
                 <Link href={`/post_id/${post._id}`}>
