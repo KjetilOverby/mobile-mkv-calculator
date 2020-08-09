@@ -14,14 +14,14 @@ const useStyles = makeStyles(theme => ({
       transition: 'background 0.3s, color 0.9s',
       background: `linear-gradient(120deg, ${theme.palette.button.main} 50%, ${theme.palette.text.main} 50%)`,
       backgroundSize: '220%',
-      [theme.breakpoints.down('md')]: {
-       background: theme.palette.background.main
-      },
       '&:hover': {
         backgroundPosition: '100%',
-        
 
       },
+      [theme.breakpoints.down('sm')]: {
+       background: theme.palette.background.main,
+      },
+     
       [theme.breakpoints.down('xs')]: {
         width: '90vw',
         "&:hover": {
@@ -41,10 +41,13 @@ const useStyles = makeStyles(theme => ({
       transition: '.5s',
       cursor: 'pointer',
       '&:hover': {
+
+        color: 'red'
       },
       [theme.breakpoints.down('xs')]: {
         width: '90vw',
         '&:hover': {
+          
           },
       },
   },
@@ -53,8 +56,18 @@ const useStyles = makeStyles(theme => ({
       fontSize: '1.2rem',
       fontWeight: 'bold',
       textShadow: '5px 5px 10px rgba(0,0,0,.3)',
+      width: 'inherit',
+      height: 'inherit',
+      display:'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      transition: '.5s',
       "&:hover": {
-         color: theme.palette.background.main
+        [theme.breakpoints.up('md')]: {
+          color: theme.palette.background.main
+        },
+        
+       
       }
   }
 

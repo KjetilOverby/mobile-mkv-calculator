@@ -19,10 +19,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '3.5rem',
     flexWrap: 'wrap',
 
-    [theme.breakpoints.down('xl')]: {
-      
-    },
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('xl')]: {},
+    [theme.breakpoints.down('sm')]: {
+    
     },
   },
   /////////// Experiental search container
@@ -38,44 +37,56 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     background: theme.palette.background.main,
 
-
     [theme.breakpoints.down('md')]: {
       alignItems: 'center',
       paddingLeft: '0',
       width: '40vw',
     },
     [theme.breakpoints.down('sm')]: {
-       width: '100vw',
-       boxShadow: '-5px -5px 10px rgba(0,0,0,.4)'
+      width: '100vw',
+      boxShadow: '-5px -5px 10px rgba(0,0,0,.4)',
+
+      paddingTop: '30vh'
+    },
+    [theme.breakpoints.down('xs')]: {
+       paddingTop: '2vh'
     },
   },
 
-
-
-  /////////////experimantal ///////////
+   searchContainerWrapper: {
+    [theme.breakpoints.up('md')]: {
+      flexGrow: 1,
+    background: theme.palette.leftBackground.main,
+    },
+    [theme.breakpoints.down('sm')]: {
+     
+    },
+    
+   },
   searchContainer: {
-    flexGrow: '1',
+    flexGrow: 1,
     padding: '2.5rem',
     flexDirection: 'column',
     background: theme.palette.leftBackground.main,
-      width: '40vw',
+    width: '40vw',
+    
+    height: '100vh',
     [theme.breakpoints.up('lg')]: {
       paddingLeft: '10vw',
       paddingTop: '15rem',
     },
 
-    [theme.breakpoints.down('md')]: {
-      width: '40vw',
-      minHeight: '100vh',
-    },
     [theme.breakpoints.down('sm')]: {
-    
-        minHeight: '20vh'
+      width: '100vw',
+      height: '20vh',
+    },
+    [theme.breakpoints.up('sm')]: {
+      height: '30vh',
+      position: 'fixed',
+      
     },
   },
 
-
-  
   textField: {
     marginRight: '3rem',
     [theme.breakpoints.down('xs')]: {
@@ -100,13 +111,17 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.textLeft.main,
     [theme.breakpoints.up('lg')]: {
       fontSize: '2.5rem',
-     
     },
   },
+  
   postHeader: {
-    margin: '2rem 0', 
-    color: theme.palette.text.main
-  }
+    margin: '2rem 0',
+    color: theme.palette.text.main,
+  },
+  imgOne: {
+    height: '20rem',
+    margin: '-10rem 4rem 0 -5rem',
+  },
 }));
 const PostSearch = ({ posts, user }) => {
   const classes = useStyles();
@@ -121,11 +136,13 @@ const PostSearch = ({ posts, user }) => {
 
   return (
     <>
+    
       <Header getSearch={getSearch} user={user} />
+      
       <Grid container className={classes.mainContainer}>
+      <Grid item className={classes.searchContainerWrapper}>
         <Grid container className={classes.searchContainer}>
           <Grid item>
-            <Grid item></Grid>
             <Grid item>
               <Typography className={classes.info}>
                 Antall poster: {posts.data.length}
@@ -133,7 +150,9 @@ const PostSearch = ({ posts, user }) => {
               <Typography className={classes.info}>
                 Søkeresultat: {!searchInput && ' Ingen søk'}{' '}
                 {searchInput && search.length != 0 && (
-                  <span style={{ color: theme.palette.text.main }}>{search.length}</span>
+                  <span style={{ color: theme.palette.text.main }}>
+                    {search.length}
+                  </span>
                 )}{' '}
                 {search.length === 0 && (
                   <span style={{ color: 'indianred' }}>Ingen treff</span>
@@ -143,10 +162,15 @@ const PostSearch = ({ posts, user }) => {
           </Grid>
           <Grid item></Grid>
         </Grid>
+        </Grid>
 
         <Grid item>
           <div className={classes.postSearchContainer}>
-          <Typography className={classes.postHeader} variant='h4'>MKV poster</Typography>
+          
+            <Typography className={classes.postHeader} variant="h4">
+              MKV poster
+            </Typography>
+         
             {search.map((post) => {
               return (
                 <Link href={`/post_id/${post._id}`}>
@@ -159,7 +183,7 @@ const PostSearch = ({ posts, user }) => {
           </div>
         </Grid>
       </Grid>
-      <Footer user={user}/>
+      <Footer user={user} />
     </>
   );
 };
