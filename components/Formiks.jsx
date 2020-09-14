@@ -22,11 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Formiks = (values) => {
-  useEffect(() => {
-    console.log('====================================');
-    console.log(values);
-    console.log('====================================');
-  }, [values]);
+
   const classes = useStyles();
   return (
     <div>

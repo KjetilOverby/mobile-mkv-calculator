@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   rawInput: {
     position: 'absolute',
 
-    color: 'blue',
+    color: 'rgba(80,179,221,1)',
     bottom: '10em',
     fontSize: '1.5rem',
     [theme.breakpoints.down('lg')]: {

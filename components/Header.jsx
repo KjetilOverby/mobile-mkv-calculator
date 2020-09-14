@@ -21,10 +21,11 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
+  // faster-one, cursive
   title: {
     flexGrow: 1,
     display: 'none',
-    fontFamily: 'Faster One, cursive',
+    fontFamily: 'Jacques Francois Shadow, cursive',
     fontSize: '1.6rem',
     color: theme.palette.headerTitle.main,
     textShadow: '1px 1px 10px white',
@@ -125,7 +126,7 @@ export default function SearchAppBar(props) {
           ></IconButton>
 
           <Typography className={classes.title} variant="h6" noWrap>
-            MKV - POST~ARKIV
+            MKV POST~ARKIV
           </Typography>
 
           <div className={classes.search}>

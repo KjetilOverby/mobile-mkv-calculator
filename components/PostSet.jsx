@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Button, Hidden, Grid } from '@material-ui/core';
+import { makeStyles, Button, Hidden, Grid, Typography } from '@material-ui/core';
 import Hylse from './hylse/Hylse';
 import ScreenRotationIcon from '@material-ui/icons/ScreenRotation';
 import Link from 'next/link'

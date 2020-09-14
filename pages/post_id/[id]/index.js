@@ -12,7 +12,7 @@ import Head from 'next/head'
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    background: 'url("https://images.unsplash.com/photo-1520531158340-44015069e78e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=4076&q=80")',
+    background: 'linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.2)), url("https://images.unsplash.com/photo-1520531158340-44015069e78e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=4076&q=80")',
     position: 'relative',
     backgroundPosition: '50%',
     width: '100vw',
@@ -35,13 +35,18 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'italic',
     fontWeight: 'bold',
     fontSize: '2rem',
+    color: 'rgba(248,255,143,1)',
     
     [theme.breakpoints.down('lg')]: {
       fontSize: '2.2rem'
     },
-    color: '#394c78',
+   
     [theme.breakpoints.down('md')]: {
       fontSize: '1.2rem',
+      
+    },
+    [theme.breakpoints.down('sm')]: {
+      color: '#394c78',
     },
    
   },

@@ -132,6 +132,8 @@ const useStyles = makeStyles((theme) => ({
   postHeader: {
     margin: '2rem 0',
     color: theme.palette.text.main,
+    fontFamily: 'Special Elite, cursive',
+    fontSize: '1.8rem'
   },
   imgOne: {
     height: '20rem',
