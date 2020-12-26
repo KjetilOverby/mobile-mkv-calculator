@@ -20,9 +20,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
 
     [theme.breakpoints.down('xl')]: {},
-    [theme.breakpoints.down('sm')]: {
-    
-    },
+    [theme.breakpoints.down('sm')]: {},
   },
   /////////// Experiental search container
   postSearchContainer: {
@@ -46,25 +44,22 @@ const useStyles = makeStyles((theme) => ({
       width: '100vw',
       boxShadow: '-5px -5px 10px rgba(0,0,0,.4)',
 
-      paddingTop: '30vh'
+      paddingTop: '30vh',
     },
     [theme.breakpoints.down('xs')]: {
-       paddingTop: '2vh'
+      paddingTop: '2vh',
     },
   },
 
-   searchContainerWrapper: {
+  searchContainerWrapper: {
     [theme.breakpoints.up('md')]: {
       flexGrow: 1,
-    background: theme.palette.leftBackground.main,
+      background: theme.palette.leftBackground.main,
     },
-    [theme.breakpoints.down('sm')]: {
-     
-    },
-    
-   },
-   // 
-   // https://images.unsplash.com/photo-1547518717-52a1971c2c96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1833&q=80
+    [theme.breakpoints.down('sm')]: {},
+  },
+  //
+  // https://images.unsplash.com/photo-1547518717-52a1971c2c96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1833&q=80
   searchContainer: {
     flexGrow: 1,
     padding: '2.5rem',
@@ -74,9 +69,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundPosition: '60%',
     minHeight: '100vh',
-    [theme.breakpoints.down('lg')]: {
-    },
-    
+    [theme.breakpoints.down('lg')]: {},
+
     [theme.breakpoints.up('lg')]: {
       paddingLeft: '10vw',
       paddingTop: '15rem',
@@ -89,7 +83,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       height: '30vh',
       position: 'fixed',
-      
     },
   },
 
@@ -120,20 +113,20 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   infoContainer: {
-     marginTop: '-7rem',
-     fontFamily: 'Special Elite, cursive',
-     marginLeft: '-4rem',
-     [theme.breakpoints.down('md')]: {
-       fontSize: '.5rem',
-       marginTop: '1rem',
-       marginLeft: '1rem'
-     },
+    marginTop: '-7rem',
+    fontFamily: 'Special Elite, cursive',
+    marginLeft: '-4rem',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '.5rem',
+      marginTop: '1rem',
+      marginLeft: '1rem',
+    },
   },
   postHeader: {
     margin: '2rem 0',
     color: theme.palette.text.main,
     fontFamily: 'Special Elite, cursive',
-    fontSize: '1.8rem'
+    fontSize: '1.8rem',
   },
   imgOne: {
     height: '20rem',
@@ -153,40 +146,39 @@ const PostSearch = ({ posts, user }) => {
 
   return (
     <>
-    
       <Header getSearch={getSearch} user={user} />
-      
+
       <Grid container className={classes.mainContainer}>
-      <Grid item className={classes.searchContainerWrapper}>
-        <Grid container className={classes.searchContainer}>
-          <Grid item>
-            <Grid className={classes.infoContainer} item>
-              <Typography className={classes.info}>
-                Antall poster: {posts.data.length}
-              </Typography>
-              <Typography className={classes.info}>
-                Søkeresultat: {!searchInput && ' Ingen søk'}{' '}
-                {searchInput && search.length != 0 && (
-                  <span style={{ color: theme.palette.text.main }}>
-                    {search.length}
-                  </span>
-                )}{' '}
-                {search.length === 0 && (
-                  <span style={{ color: 'indianred' }}>Ingen treff</span>
-                )}
-              </Typography>
+        <Grid item className={classes.searchContainerWrapper}>
+          <Grid container className={classes.searchContainer}>
+            <Grid item>
+              <Grid className={classes.infoContainer} item>
+                <Typography className={classes.info}>
+                  Antall poster: {posts.data.length}
+                </Typography>
+                <Typography className={classes.info}>
+                  Søkeresultat: {!searchInput && ' Ingen søk'}{' '}
+                  {searchInput && search.length != 0 && (
+                    <span style={{ color: theme.palette.text.main }}>
+                      {search.length}
+                    </span>
+                  )}{' '}
+                  {search.length === 0 && (
+                    <span style={{ color: 'indianred' }}>Ingen treff</span>
+                  )}
+                </Typography>
+              </Grid>
             </Grid>
+            <Grid item></Grid>
           </Grid>
-          <Grid item></Grid>
-        </Grid>
         </Grid>
 
         <Grid item>
           <div className={classes.postSearchContainer}>
-          <div className={classes.headerWrapper}>
-            <Typography className={classes.postHeader} variant="h4">
-              MKV poster
-            </Typography>
+            <div className={classes.headerWrapper}>
+              <Typography className={classes.postHeader} variant="h4">
+                MKV poster
+              </Typography>
             </div>
             {search.map((post) => {
               return (

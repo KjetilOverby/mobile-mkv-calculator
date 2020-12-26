@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -11,14 +11,17 @@ import App from '../components/App';
 import { Button } from '@material-ui/core';
 import PostSearch from '../components/PostSearch';
 
-export default function Index({posts, user}) {
+import ReactGA from 'react-ga';
 
+export default function Index({ posts, user }) {
+  useEffect(() => {
+    ReactGA.initialize('UA-165295838-2');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
-   <div>
-   
-    <PostSearch posts={posts} user={user}/>
-    
-   </div>
+    <div>
+      <PostSearch posts={posts} user={user} />
+    </div>
   );
 }
 
