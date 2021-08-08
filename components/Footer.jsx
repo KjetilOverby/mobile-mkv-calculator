@@ -1,49 +1,49 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { Typography, Grid, Button, Hidden } from '@material-ui/core';
-import WidgetsIcon from '@material-ui/icons/Widgets';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import RestoreIcon from "@material-ui/icons/Restore";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import { Typography, Grid, Button, Hidden } from "@material-ui/core";
+import WidgetsIcon from "@material-ui/icons/Widgets";
+var dateFormat = require("dateformat");
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: 'fixed',
+    position: "fixed",
     bottom: 0,
-    width: '100vw',
-    alignItems: 'center',
+    width: "100vw",
+    alignItems: "center",
     background: theme.palette.footer.main,
-    justifyContent: 'space-between',
-    padding: '0 2rem',
-    height: '3em',
-    boxShadow: '-5px -5px 10px rgba(0,0,0,.2)'
+    justifyContent: "space-between",
+    padding: "0 2rem",
+    height: "3em",
+    boxShadow: "-5px -5px 10px rgba(0,0,0,.2)",
   },
   leftPart: {
-    color: 'white',
-    display: 'flex',
+    color: "white",
+    display: "flex",
   },
   rightPart: {
-    display: 'flex',
-    width: '25vw',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    color: 'lightblue',
-    [theme.breakpoints.down('lg')]: {
-       width: '35vw'
+    display: "flex",
+    width: "25vw",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    color: "lightblue",
+    [theme.breakpoints.down("lg")]: {
+      width: "35vw",
     },
   },
   classicCalcBtn: {
-    color: theme.palette.text.main
+    color: theme.palette.text.main,
   },
   copyRight: {
-    
-    color: 'white',
-    position: 'absolute',
-    marginLeft: '50%',
-    transform: 'translateX(-70%)'
-  }
+    color: "white",
+    position: "absolute",
+    marginLeft: "50%",
+    transform: "translateX(-70%)",
+  },
 }));
 
 export default function SimpleBottomNavigation({ user }) {
@@ -63,43 +63,56 @@ export default function SimpleBottomNavigation({ user }) {
       <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
       <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} /> */}
       <Hidden mdDown>
-      <Grid item className={classes.leftPart}>
-        <Button className={classes.classicCalcBtn}>
-          {' '}
-          <a className={classes.classicCalcBtn}
-            style={{
-              textDecoration: 'none',
-              fontSize: '.8rem',
-            }}
-            href="https://mkv-calculator.ktl.now.sh"
-            target="_blank"
-          >
-          
-            <WidgetsIcon style={{ paddingTop: '.5rem' }} /> Classic Calculator
-          </a>
-        </Button>
-      </Grid>
-       
-       <Typography className={classes.copyRight}>© Copyright 2020</Typography>
-   
-      <Grid item className={classes.rightPart}>
-        {user && (
-          <>
-            <p>Status: {user.name ? 'innlogget som ' + user.name : 'Ikke innlogget'}</p>
-            <img style={{height: '1.2em', borderRadius: '50%', marginTop:'1rem'}} src={user.picture} alt=""/>
+        {/* <Grid item className={classes.leftPart}>
+          <Button className={classes.classicCalcBtn}>
+            {" "}
+            <a
+              className={classes.classicCalcBtn}
+              style={{
+                textDecoration: "none",
+                fontSize: ".8rem",
+              }}
+              href="https://mkv-calculator.ktl.now.sh"
+              target="_blank"
+            >
+              <WidgetsIcon style={{ paddingTop: ".5rem" }} /> Classic Calculator
+            </a>
+          </Button>
+        </Grid> */}
 
-            <p>{user.updated_at}</p>
-          </>
-        )}
-      </Grid>
+        <Typography className={classes.copyRight}>© Copyright 2021</Typography>
+
+        <Grid item className={classes.rightPart}>
+          {user && (
+            <>
+              <p>
+                Status:{" "}
+                {user.name ? "innlogget som " + user.name : "Ikke innlogget"}
+              </p>
+              <img
+                style={{
+                  height: "1.2em",
+                  borderRadius: "50%",
+                  marginTop: "1rem",
+                }}
+                src={user.picture}
+                alt=""
+              />
+
+              <p>
+                {user.updated_at &&
+                  dateFormat(user.updated_at, "dd.mm.yyyy hh:MM:ss")}
+              </p>
+            </>
+          )}
+        </Grid>
       </Hidden>
       <Hidden mdUp>
-          <Grid container justify="center">
-              <Grid item>
-             
-                  <Typography style={{color: 'white'}}>© Copyright 2020</Typography>
-              </Grid>
+        <Grid container justify="center">
+          <Grid item>
+            <Typography style={{ color: "white" }}>© Copyright 2021</Typography>
           </Grid>
+        </Grid>
       </Hidden>
     </BottomNavigation>
   );

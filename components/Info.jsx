@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+var dateFormat = require("dateformat");
 import {
   makeStyles,
   Typography,
@@ -6,88 +7,91 @@ import {
   Grid,
   Divider,
   Hidden,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   infoContainer: {
-    padding: '3rem 3rem',
+    padding: "3rem 3rem",
     background:
-      'linear-gradient(4deg, rgba(44,214,230,1) 0%, rgba(81,153,235,1) 50%, rgba(17,79,57,1) 100%)',
+      "linear-gradient(4deg, rgba(44,214,230,1) 0%, rgba(81,153,235,1) 50%, rgba(17,79,57,1) 100%)",
   },
   infoSectionContainer: {
-    flexDirection: 'row',
-    width: '20vw',
-    justifyContent: 'space-between',
-    [theme.breakpoints.down('xs')]: {
-      width: '70vw',
+    flexDirection: "row",
+    width: "20vw",
+    justifyContent: "space-between",
+    [theme.breakpoints.down("xs")]: {
+      width: "70vw",
     },
   },
   ok: {
-    height: '1.2rem',
-    width: '1.2rem',
-    background: '#4cdd8e',
-    borderRadius: '50%',
-    [theme.breakpoints.down('md')]: {
-      height: '1rem',
-      width: '1rem',
+    height: "1.2rem",
+    width: "1.2rem",
+    background: "#4cdd8e",
+    borderRadius: "50%",
+    [theme.breakpoints.down("md")]: {
+      height: "1rem",
+      width: "1rem",
     },
   },
   notOk: {
-    height: '1.2rem',
-    width: '1.2rem',
-    background: 'indianred',
-    borderRadius: '50%',
-    [theme.breakpoints.down('md')]: {
-      height: '1rem',
-      width: '1rem',
+    height: "1.2rem",
+    width: "1.2rem",
+    background: "indianred",
+    borderRadius: "50%",
+    [theme.breakpoints.down("md")]: {
+      height: "1rem",
+      width: "1rem",
     },
   },
   dotContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    marginLeft: '1rem',
+    display: "flex",
+    alignItems: "center",
+    marginLeft: "1rem",
   },
   infoHeaders: {
-    margin: '1rem 0'
-  }, 
+    margin: "1rem 0",
+  },
   typography: {
-    fontStyle: 'italic',
-    color: '#430d4e',
-    fontSize: '1.2rem',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '1rem',
+    fontStyle: "italic",
+    color: "#430d4e",
+    fontSize: "1.2rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1rem",
     },
   },
   span: {
-    color: '#e6eb51',
+    color: "#e6eb51",
   },
   infoHeaderLow: {
-    margin: '1rem 0',
-    fontStyle: 'italic',
-    color: '#4e3861',
-    fontSize: '1.5rem',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '1.2rem',
-      fontWeight: 'bold',
+    margin: "1rem 0",
+    fontStyle: "italic",
+    color: "#4e3861",
+    fontSize: "1.5rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1.2rem",
+      fontWeight: "bold",
     },
   },
   infoText: {
-    fontStyle: 'italic',
-    color: '#4e3861',
-    fontSize: '1rem',
+    fontStyle: "italic",
+    color: "#4e3861",
+    fontSize: "1rem",
   },
   divider: {
-    margin: '1rem 0',
+    margin: "1rem 0",
   },
   infoText2: {
-    fontStyle: 'italic',
-    fontSize: '.7rem',
-    color: '#4e3861',
+    fontStyle: "italic",
+    fontSize: ".7rem",
+    color: "#4e3861",
   },
 }));
 const Info = ({ post, firstBladeValueTop }) => {
   // const startRingsVal = 200;
   // const endRingVal = 217.2;
+
+  const time = dateFormat(post.date, "dd.mm.yyyy hh:MM:ss");
+  console.log(time);
 
   const startRings = post.startRings;
   const startRingSum = startRings
@@ -118,8 +122,6 @@ const Info = ({ post, firstBladeValueTop }) => {
 
   // Start rings
 
-
-
   // const sagSnitt = post.sagsnitt;
   // const sagSnittSum = sagSnitt.reduce((num1, num) => num1 + num);
   // const [allBlades, setAllBlades] = useState(sagSnittSum + firstBladeValueTop);
@@ -145,8 +147,6 @@ const Info = ({ post, firstBladeValueTop }) => {
   // ).toFixed(2);
 
   // //ENDRINGS
-
-  
 
   // const toCenter = (
   //   Number(startRingSum) + Number(sumRawRingBladeDivided)
@@ -185,11 +185,11 @@ const Info = ({ post, firstBladeValueTop }) => {
             </Typography>
           </Grid>
 
-          {startRingSum === firstLabelVal ?
+          {startRingSum === firstLabelVal ? (
             <div className={classes.ok}></div>
-            :
+          ) : (
             <div className={classes.notOk}></div>
-          }
+          )}
         </Grid>
 
         <Grid className={classes.infoSectionContainer} container>
@@ -208,61 +208,73 @@ const Info = ({ post, firstBladeValueTop }) => {
               Status verdi bak
             </Typography>
           </Grid>
-          {endRingSum === secondLabel ?
+          {endRingSum === secondLabel ? (
             <div className={classes.ok}></div>
-            :
+          ) : (
             <div className={classes.notOk}></div>
-          }
-          
+          )}
         </Grid>
 
-        <Grid direction='column' container>
-          <Typography variant='h5' className={classes.infoHeaders}>Ringer foran</Typography>
+        <Grid direction="column" container>
+          <Typography variant="h5" className={classes.infoHeaders}>
+            Ringer foran
+          </Typography>
           <Grid className={classes.infoSectionContainer} container>
-          <Grid item>
-            <Typography className={classes.infoText}>Sum ringer foran</Typography>
-          </Grid>
-          <Grid item>
-            <Typography className={classes.infoText}></Typography>
-            {startRingSum}
+            <Grid item>
+              <Typography className={classes.infoText}>
+                Sum ringer foran
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.infoText}></Typography>
+              {startRingSum}
+            </Grid>
           </Grid>
         </Grid>
-        </Grid>
-        <Grid direction='column' container>
-          
+        <Grid direction="column" container>
           <Grid className={classes.infoSectionContainer} container>
-          <Grid item>
-            <Typography className={classes.infoText}>Differanse</Typography>
-          </Grid>
-          <Grid item>
-            <Typography className={classes.infoText}></Typography>
-            {(firstLabelVal - startRingSum ).toFixed(2)}
+            <Grid item>
+              <Typography className={classes.infoText}>Differanse</Typography>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.infoText}></Typography>
+              {(firstLabelVal - startRingSum).toFixed(2)}
+            </Grid>
           </Grid>
         </Grid>
-        </Grid>
-        <Grid direction='column' container>
-          <Typography variant='h5' className={classes.infoHeaders}>Ringer bak</Typography>
+        <Grid direction="column" container>
+          <Typography variant="h5" className={classes.infoHeaders}>
+            Ringer bak
+          </Typography>
           <Grid className={classes.infoSectionContainer} container>
-          <Grid item>
-            <Typography className={classes.infoText}>Sum ringer bak</Typography>
-          </Grid>
-          <Grid item>
-            <Typography className={classes.infoText}></Typography>
-            {endRingSum}
+            <Grid item>
+              <Typography className={classes.infoText}>
+                Sum ringer bak
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.infoText}></Typography>
+              {endRingSum}
+            </Grid>
           </Grid>
         </Grid>
-        </Grid>
-        <Grid direction='column' container>
-          
+        <Grid direction="column" container>
           <Grid className={classes.infoSectionContainer} container>
-          <Grid item>
-            <Typography className={classes.infoText}>Differanse</Typography>
-          </Grid>
-          <Grid item>
-            <Typography className={classes.infoText}></Typography>
-            {(secondLabel - endRingSum).toFixed(2)}
+            <Grid item>
+              <Typography className={classes.infoText}>Differanse</Typography>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.infoText}></Typography>
+              {(secondLabel - endRingSum).toFixed(2)}
+            </Grid>
           </Grid>
         </Grid>
+        <Grid container>
+          <Grid item>
+            <p className={classes.infoText}>
+              Opprettelsesdato: {time && post.date ? time : "Ukjent"}
+            </p>
+          </Grid>
         </Grid>
       </div>
       {/* <Hidden only='sm'>
