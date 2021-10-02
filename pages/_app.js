@@ -5,7 +5,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/theme";
 import useSWR from "swr";
-
+// test
 export default function MyApp(props) {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR("/api/authentication/user", fetcher);
