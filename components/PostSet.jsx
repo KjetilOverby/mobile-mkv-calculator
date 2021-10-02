@@ -1,44 +1,44 @@
-import React from 'react';
+import React from "react";
 import {
   makeStyles,
   Button,
   Hidden,
   Grid,
   Typography,
-} from '@material-ui/core';
-import Hylse from './hylse/Hylse';
-import ScreenRotationIcon from '@material-ui/icons/ScreenRotation';
-import Link from 'next/link';
-import fetch from 'isomorphic-unfetch';
+} from "@material-ui/core";
+import Hylse from "./hylse/Hylse";
+import ScreenRotationIcon from "@material-ui/icons/ScreenRotation";
+import Link from "next/link";
+import fetch from "isomorphic-unfetch";
 
-import { useRouter } from 'next/router';
-import Info from './Info';
+import { useRouter } from "next/router";
+import Info from "./Info";
 
-import DeleteModal from '../components/modals/DeleteModal';
+import DeleteModal from "../components/modals/DeleteModal";
 
 const useStyles = makeStyles((theme) => ({
   backBtn: {
-    position: 'absolute',
-    left: '5vw',
-    bottom: '4vh',
+    position: "absolute",
+    left: "5vw",
+    bottom: "4vh",
   },
   postContainer: {
-    height: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    [theme.breakpoints.down('xs')]: {
-      height: '40vh',
+    height: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    [theme.breakpoints.down("xs")]: {
+      height: "40vh",
     },
   },
 
   buttonContainer: {
-    margin: '0 0 0 3rem',
-    paddingBottom: '3rem',
+    margin: "0 0 0 3rem",
+    paddingBottom: "3rem",
   },
   btn: {
-    marginRight: '1rem',
+    marginRight: "1rem",
   },
 }));
 const PostSet = (props) => {
@@ -50,7 +50,7 @@ const PostSet = (props) => {
     const postId = router.query.id;
     try {
       const deleted = await fetch(`${props.deleteUrl}/${postId}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
       router.push(props.pushUrl);
     } catch (error) {
@@ -76,7 +76,7 @@ const PostSet = (props) => {
         <Info post={props.post} />
         {/* My account */}
         {props.user !== undefined &&
-          props.user.sub === 'google-oauth2|106500081074791056792' && (
+          props.user.sub === process.env.MY_ACCOUNT && (
             <DeleteModal
               delete={deletePost}
               post={props.post}
@@ -85,7 +85,7 @@ const PostSet = (props) => {
           )}
         {/* work account */}
         {props.user !== undefined &&
-          props.user.sub === 'auth0|5f27b78668033f003d618d38' && (
+          props.user.sub === process.env.USER_SUB && (
             <DeleteModal
               delete={deletePost}
               post={props.post}
@@ -95,7 +95,7 @@ const PostSet = (props) => {
 
         {/* work account google auth */}
         {props.user !== undefined &&
-          props.user.sub === 'google-oauth2|101843312488184148257' && (
+          props.user.sub === process.env.USER_SUB2 && (
             <DeleteModal
               delete={deletePost}
               post={props.post}

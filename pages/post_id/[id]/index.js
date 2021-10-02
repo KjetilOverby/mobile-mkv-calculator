@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const post_id = ({ post, user }) => {
+  console.log(user);
   const classes = useStyles();
   return (
     <div className={classes.container}>
