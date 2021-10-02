@@ -25,7 +25,7 @@ const create = (props) => {
       <div className={classes.container}>
         <CreatePost
           user={props.user}
-          url={`${baseUrl}/api/createdPost/posts?user=${props.user.sub}`}
+          url={`${baseUrl}/api/createdPost/posts?user=${props.user && props.user.sub}`}
         />
       </div>
       <Divider className={classes.divider} />

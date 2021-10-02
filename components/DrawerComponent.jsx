@@ -16,7 +16,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Link from 'next/link';
 import CreateIcon from '@material-ui/icons/Create';
 import { Typography } from '@material-ui/core';
-import { loadGetInitialProps } from 'next/dist/next-server/lib/utils';
 
 const useStyles = makeStyles(theme => ({
   list: {
@@ -51,7 +50,7 @@ export default function TemporaryDrawer(props) {
   };
 
   const list = (anchor) => (
-    <div 
+    <div
       className={clsx(classes.list, {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
@@ -62,44 +61,44 @@ export default function TemporaryDrawer(props) {
       <List>
         <Link href='/create'>
           <ListItem className={classes.listItemBtn} button>
-          <CreateIcon style={{margin: '0 2rem 0 1rem', color: 'indianred'}}/>
-          <Typography style={{color: 'gray', fontWeight: 'bold'}}>Ny post</Typography>
+            <CreateIcon style={{ margin: '0 2rem 0 1rem', color: 'indianred' }} />
+            <Typography style={{ color: 'gray', fontWeight: 'bold' }}>Ny post</Typography>
             <ListItemIcon></ListItemIcon>
             <ListItemText />
           </ListItem>
+        </Link>
+        <Divider />
+        {!props.user || props.user.error &&
+          <Link href='/api/authentication/login'>
+            <ListItem className={classes.listItemBtn} button>
+              <LockOpenIcon style={{ margin: '0 2rem 0 1rem', color: 'indianred' }} />
+              <Typography style={{ color: 'gray', fontWeight: 'bold' }}>Login</Typography>
+              <ListItemIcon></ListItemIcon>
+              <ListItemText />
+            </ListItem>
           </Link>
-          <Divider />
-       {!props.user || props.user.error &&
-        <Link href='/api/authentication/login'>
-          <ListItem className={classes.listItemBtn} button>
-          <LockOpenIcon style={{margin: '0 2rem 0 1rem', color: 'indianred'}}/>
-          <Typography style={{color: 'gray', fontWeight: 'bold'}}>Login</Typography>
-            <ListItemIcon></ListItemIcon>
-            <ListItemText />
-          </ListItem>
+        }
+        {!props.user || !props.user.error &&
+          <Link href='/api/authentication/logout'>
+            <ListItem className={classes.listItemBtn} button>
+              <LockIcon style={{ margin: '0 2rem 0 1rem', color: 'indianred' }} />
+              <Typography style={{ color: 'gray', fontWeight: 'bold' }}>Logout</Typography>
+              <ListItemIcon></ListItemIcon>
+              <ListItemText />
+            </ListItem>
           </Link>
-       }
-       {!props.user || !props.user.error &&
-        <Link href='/api/authentication/logout'>
-          <ListItem className={classes.listItemBtn} button>
-          <LockIcon style={{margin: '0 2rem 0 1rem', color: 'indianred'}}/>
-          <Typography style={{color: 'gray', fontWeight: 'bold'}}>Logout</Typography>
-            <ListItemIcon></ListItemIcon>
-            <ListItemText />
-          </ListItem>
-          </Link>
-       }
-          
-          <Divider />
-          {props.user !== undefined && props.user.name ? <p style={{marginLeft: '1.3rem'}}>Logget inn som: {props.user.name}</p> : <p style={{marginLeft: '1.3rem'}}>Ikke innlogget</p>}
-          {props.user &&
-            <img style={{height: '8rem', marginLeft: '2rem', marginTop: '2rem', borderRadius: '50%'}} src={props.user.picture} alt=""/>
-          }
-          
-          
+        }
+
+        <Divider />
+        {props.user !== undefined && props.user.name ? <p style={{ marginLeft: '1.3rem' }}>Logget inn som: {props.user.name}</p> : <p style={{ marginLeft: '1.3rem' }}>Ikke innlogget</p>}
+        {props.user &&
+          <img style={{ height: '8rem', marginLeft: '2rem', marginTop: '2rem', borderRadius: '50%' }} src={props.user.picture} alt="" />
+        }
+
+
       </List>
-    
-     
+
+
     </div>
   );
 
