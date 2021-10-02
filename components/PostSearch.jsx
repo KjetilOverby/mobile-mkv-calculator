@@ -19,8 +19,13 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "3.5rem",
     flexWrap: "wrap",
 
+<<<<<<< HEAD
     [theme.breakpoints.down("xl")]: {},
     [theme.breakpoints.down("sm")]: {},
+=======
+    [theme.breakpoints.down('xl')]: {},
+    [theme.breakpoints.down('sm')]: {},
+>>>>>>> f1b6458190b3c381206991e61508fc85f038fd3d
   },
   /////////// Experiental search container
   postSearchContainer: {
@@ -44,24 +49,40 @@ const useStyles = makeStyles((theme) => ({
       width: "100vw",
       boxShadow: "-5px -5px 10px rgba(0,0,0,.4)",
 
+<<<<<<< HEAD
       paddingTop: "30vh",
     },
     [theme.breakpoints.down("xs")]: {
       paddingTop: "2vh",
+=======
+      paddingTop: '30vh',
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '2vh',
+>>>>>>> f1b6458190b3c381206991e61508fc85f038fd3d
     },
   },
 
   searchContainerWrapper: {
+<<<<<<< HEAD
     [theme.breakpoints.up("md")]: {
       flexGrow: 1,
       background: theme.palette.leftBackground.main,
     },
     [theme.breakpoints.down("sm")]: {},
+=======
+    [theme.breakpoints.up('md')]: {
+      flexGrow: 1,
+      background: theme.palette.leftBackground.main,
+    },
+    [theme.breakpoints.down('sm')]: {},
+>>>>>>> f1b6458190b3c381206991e61508fc85f038fd3d
   },
   //
   // https://images.unsplash.com/photo-1547518717-52a1971c2c96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1833&q=80
   searchContainer: {
     flexGrow: 1,
+<<<<<<< HEAD
     padding: "2.5rem",
     flexDirection: "column",
     background: `linear-gradient(rgba(6, 37, 61, .6), rgba(0, 0, 0, .6)) , url("https://images.unsplash.com/photo-1583418007992-a8e33a92e7ad?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")`,
@@ -74,15 +95,35 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       paddingLeft: "10vw",
       paddingTop: "15rem",
+=======
+    padding: '2.5rem',
+    flexDirection: 'column',
+    background: `linear-gradient(rgba(6, 37, 61, .95), rgba(0, 0, 0, .8)) , url("https://images.unsplash.com/photo-1522609163202-be0734d421e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60")`,
+    width: '50vw',
+    backgroundSize: 'cover',
+    backgroundPosition: '60%',
+    minHeight: '100vh',
+    [theme.breakpoints.down('lg')]: {},
+
+    [theme.breakpoints.up('lg')]: {
+      paddingLeft: '10vw',
+      paddingTop: '15rem',
+>>>>>>> f1b6458190b3c381206991e61508fc85f038fd3d
     },
 
     [theme.breakpoints.down("sm")]: {
       width: "100vw",
       minHeight: "30vh",
     },
+<<<<<<< HEAD
     [theme.breakpoints.up("sm")]: {
       height: "30vh",
       position: "fixed",
+=======
+    [theme.breakpoints.up('sm')]: {
+      height: '30vh',
+      position: 'fixed',
+>>>>>>> f1b6458190b3c381206991e61508fc85f038fd3d
     },
   },
 
@@ -113,6 +154,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   infoContainer: {
+<<<<<<< HEAD
     marginTop: "-7rem",
     fontFamily: "Special Elite, cursive",
     marginLeft: "-4rem",
@@ -120,13 +162,27 @@ const useStyles = makeStyles((theme) => ({
       fontSize: ".5rem",
       marginTop: "1rem",
       marginLeft: "1rem",
+=======
+    marginTop: '-7rem',
+    fontFamily: 'Special Elite, cursive',
+    marginLeft: '-4rem',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '.5rem',
+      marginTop: '1rem',
+      marginLeft: '1rem',
+>>>>>>> f1b6458190b3c381206991e61508fc85f038fd3d
     },
   },
   postHeader: {
     margin: "2rem 0",
     color: theme.palette.text.main,
+<<<<<<< HEAD
     fontFamily: "Special Elite, cursive",
     fontSize: "1.8rem",
+=======
+    fontFamily: 'Special Elite, cursive',
+    fontSize: '1.8rem',
+>>>>>>> f1b6458190b3c381206991e61508fc85f038fd3d
   },
   imgOne: {
     height: "20rem",
@@ -157,14 +213,24 @@ const PostSearch = ({ posts, user }) => {
                   Antall poster: {posts.data.length}
                 </Typography>
                 <Typography className={classes.info}>
+<<<<<<< HEAD
                   Søkeresultat: {!searchInput && " Ingen søk"}{" "}
+=======
+                  Søkeresultat: {!searchInput && ' Ingen søk'}{' '}
+>>>>>>> f1b6458190b3c381206991e61508fc85f038fd3d
                   {searchInput && search.length != 0 && (
                     <span style={{ color: theme.palette.text.main }}>
                       {search.length}
                     </span>
+<<<<<<< HEAD
                   )}{" "}
                   {search.length === 0 && (
                     <span style={{ color: "indianred" }}>Ingen treff</span>
+=======
+                  )}{' '}
+                  {search.length === 0 && (
+                    <span style={{ color: 'indianred' }}>Ingen treff</span>
+>>>>>>> f1b6458190b3c381206991e61508fc85f038fd3d
                   )}
                 </Typography>
               </Grid>
